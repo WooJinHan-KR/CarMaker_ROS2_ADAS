@@ -1,6 +1,7 @@
-# CMRosIF-1.0.0-linux64-Release
 
-Base example of `CarMaker` `ROS` Interface
+CarMaker 13.0.1 & ROS2 Interface + Autonomous Driving Algorithm
+
+
 
 ## Outline
 
@@ -21,18 +22,14 @@ Base example of `CarMaker` `ROS` Interface
     cd ./src_cmrosif
     # Set command following `CarMaker` version
     # CM_09, CM_10, CM_11, CM_12, CM_13
-    ./patch.sh CM_11
+    ./patch.sh CM_13
     ```
-4. Build `CarMaker`(./src) and `ROS` workspace(./ros/ros1_ws/src or ./ros/ros2_ws/src)
-    ```bash
-    # ROS 1
-    ./build.sh 1
-    ```
+4. Build `CarMaker`(./src) and `ROS` workspace(./ros/ros2_ws/src)
+
     ```bash
     # ROS 2
     ./build.sh 2
     ```
-    - for ROS2 you need to change CMRosIFParameters file
 
 ## Start Procedure
 
@@ -56,22 +53,15 @@ Cfg.Lib.Path = libcmnode_hellocm.so
 ```
 
 Namespace settings
-- uncomment line follow by your ROS version
-    ```
-    ## Remapping arguments for ROS
-    #Cfg.Args = __ns:=/carmaker /carmaker/ext2cm:=/hellocm/ext2cm
 
+    ```
     ## Remapping arguments for ROS 2
     Cfg.Args = --ros-args -r __ns:=/carmaker -r /carmaker/ext2cm:=/hellocm/ext2cm
     ```
 
 Launch File setting
-- uncomment line follow by your ROS version
 
     ```
-    ## Launch arguments for ROS (roslaunch <args>)
-    #Launch.Args = hellocm hellocm.launch use_sim_time:="true"
-
     ## Launch arguments for ROS 2 (ros2 launch <args>)
     Launch.Args = hellocm hellocm.launch.py use_sim_time:=True
     ```
