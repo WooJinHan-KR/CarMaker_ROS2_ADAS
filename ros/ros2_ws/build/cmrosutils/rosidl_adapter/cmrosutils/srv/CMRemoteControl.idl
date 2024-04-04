@@ -1,0 +1,33 @@
+// generated from rosidl_adapter/resource/srv.idl.em
+// with input from cmrosutils/srv/CMRemoteControl.srv
+// generated code does not contain a copyright notice
+
+
+module cmrosutils {
+  module srv {
+    @verbatim (language="comment", text=
+      " Service to send ScriptControl commands to CarMaker GUI")
+    struct CMRemoteControl_Request {
+      @verbatim (language="comment", text=
+        " general type of command")
+      string type;
+
+      @verbatim (language="comment", text=
+        " message to be evaluated")
+      string msg;
+
+      @verbatim (language="comment", text=
+        " additional data, e.g. command arguments, ...")
+      string data;
+    };
+    struct CMRemoteControl_Response {
+      @verbatim (language="comment", text=
+        " result of triggered service")
+      int32 res;
+
+      @verbatim (language="comment", text=
+        " informational, e.g. for error messages")
+      string msg;
+    };
+  };
+};

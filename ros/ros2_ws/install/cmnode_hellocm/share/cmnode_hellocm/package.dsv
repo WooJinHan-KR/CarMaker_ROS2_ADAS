@@ -1,0 +1,11 @@
+source;share/cmnode_hellocm/hook/cmake_prefix_path.ps1
+source;share/cmnode_hellocm/hook/cmake_prefix_path.dsv
+source;share/cmnode_hellocm/hook/cmake_prefix_path.sh
+source;share/cmnode_hellocm/hook/ld_library_path_lib.ps1
+source;share/cmnode_hellocm/hook/ld_library_path_lib.dsv
+source;share/cmnode_hellocm/hook/ld_library_path_lib.sh
+source;share/cmnode_hellocm/local_setup.bash
+source;share/cmnode_hellocm/local_setup.dsv
+source;share/cmnode_hellocm/local_setup.ps1
+source;share/cmnode_hellocm/local_setup.sh
+source;share/cmnode_hellocm/local_setup.zsh

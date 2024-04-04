@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<package format="2">
+  <name>cmnode_hellocm</name>
+  <version>1.0.0</version>
+  <description>
+    Shared library for CarMaker ROS Node example implementation.
+  </description>
+  <maintainer email="no@support.com">IPG Automotive GmbH/dbe</maintainer>
+  <license>IPG Automotive GmbH</license>
+
+  <buildtool_depend>catkin</buildtool_depend>
+
+  <depend>roscpp</depend>
+
+  <build_depend>message_generation</build_depend>
+  <build_depend>cmrosutils</build_depend>
+  <build_depend>hellocm_msgs</build_depend>
+
+  <exec_depend>message_runtime</exec_depend>
+  <exec_depend>cmrosutils</exec_depend>
+  <exec_depend>hellocm_msgs</exec_depend>
+</package>

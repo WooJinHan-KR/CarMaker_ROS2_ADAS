@@ -1,0 +1,4 @@
+srv/CMRemoteControl.idl
+srv/CMRemoteControl.srv
+srv/CMRemoteControl_Request.msg
+srv/CMRemoteControl_Response.msg

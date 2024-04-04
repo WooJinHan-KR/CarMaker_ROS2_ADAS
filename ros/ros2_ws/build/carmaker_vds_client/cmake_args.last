@@ -1,0 +1,1 @@
+['-DCARMAKER_VER:STRING=13.0.1', '-DCARMAKER_DIR:PATH=/opt/ipg/carmaker/linux64-13.0.1', '--no-warn-unused-cli']

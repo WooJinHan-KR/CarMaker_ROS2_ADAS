@@ -1,0 +1,30 @@
+{
+  "package_name": "cmrosutils",
+  "output_dir": "/home/ipg-pc-30/CM-Projects/work_woh/240404_CM13_ROS2/ros/ros2_ws/build/cmrosutils/rosidl_generator_c/cmrosutils",
+  "template_dir": "/opt/ros/foxy/share/rosidl_generator_c/cmake/../resource",
+  "idl_tuples": [
+    "/home/ipg-pc-30/CM-Projects/work_woh/240404_CM13_ROS2/ros/ros2_ws/build/cmrosutils/rosidl_adapter/cmrosutils:srv/CMRemoteControl.idl"
+  ],
+  "ros_interface_dependencies": [
+    "builtin_interfaces:/opt/ros/foxy/share/builtin_interfaces/msg/Duration.idl",
+    "builtin_interfaces:/opt/ros/foxy/share/builtin_interfaces/msg/Time.idl"
+  ],
+  "target_dependencies": [
+    "/opt/ros/foxy/share/rosidl_generator_c/cmake/../../../lib/rosidl_generator_c/rosidl_generator_c",
+    "/opt/ros/foxy/share/rosidl_generator_c/cmake/../../../lib/python3.8/site-packages/rosidl_generator_c/__init__.py",
+    "/opt/ros/foxy/share/rosidl_generator_c/cmake/../resource/action__type_support.h.em",
+    "/opt/ros/foxy/share/rosidl_generator_c/cmake/../resource/idl.h.em",
+    "/opt/ros/foxy/share/rosidl_generator_c/cmake/../resource/idl__functions.c.em",
+    "/opt/ros/foxy/share/rosidl_generator_c/cmake/../resource/idl__functions.h.em",
+    "/opt/ros/foxy/share/rosidl_generator_c/cmake/../resource/idl__struct.h.em",
+    "/opt/ros/foxy/share/rosidl_generator_c/cmake/../resource/idl__type_support.h.em",
+    "/opt/ros/foxy/share/rosidl_generator_c/cmake/../resource/msg__functions.c.em",
+    "/opt/ros/foxy/share/rosidl_generator_c/cmake/../resource/msg__functions.h.em",
+    "/opt/ros/foxy/share/rosidl_generator_c/cmake/../resource/msg__struct.h.em",
+    "/opt/ros/foxy/share/rosidl_generator_c/cmake/../resource/msg__type_support.h.em",
+    "/opt/ros/foxy/share/rosidl_generator_c/cmake/../resource/srv__type_support.h.em",
+    "/home/ipg-pc-30/CM-Projects/work_woh/240404_CM13_ROS2/ros/ros2_ws/build/cmrosutils/rosidl_adapter/cmrosutils/srv/CMRemoteControl.idl",
+    "/opt/ros/foxy/share/builtin_interfaces/msg/Duration.idl",
+    "/opt/ros/foxy/share/builtin_interfaces/msg/Time.idl"
+  ]
+}

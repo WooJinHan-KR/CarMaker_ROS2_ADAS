@@ -1,0 +1,30 @@
+// generated from rosidl_adapter/resource/msg.idl.em
+// with input from hellocm_msgs/msg/CM2Ext.msg
+// generated code does not contain a copyright notice
+
+#include "builtin_interfaces/msg/Time.idl"
+#include "std_msgs/msg/Header.idl"
+
+module hellocm_msgs {
+  module msg {
+    @verbatim (language="comment", text=
+      " Message from CarMaker ROS Node to external ROS Node")
+    struct CM2Ext {
+      @verbatim (language="comment", text=
+        " General ROS Header (optional)")
+      std_msgs::msg::Header header;
+
+      @verbatim (language="comment", text=
+        " ROS time when message was sent (optional)")
+      builtin_interfaces::msg::Time time;
+
+      @verbatim (language="comment", text=
+        " Cycle number since simulation start (optional)")
+      int64 cycleno;
+
+      @verbatim (language="comment", text=
+        " Synthetic delay to check synchronization (optional)")
+      double synthdelay;
+    };
+  };
+};

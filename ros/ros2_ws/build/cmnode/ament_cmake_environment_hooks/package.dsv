@@ -1,0 +1,4 @@
+source;share/cmnode/local_setup.bash
+source;share/cmnode/local_setup.dsv
+source;share/cmnode/local_setup.sh
+source;share/cmnode/local_setup.zsh
