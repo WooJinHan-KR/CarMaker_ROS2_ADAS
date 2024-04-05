@@ -9,27 +9,27 @@ dist/
 
 # Ignore Folders
 bin/*
-!bin/
+!bin/*
 Data/*
-!Data/
+!Data/*
 doc/*
-!doc/
+!doc/*
 include/*
-!include/
+!include/*
 lib/*
-!lib/
+!lib/*
 Movie/*
-!Movie
+!Movie/*
 MovieNX/*
-!MovieNX
+!MovieNX/*
 Plugins/*
-!Plugins
+!Plugins/*
 SimInput/*
-!SimInput
+!SimInput/*
 SimOutput/*
-!SimOutput
+!SimOutput/*
 src_cm4sl/*
-!src_cm4sl
+!src_cm4sl/*
 src/.settings/org.eclipse.cdt.core.prefs
 src/.settings/org.eclipse.core.resources.prefs
 

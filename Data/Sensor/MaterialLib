@@ -1,0 +1,178 @@
+#INFOFILE1.1 (UTF-8) - Do not remove this line!
+FileIdent = MaterialLib 13
+Description:
+	Material Definitions used by GPUSensor
+
+Materials.N = 21
+
+Material.1.Name = asphalt
+Material.1.Lidar.OutgoingRay = none
+Material.1.Lidar.BsdfParams = 0.1 0.1 0 0.1 1 0 0 0
+Material.1.Radar.Permittivity = 4.4
+Material.1.Radar.Scattering = 20.0
+Material.1.USonic.Reflection = 0.95
+Material.1.USonic.Scattering = 18.0
+
+Material.2.Name = concrete-and-steel
+Material.2.Lidar.OutgoingRay = none
+Material.2.Lidar.BsdfParams = 0.11 0.11 0 0.1 1 0 0 0
+Material.2.Radar.Permittivity = 1000000000.0
+Material.2.Radar.Scattering = 0.5
+Material.2.USonic.Reflection = 1.0
+Material.2.USonic.Scattering = 0.0
+
+Material.3.Name = stone
+Material.3.Lidar.OutgoingRay = none
+Material.3.Lidar.BsdfParams = 0.47 0.47 0 0.1 1 0 0 0
+Material.3.Radar.Permittivity = 5.0
+Material.3.Radar.Scattering = 5.0
+Material.3.USonic.Reflection = 0.9
+Material.3.USonic.Scattering = 0.0
+
+Material.4.Name = metal
+Material.4.Lidar.OutgoingRay = none
+Material.4.Lidar.BsdfParams = 0.35 0.65 2.8 0.1 1 0 0 0
+Material.4.Radar.Permittivity = 1000000000.0
+Material.4.Radar.Scattering = 0.01
+Material.4.USonic.Reflection = 1.0
+Material.4.USonic.Scattering = 0.0
+
+Material.5.Name = metal_retroreflective
+Material.5.Lidar.OutgoingRay = none
+Material.5.Lidar.BsdfParams = 0.35 0.65 2.8 0.1 0 0 1 0
+Material.5.Radar.Permittivity = 1000000000.0
+Material.5.Radar.Scattering = 0.01
+Material.5.USonic.Reflection = 1.0
+Material.5.USonic.Scattering = 0.0
+
+Material.6.Name = metal_scatter
+Material.6.Lidar.OutgoingRay = specular
+Material.6.Lidar.BsdfParams = 0.5 0.8 2.8 0.1 0 1 0 0
+Material.6.Radar.Permittivity = 1000000000.0
+Material.6.Radar.Scattering = 20.0
+Material.6.USonic.Reflection = 1.0
+Material.6.USonic.Scattering = 0.0
+
+Material.7.Name = metal_painted
+Material.7.Lidar.OutgoingRay = specular
+Material.7.Lidar.BsdfParams = 0.01 0.6 2.8 0.1 0.2 0.8 0 0
+Material.7.Radar.Permittivity = 1000000000.0
+Material.7.Radar.Scattering = 0.01
+Material.7.USonic.Reflection = 1.0
+Material.7.USonic.Scattering = 0.0
+
+Material.8.Name = plastic
+Material.8.Lidar.OutgoingRay = none
+Material.8.Lidar.BsdfParams = 0.15 0.35 0 0.1 1 0 0 0
+Material.8.Radar.Permittivity = 2.5
+Material.8.Radar.Scattering = 0.5
+Material.8.USonic.Reflection = 1.0
+Material.8.USonic.Scattering = 0.0
+
+Material.9.Name = plastic_retroreflective
+Material.9.Lidar.OutgoingRay = none
+Material.9.Lidar.BsdfParams = 0.15 0.35 0 0.1 0 0 1 0
+Material.9.Radar.Permittivity = 2.5
+Material.9.Radar.Scattering = 0.5
+Material.9.USonic.Reflection = 1.0
+Material.9.USonic.Scattering = 0.0
+
+Material.10.Name = plastic_scatter
+Material.10.Lidar.OutgoingRay = transmissive
+Material.10.Lidar.TransmittanceLimit = 0.13
+Material.10.Lidar.BsdfParams =  0.65 0.65 0 0.01 0.05 0.05 0 0.9
+Material.10.Radar.Permittivity = 2.5
+Material.10.Radar.Scattering = 20.0
+Material.10.USonic.Reflection = 1.0
+Material.10.USonic.Scattering = 0.0
+
+Material.11.Name = glass
+Material.11.Lidar.OutgoingRay = transmissive
+Material.11.Lidar.TransmittanceLimit = 0.12
+Material.11.Lidar.BsdfParams =  0.92 0.92 0 0.01 0.05 0.05 0 0.9
+Material.11.Radar.Permittivity = 8.0
+Material.11.Radar.Scattering = 0.5
+Material.11.USonic.Reflection = 1.0
+Material.11.USonic.Scattering = 0.0
+
+Material.12.Name = glass_scatter
+Material.12.Lidar.OutgoingRay = transmissive
+Material.12.Lidar.TransmittanceLimit = 0.12
+Material.12.Lidar.BsdfParams =  0.92 0.92 0 0.01 0.05 0.05 0 0.9
+Material.12.Radar.Permittivity = 8.0
+Material.12.Radar.Scattering = 20.0
+Material.12.USonic.Reflection = 1.0
+Material.12.USonic.Scattering = 0.0
+
+Material.13.Name = rubber
+Material.13.Lidar.OutgoingRay = none
+Material.13.Lidar.BsdfParams = 0.02 0.08 0 0.1 1 0 0 0
+Material.13.Radar.Permittivity = 2.5
+Material.13.Radar.Scattering = 0.5
+Material.13.USonic.Reflection = 0.7
+Material.13.USonic.Scattering = 0.0
+
+Material.14.Name = water
+Material.14.Lidar.OutgoingRay = transmissive
+Material.14.Lidar.TransmittanceLimit = 0.11
+Material.14.Lidar.BsdfParams =  0.97 0.97 0 0.01 0.05 0.05 0 0.9
+Material.14.Radar.Permittivity = 17.0
+Material.14.Radar.Scattering = 0.5
+Material.14.USonic.Reflection = 0.7
+Material.14.USonic.Scattering = 0.0
+
+Material.15.Name = skin-hair
+Material.15.Lidar.OutgoingRay = none
+Material.15.Lidar.BsdfParams = 0.3 0.3 0 0.1 1 0 0 0
+Material.15.Radar.Permittivity = 4.0
+Material.15.Radar.Scattering = 0.5
+Material.15.USonic.Reflection = 0.3
+Material.15.USonic.Scattering = 0.0
+
+Material.16.Name = textile
+Material.16.Lidar.OutgoingRay = none
+Material.16.Lidar.BsdfParams = 0.04 0.06 0 0.1 1 0 0 0
+Material.16.Radar.Permittivity = 3.0
+Material.16.Radar.Scattering = 0.5
+Material.16.USonic.Reflection = 0.4
+Material.16.USonic.Scattering = 0.0
+
+Material.17.Name = wood
+Material.17.Lidar.OutgoingRay = none
+Material.17.Lidar.BsdfParams = 0.6 0.8 0 0.1 1 0 0 0
+Material.17.Radar.Permittivity = 2.5
+Material.17.Radar.Scattering = 0.5
+Material.17.USonic.Reflection = 0.6
+Material.17.USonic.Scattering = 0.0
+
+Material.18.Name = grass-leaf
+Material.18.Lidar.OutgoingRay = none
+Material.18.Lidar.BsdfParams = 0.3 0.5 0 0.1 1 0 0 0
+Material.18.Radar.Permittivity = 3.0
+Material.18.Radar.Scattering = 0.5
+Material.18.USonic.Reflection = 0.6
+Material.18.USonic.Scattering = 0.0
+
+Material.19.Name = road_paint
+Material.19.Lidar.OutgoingRay = none
+Material.19.Lidar.BsdfParams = 0.85 0.95 0 0.1 0 0 1 0
+Material.19.Radar.Permittivity = 4.4
+Material.19.Radar.Scattering = 0.5
+Material.19.USonic.Reflection = 1.0
+Material.19.USonic.Scattering = 0.0
+
+Material.20.Name = dirt-earth
+Material.20.Lidar.OutgoingRay = none
+Material.20.Lidar.BsdfParams = 0.02 0.02 0 0.1 1 0 0 0
+Material.20.Radar.Permittivity = 3.0
+Material.20.Radar.Scattering = 0.5
+Material.20.USonic.Reflection = 1.0
+Material.20.USonic.Scattering = 0.0
+
+Material.21.Name = wet_asphalt
+Material.21.Lidar.OutgoingRay = specular
+Material.21.Lidar.BsdfParams =  0.15 0.15 0 0.05 0.5 0.5 0 0
+Material.21.Radar.Permittivity = 4.4
+Material.21.Radar.Scattering = 20.0
+Material.21.USonic.Reflection = 0.95
+Material.21.USonic.Scattering = 18.0

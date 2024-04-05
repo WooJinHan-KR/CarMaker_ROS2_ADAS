@@ -1,0 +1,4 @@
+<map id="CMJob::AbstractJob" name="CMJob::AbstractJob">
+<area shape="rect" id="node2" href="$classCMJob_1_1RosPublisher.html" title="Ros_Publisher provides a job based interfoce for ros publisher. " alt="" coords="5,380,188,501"/>
+<area shape="rect" id="node3" href="$classCMJob_1_1RosSubscriber.html" title="Ros_Subscriber provides a job based interfoce for ros subscribers. " alt="" coords="212,365,403,516"/>
+</map>

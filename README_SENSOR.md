@@ -57,10 +57,6 @@ use TestRun `PerformanceBenchmark`
 - LidarRSI Sensor
 - CameraRSI Sensor
     ```
-    #run RSDS Client - ROS 1
-    roslaunch carmaker_vds_client carmaker_vds_client.launch 
-    ```
-    ```
     #run RSDS Client - ROS 2
     ros2 launch carmaker_vds_client carmaker_vds_client.launch.py 
     ```
@@ -69,7 +65,6 @@ use TestRun `PerformanceBenchmark`
 
 Visualize Data using `Rviz`
 - use config file
-    - ROS 1 [rviz_config.rviz](Movie/rviz_config.rviz)
     - ROS 2 [rviz_config2.rviz](Movie/rviz_config2.rviz)
 
 ![Alt text](/doc/pic/rviz.png)
