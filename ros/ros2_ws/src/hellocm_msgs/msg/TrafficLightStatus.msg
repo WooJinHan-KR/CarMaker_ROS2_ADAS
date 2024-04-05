@@ -1,0 +1,5 @@
+Header header
+
+string trafficLightIndex
+int32 trafficLightType
+int32 trafficLightStatus

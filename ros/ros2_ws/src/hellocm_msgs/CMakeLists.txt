@@ -25,6 +25,8 @@ rosidl_generate_interfaces(${PROJECT_NAME}
   "msg/CM2Ext.msg"
   "msg/Ext2CM.msg"
   "srv/Init.srv"
+  "RadarRSI.msg"
+  "TrafficLightStatus.msg"
   DEPENDENCIES
     std_msgs
     builtin_interfaces

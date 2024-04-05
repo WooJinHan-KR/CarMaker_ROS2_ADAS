@@ -10,6 +10,9 @@
  */
 
 #include "cmnode.hpp"
+#include "LidarRSI_IF.hpp"
+#include "RadarRSI_IF.hpp"
+
 
 using cm_ros::CMNode;
 using CMJob::Log;
@@ -30,6 +33,8 @@ int CMNode::userTestrunStartAtBegin() {
 }
 
 int CMNode::userTestrunStartAtEnd() {
+	CMNode_LidarRSI_IF_TestrunStartAtEnd(this);
+	CMNode_RadarRSI_IF_TestrunStartAtEnd(this);
 	return 1;
 }
 
@@ -58,6 +63,10 @@ void CMNode::userOut() {
 }
 
 int CMNode::userTestrunEnd() {
+
+	CMNode_LidarRSI_IF_TestrunEnd(this);
+	CMNode_RadarRSI_IF_TestrunEnd(this);
+
 	return 1;
 }
 

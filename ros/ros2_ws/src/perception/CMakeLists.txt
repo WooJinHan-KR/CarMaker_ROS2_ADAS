@@ -20,21 +20,61 @@ find_package(ament_cmake REQUIRED)
 find_package(rclcpp REQUIRED)
 find_package(cmrosutils REQUIRED)
 find_package(hellocm_msgs REQUIRED)
+find_package(image_transport REQUIRED)
+find_package(tf2 REQUIRED)
+find_package(tf2_ros REQUIRED)
+find_package(tf2_geometry_msgs REQUIRED)
+find_package(nav_msgs REQUIRED)
+find_package(sensor_msgs REQUIRED)
+find_package(visualization_msgs REQUIRED)
 
 add_library(${PROJECT_NAME} SHARED
   src/cmnode.cpp
- )
+  src/LidarRSI_IF.cpp
+)
+
+include_directories(
+  include
+  include ${rclcpp_INCLUDE_DIRS}
+  include ${image_transport_INCLUDE_DIRS}
+  include ${tf2_INCLUDE_DIRS}
+  include ${tf2_ros_INCLUDE_DIRS}
+  include ${tf2_geometry_msgs_INCLUDE_DIRS}
+)
 
 ament_target_dependencies(${PROJECT_NAME}
     rclcpp
     cmrosutils
     hellocm_msgs
+    tf2
+    tf2_ros
+    tf2_geometry_msgs
+    nav_msgs
+    sensor_msgs
+    visualization_msgs
  )
+
+add_executable(${PROJECT_NAME}_node src/carmaker_vds_client_node.cpp)
+
 
 install(TARGETS
    ${PROJECT_NAME}
    DESTINATION lib
  )
+
+install(TARGETS ${PROJECT_NAME}_node
+  DESTINATION lib/${PROJECT_NAME}
+)
+
+install(DIRECTORY
+  launch
+  DESTINATION share/${PROJECT_NAME}
+)
+
+install(
+  PROGRAMS launch/IPGMovie_VDS_helper.sh
+  DESTINATION lib/${PROJECT_NAME}
+)
 
 #install(DIRECTORY include/
 #  DESTINATION include
@@ -45,6 +85,12 @@ ament_export_libraries(${PROJECT_NAME})
 ament_export_dependencies(rclcpp)
 ament_export_dependencies(cmrosutils)
 ament_export_dependencies(hellocm_msgs)
+ament_export_dependencies(tf2)
+ament_export_dependencies(tf2_ros)
+ament_export_dependencies(tf2_geometry_msgs)
+ament_export_dependencies(nav_msgs)
+ament_export_dependencies(sensor_msgs)
+ament_export_dependencies(visualization_msgs)
 ament_export_dependencies(rosidl_default_runtime)
 
 if(BUILD_TESTING)

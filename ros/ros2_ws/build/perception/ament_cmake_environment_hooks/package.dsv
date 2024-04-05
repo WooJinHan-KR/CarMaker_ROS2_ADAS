@@ -1,0 +1,4 @@
+source;share/perception/local_setup.bash
+source;share/perception/local_setup.dsv
+source;share/perception/local_setup.sh
+source;share/perception/local_setup.zsh

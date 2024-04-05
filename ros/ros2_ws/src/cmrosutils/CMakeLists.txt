@@ -25,11 +25,11 @@ endif()
 set(GET_CM_VERSION_FROM_CMD_LINE_OR_CACHE ON)
 
 if(NOT ${GET_CM_VERSION_FROM_CMD_LINE_OR_CACHE})
-  set(CARMAKER_VER 9.0.1)
+  set(CARMAKER_VER 13.0.1)
   set(CARMAKER_DIR $ENV{IPGHOME}/carmaker/linux64-${CARMAKER_VER})
 else()
   set(CARMAKER_VER
-      CACHE STRING "CarMaker Version, e.g. 9.0.1")
+      CACHE STRING "CarMaker Version, e.g. 13.0.1")
 
   set(CARMAKER_DIR $ENV{IPGHOME}/carmaker/linux64-${CARMAKER_VER}
       CACHE STRING "CarMaker installation directory")
