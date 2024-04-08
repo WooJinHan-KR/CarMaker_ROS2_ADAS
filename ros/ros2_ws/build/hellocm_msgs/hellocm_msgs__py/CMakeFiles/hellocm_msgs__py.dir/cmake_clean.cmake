@@ -7,6 +7,8 @@ file(REMOVE_RECURSE
   "../rosidl_generator_py/hellocm_msgs/msg/_cm2_ext_s.c"
   "../rosidl_generator_py/hellocm_msgs/msg/_ext2_cm.py"
   "../rosidl_generator_py/hellocm_msgs/msg/_ext2_cm_s.c"
+  "../rosidl_generator_py/hellocm_msgs/msg/_radar_data.py"
+  "../rosidl_generator_py/hellocm_msgs/msg/_radar_data_s.c"
   "../rosidl_generator_py/hellocm_msgs/srv/__init__.py"
   "../rosidl_generator_py/hellocm_msgs/srv/_init.py"
   "../rosidl_generator_py/hellocm_msgs/srv/_init_s.c"

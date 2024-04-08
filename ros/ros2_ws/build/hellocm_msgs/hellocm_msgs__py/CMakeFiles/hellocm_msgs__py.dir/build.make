@@ -59,11 +59,13 @@ hellocm_msgs__py/CMakeFiles/hellocm_msgs__py: rosidl_generator_py/hellocm_msgs/_
 hellocm_msgs__py/CMakeFiles/hellocm_msgs__py: rosidl_generator_py/hellocm_msgs/msg/_cm2_ext.py
 hellocm_msgs__py/CMakeFiles/hellocm_msgs__py: rosidl_generator_py/hellocm_msgs/msg/_ext2_cm.py
 hellocm_msgs__py/CMakeFiles/hellocm_msgs__py: rosidl_generator_py/hellocm_msgs/srv/_init.py
+hellocm_msgs__py/CMakeFiles/hellocm_msgs__py: rosidl_generator_py/hellocm_msgs/msg/_radar_data.py
 hellocm_msgs__py/CMakeFiles/hellocm_msgs__py: rosidl_generator_py/hellocm_msgs/msg/__init__.py
 hellocm_msgs__py/CMakeFiles/hellocm_msgs__py: rosidl_generator_py/hellocm_msgs/srv/__init__.py
 hellocm_msgs__py/CMakeFiles/hellocm_msgs__py: rosidl_generator_py/hellocm_msgs/msg/_cm2_ext_s.c
 hellocm_msgs__py/CMakeFiles/hellocm_msgs__py: rosidl_generator_py/hellocm_msgs/msg/_ext2_cm_s.c
 hellocm_msgs__py/CMakeFiles/hellocm_msgs__py: rosidl_generator_py/hellocm_msgs/srv/_init_s.c
+hellocm_msgs__py/CMakeFiles/hellocm_msgs__py: rosidl_generator_py/hellocm_msgs/msg/_radar_data_s.c
 
 
 rosidl_generator_py/hellocm_msgs/_hellocm_msgs_s.ep.rosidl_typesupport_fastrtps_c.c: /opt/ros/foxy/lib/rosidl_generator_py/rosidl_generator_py
@@ -82,6 +84,7 @@ rosidl_generator_py/hellocm_msgs/_hellocm_msgs_s.ep.rosidl_typesupport_fastrtps_
 rosidl_generator_py/hellocm_msgs/_hellocm_msgs_s.ep.rosidl_typesupport_fastrtps_c.c: rosidl_adapter/hellocm_msgs/msg/CM2Ext.idl
 rosidl_generator_py/hellocm_msgs/_hellocm_msgs_s.ep.rosidl_typesupport_fastrtps_c.c: rosidl_adapter/hellocm_msgs/msg/Ext2CM.idl
 rosidl_generator_py/hellocm_msgs/_hellocm_msgs_s.ep.rosidl_typesupport_fastrtps_c.c: rosidl_adapter/hellocm_msgs/srv/Init.idl
+rosidl_generator_py/hellocm_msgs/_hellocm_msgs_s.ep.rosidl_typesupport_fastrtps_c.c: rosidl_adapter/hellocm_msgs/msg/RadarData.idl
 rosidl_generator_py/hellocm_msgs/_hellocm_msgs_s.ep.rosidl_typesupport_fastrtps_c.c: /opt/ros/foxy/share/std_msgs/msg/Bool.idl
 rosidl_generator_py/hellocm_msgs/_hellocm_msgs_s.ep.rosidl_typesupport_fastrtps_c.c: /opt/ros/foxy/share/std_msgs/msg/Byte.idl
 rosidl_generator_py/hellocm_msgs/_hellocm_msgs_s.ep.rosidl_typesupport_fastrtps_c.c: /opt/ros/foxy/share/std_msgs/msg/ByteMultiArray.idl
@@ -114,6 +117,63 @@ rosidl_generator_py/hellocm_msgs/_hellocm_msgs_s.ep.rosidl_typesupport_fastrtps_
 rosidl_generator_py/hellocm_msgs/_hellocm_msgs_s.ep.rosidl_typesupport_fastrtps_c.c: /opt/ros/foxy/share/std_msgs/msg/UInt8MultiArray.idl
 rosidl_generator_py/hellocm_msgs/_hellocm_msgs_s.ep.rosidl_typesupport_fastrtps_c.c: /opt/ros/foxy/share/builtin_interfaces/msg/Duration.idl
 rosidl_generator_py/hellocm_msgs/_hellocm_msgs_s.ep.rosidl_typesupport_fastrtps_c.c: /opt/ros/foxy/share/builtin_interfaces/msg/Time.idl
+rosidl_generator_py/hellocm_msgs/_hellocm_msgs_s.ep.rosidl_typesupport_fastrtps_c.c: /opt/ros/foxy/share/sensor_msgs/msg/BatteryState.idl
+rosidl_generator_py/hellocm_msgs/_hellocm_msgs_s.ep.rosidl_typesupport_fastrtps_c.c: /opt/ros/foxy/share/sensor_msgs/msg/CameraInfo.idl
+rosidl_generator_py/hellocm_msgs/_hellocm_msgs_s.ep.rosidl_typesupport_fastrtps_c.c: /opt/ros/foxy/share/sensor_msgs/msg/ChannelFloat32.idl
+rosidl_generator_py/hellocm_msgs/_hellocm_msgs_s.ep.rosidl_typesupport_fastrtps_c.c: /opt/ros/foxy/share/sensor_msgs/msg/CompressedImage.idl
+rosidl_generator_py/hellocm_msgs/_hellocm_msgs_s.ep.rosidl_typesupport_fastrtps_c.c: /opt/ros/foxy/share/sensor_msgs/msg/FluidPressure.idl
+rosidl_generator_py/hellocm_msgs/_hellocm_msgs_s.ep.rosidl_typesupport_fastrtps_c.c: /opt/ros/foxy/share/sensor_msgs/msg/Illuminance.idl
+rosidl_generator_py/hellocm_msgs/_hellocm_msgs_s.ep.rosidl_typesupport_fastrtps_c.c: /opt/ros/foxy/share/sensor_msgs/msg/Image.idl
+rosidl_generator_py/hellocm_msgs/_hellocm_msgs_s.ep.rosidl_typesupport_fastrtps_c.c: /opt/ros/foxy/share/sensor_msgs/msg/Imu.idl
+rosidl_generator_py/hellocm_msgs/_hellocm_msgs_s.ep.rosidl_typesupport_fastrtps_c.c: /opt/ros/foxy/share/sensor_msgs/msg/JointState.idl
+rosidl_generator_py/hellocm_msgs/_hellocm_msgs_s.ep.rosidl_typesupport_fastrtps_c.c: /opt/ros/foxy/share/sensor_msgs/msg/Joy.idl
+rosidl_generator_py/hellocm_msgs/_hellocm_msgs_s.ep.rosidl_typesupport_fastrtps_c.c: /opt/ros/foxy/share/sensor_msgs/msg/JoyFeedback.idl
+rosidl_generator_py/hellocm_msgs/_hellocm_msgs_s.ep.rosidl_typesupport_fastrtps_c.c: /opt/ros/foxy/share/sensor_msgs/msg/JoyFeedbackArray.idl
+rosidl_generator_py/hellocm_msgs/_hellocm_msgs_s.ep.rosidl_typesupport_fastrtps_c.c: /opt/ros/foxy/share/sensor_msgs/msg/LaserEcho.idl
+rosidl_generator_py/hellocm_msgs/_hellocm_msgs_s.ep.rosidl_typesupport_fastrtps_c.c: /opt/ros/foxy/share/sensor_msgs/msg/LaserScan.idl
+rosidl_generator_py/hellocm_msgs/_hellocm_msgs_s.ep.rosidl_typesupport_fastrtps_c.c: /opt/ros/foxy/share/sensor_msgs/msg/MagneticField.idl
+rosidl_generator_py/hellocm_msgs/_hellocm_msgs_s.ep.rosidl_typesupport_fastrtps_c.c: /opt/ros/foxy/share/sensor_msgs/msg/MultiDOFJointState.idl
+rosidl_generator_py/hellocm_msgs/_hellocm_msgs_s.ep.rosidl_typesupport_fastrtps_c.c: /opt/ros/foxy/share/sensor_msgs/msg/MultiEchoLaserScan.idl
+rosidl_generator_py/hellocm_msgs/_hellocm_msgs_s.ep.rosidl_typesupport_fastrtps_c.c: /opt/ros/foxy/share/sensor_msgs/msg/NavSatFix.idl
+rosidl_generator_py/hellocm_msgs/_hellocm_msgs_s.ep.rosidl_typesupport_fastrtps_c.c: /opt/ros/foxy/share/sensor_msgs/msg/NavSatStatus.idl
+rosidl_generator_py/hellocm_msgs/_hellocm_msgs_s.ep.rosidl_typesupport_fastrtps_c.c: /opt/ros/foxy/share/sensor_msgs/msg/PointCloud.idl
+rosidl_generator_py/hellocm_msgs/_hellocm_msgs_s.ep.rosidl_typesupport_fastrtps_c.c: /opt/ros/foxy/share/sensor_msgs/msg/PointCloud2.idl
+rosidl_generator_py/hellocm_msgs/_hellocm_msgs_s.ep.rosidl_typesupport_fastrtps_c.c: /opt/ros/foxy/share/sensor_msgs/msg/PointField.idl
+rosidl_generator_py/hellocm_msgs/_hellocm_msgs_s.ep.rosidl_typesupport_fastrtps_c.c: /opt/ros/foxy/share/sensor_msgs/msg/Range.idl
+rosidl_generator_py/hellocm_msgs/_hellocm_msgs_s.ep.rosidl_typesupport_fastrtps_c.c: /opt/ros/foxy/share/sensor_msgs/msg/RegionOfInterest.idl
+rosidl_generator_py/hellocm_msgs/_hellocm_msgs_s.ep.rosidl_typesupport_fastrtps_c.c: /opt/ros/foxy/share/sensor_msgs/msg/RelativeHumidity.idl
+rosidl_generator_py/hellocm_msgs/_hellocm_msgs_s.ep.rosidl_typesupport_fastrtps_c.c: /opt/ros/foxy/share/sensor_msgs/msg/Temperature.idl
+rosidl_generator_py/hellocm_msgs/_hellocm_msgs_s.ep.rosidl_typesupport_fastrtps_c.c: /opt/ros/foxy/share/sensor_msgs/msg/TimeReference.idl
+rosidl_generator_py/hellocm_msgs/_hellocm_msgs_s.ep.rosidl_typesupport_fastrtps_c.c: /opt/ros/foxy/share/sensor_msgs/srv/SetCameraInfo.idl
+rosidl_generator_py/hellocm_msgs/_hellocm_msgs_s.ep.rosidl_typesupport_fastrtps_c.c: /opt/ros/foxy/share/geometry_msgs/msg/Accel.idl
+rosidl_generator_py/hellocm_msgs/_hellocm_msgs_s.ep.rosidl_typesupport_fastrtps_c.c: /opt/ros/foxy/share/geometry_msgs/msg/AccelStamped.idl
+rosidl_generator_py/hellocm_msgs/_hellocm_msgs_s.ep.rosidl_typesupport_fastrtps_c.c: /opt/ros/foxy/share/geometry_msgs/msg/AccelWithCovariance.idl
+rosidl_generator_py/hellocm_msgs/_hellocm_msgs_s.ep.rosidl_typesupport_fastrtps_c.c: /opt/ros/foxy/share/geometry_msgs/msg/AccelWithCovarianceStamped.idl
+rosidl_generator_py/hellocm_msgs/_hellocm_msgs_s.ep.rosidl_typesupport_fastrtps_c.c: /opt/ros/foxy/share/geometry_msgs/msg/Inertia.idl
+rosidl_generator_py/hellocm_msgs/_hellocm_msgs_s.ep.rosidl_typesupport_fastrtps_c.c: /opt/ros/foxy/share/geometry_msgs/msg/InertiaStamped.idl
+rosidl_generator_py/hellocm_msgs/_hellocm_msgs_s.ep.rosidl_typesupport_fastrtps_c.c: /opt/ros/foxy/share/geometry_msgs/msg/Point.idl
+rosidl_generator_py/hellocm_msgs/_hellocm_msgs_s.ep.rosidl_typesupport_fastrtps_c.c: /opt/ros/foxy/share/geometry_msgs/msg/Point32.idl
+rosidl_generator_py/hellocm_msgs/_hellocm_msgs_s.ep.rosidl_typesupport_fastrtps_c.c: /opt/ros/foxy/share/geometry_msgs/msg/PointStamped.idl
+rosidl_generator_py/hellocm_msgs/_hellocm_msgs_s.ep.rosidl_typesupport_fastrtps_c.c: /opt/ros/foxy/share/geometry_msgs/msg/Polygon.idl
+rosidl_generator_py/hellocm_msgs/_hellocm_msgs_s.ep.rosidl_typesupport_fastrtps_c.c: /opt/ros/foxy/share/geometry_msgs/msg/PolygonStamped.idl
+rosidl_generator_py/hellocm_msgs/_hellocm_msgs_s.ep.rosidl_typesupport_fastrtps_c.c: /opt/ros/foxy/share/geometry_msgs/msg/Pose.idl
+rosidl_generator_py/hellocm_msgs/_hellocm_msgs_s.ep.rosidl_typesupport_fastrtps_c.c: /opt/ros/foxy/share/geometry_msgs/msg/Pose2D.idl
+rosidl_generator_py/hellocm_msgs/_hellocm_msgs_s.ep.rosidl_typesupport_fastrtps_c.c: /opt/ros/foxy/share/geometry_msgs/msg/PoseArray.idl
+rosidl_generator_py/hellocm_msgs/_hellocm_msgs_s.ep.rosidl_typesupport_fastrtps_c.c: /opt/ros/foxy/share/geometry_msgs/msg/PoseStamped.idl
+rosidl_generator_py/hellocm_msgs/_hellocm_msgs_s.ep.rosidl_typesupport_fastrtps_c.c: /opt/ros/foxy/share/geometry_msgs/msg/PoseWithCovariance.idl
+rosidl_generator_py/hellocm_msgs/_hellocm_msgs_s.ep.rosidl_typesupport_fastrtps_c.c: /opt/ros/foxy/share/geometry_msgs/msg/PoseWithCovarianceStamped.idl
+rosidl_generator_py/hellocm_msgs/_hellocm_msgs_s.ep.rosidl_typesupport_fastrtps_c.c: /opt/ros/foxy/share/geometry_msgs/msg/Quaternion.idl
+rosidl_generator_py/hellocm_msgs/_hellocm_msgs_s.ep.rosidl_typesupport_fastrtps_c.c: /opt/ros/foxy/share/geometry_msgs/msg/QuaternionStamped.idl
+rosidl_generator_py/hellocm_msgs/_hellocm_msgs_s.ep.rosidl_typesupport_fastrtps_c.c: /opt/ros/foxy/share/geometry_msgs/msg/Transform.idl
+rosidl_generator_py/hellocm_msgs/_hellocm_msgs_s.ep.rosidl_typesupport_fastrtps_c.c: /opt/ros/foxy/share/geometry_msgs/msg/TransformStamped.idl
+rosidl_generator_py/hellocm_msgs/_hellocm_msgs_s.ep.rosidl_typesupport_fastrtps_c.c: /opt/ros/foxy/share/geometry_msgs/msg/Twist.idl
+rosidl_generator_py/hellocm_msgs/_hellocm_msgs_s.ep.rosidl_typesupport_fastrtps_c.c: /opt/ros/foxy/share/geometry_msgs/msg/TwistStamped.idl
+rosidl_generator_py/hellocm_msgs/_hellocm_msgs_s.ep.rosidl_typesupport_fastrtps_c.c: /opt/ros/foxy/share/geometry_msgs/msg/TwistWithCovariance.idl
+rosidl_generator_py/hellocm_msgs/_hellocm_msgs_s.ep.rosidl_typesupport_fastrtps_c.c: /opt/ros/foxy/share/geometry_msgs/msg/TwistWithCovarianceStamped.idl
+rosidl_generator_py/hellocm_msgs/_hellocm_msgs_s.ep.rosidl_typesupport_fastrtps_c.c: /opt/ros/foxy/share/geometry_msgs/msg/Vector3.idl
+rosidl_generator_py/hellocm_msgs/_hellocm_msgs_s.ep.rosidl_typesupport_fastrtps_c.c: /opt/ros/foxy/share/geometry_msgs/msg/Vector3Stamped.idl
+rosidl_generator_py/hellocm_msgs/_hellocm_msgs_s.ep.rosidl_typesupport_fastrtps_c.c: /opt/ros/foxy/share/geometry_msgs/msg/Wrench.idl
+rosidl_generator_py/hellocm_msgs/_hellocm_msgs_s.ep.rosidl_typesupport_fastrtps_c.c: /opt/ros/foxy/share/geometry_msgs/msg/WrenchStamped.idl
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/ipg-pc-30/CM-Projects/work_woh/240404_CM13_ROS2/ros/ros2_ws/build/hellocm_msgs/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Generating Python code for ROS interfaces"
 	cd /home/ipg-pc-30/CM-Projects/work_woh/240404_CM13_ROS2/ros/ros2_ws/build/hellocm_msgs/hellocm_msgs__py && /usr/bin/python3 /opt/ros/foxy/share/rosidl_generator_py/cmake/../../../lib/rosidl_generator_py/rosidl_generator_py --generator-arguments-file /home/ipg-pc-30/CM-Projects/work_woh/240404_CM13_ROS2/ros/ros2_ws/build/hellocm_msgs/rosidl_generator_py__arguments.json --typesupport-impls "rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c;rosidl_typesupport_c"
 
@@ -132,6 +192,9 @@ rosidl_generator_py/hellocm_msgs/msg/_ext2_cm.py: rosidl_generator_py/hellocm_ms
 rosidl_generator_py/hellocm_msgs/srv/_init.py: rosidl_generator_py/hellocm_msgs/_hellocm_msgs_s.ep.rosidl_typesupport_fastrtps_c.c
 	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_py/hellocm_msgs/srv/_init.py
 
+rosidl_generator_py/hellocm_msgs/msg/_radar_data.py: rosidl_generator_py/hellocm_msgs/_hellocm_msgs_s.ep.rosidl_typesupport_fastrtps_c.c
+	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_py/hellocm_msgs/msg/_radar_data.py
+
 rosidl_generator_py/hellocm_msgs/msg/__init__.py: rosidl_generator_py/hellocm_msgs/_hellocm_msgs_s.ep.rosidl_typesupport_fastrtps_c.c
 	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_py/hellocm_msgs/msg/__init__.py
 
@@ -147,6 +210,9 @@ rosidl_generator_py/hellocm_msgs/msg/_ext2_cm_s.c: rosidl_generator_py/hellocm_m
 rosidl_generator_py/hellocm_msgs/srv/_init_s.c: rosidl_generator_py/hellocm_msgs/_hellocm_msgs_s.ep.rosidl_typesupport_fastrtps_c.c
 	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_py/hellocm_msgs/srv/_init_s.c
 
+rosidl_generator_py/hellocm_msgs/msg/_radar_data_s.c: rosidl_generator_py/hellocm_msgs/_hellocm_msgs_s.ep.rosidl_typesupport_fastrtps_c.c
+	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_py/hellocm_msgs/msg/_radar_data_s.c
+
 hellocm_msgs__py: hellocm_msgs__py/CMakeFiles/hellocm_msgs__py
 hellocm_msgs__py: rosidl_generator_py/hellocm_msgs/_hellocm_msgs_s.ep.rosidl_typesupport_fastrtps_c.c
 hellocm_msgs__py: rosidl_generator_py/hellocm_msgs/_hellocm_msgs_s.ep.rosidl_typesupport_introspection_c.c
@@ -154,11 +220,13 @@ hellocm_msgs__py: rosidl_generator_py/hellocm_msgs/_hellocm_msgs_s.ep.rosidl_typ
 hellocm_msgs__py: rosidl_generator_py/hellocm_msgs/msg/_cm2_ext.py
 hellocm_msgs__py: rosidl_generator_py/hellocm_msgs/msg/_ext2_cm.py
 hellocm_msgs__py: rosidl_generator_py/hellocm_msgs/srv/_init.py
+hellocm_msgs__py: rosidl_generator_py/hellocm_msgs/msg/_radar_data.py
 hellocm_msgs__py: rosidl_generator_py/hellocm_msgs/msg/__init__.py
 hellocm_msgs__py: rosidl_generator_py/hellocm_msgs/srv/__init__.py
 hellocm_msgs__py: rosidl_generator_py/hellocm_msgs/msg/_cm2_ext_s.c
 hellocm_msgs__py: rosidl_generator_py/hellocm_msgs/msg/_ext2_cm_s.c
 hellocm_msgs__py: rosidl_generator_py/hellocm_msgs/srv/_init_s.c
+hellocm_msgs__py: rosidl_generator_py/hellocm_msgs/msg/_radar_data_s.c
 hellocm_msgs__py: hellocm_msgs__py/CMakeFiles/hellocm_msgs__py.dir/build.make
 
 .PHONY : hellocm_msgs__py

@@ -3,6 +3,7 @@
   "non_idl_tuples": [
     "/home/ipg-pc-30/CM-Projects/work_woh/240404_CM13_ROS2/ros/ros2_ws/src/hellocm_msgs:msg/CM2Ext.msg",
     "/home/ipg-pc-30/CM-Projects/work_woh/240404_CM13_ROS2/ros/ros2_ws/src/hellocm_msgs:msg/Ext2CM.msg",
-    "/home/ipg-pc-30/CM-Projects/work_woh/240404_CM13_ROS2/ros/ros2_ws/src/hellocm_msgs:srv/Init.srv"
+    "/home/ipg-pc-30/CM-Projects/work_woh/240404_CM13_ROS2/ros/ros2_ws/src/hellocm_msgs:srv/Init.srv",
+    "/home/ipg-pc-30/CM-Projects/work_woh/240404_CM13_ROS2/ros/ros2_ws/src/hellocm_msgs:msg/RadarData.msg"
   ]
 }

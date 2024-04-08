@@ -1,0 +1,24 @@
+// generated from rosidl_adapter/resource/msg.idl.em
+// with input from hellocm_msgs/msg/RadarData.msg
+// generated code does not contain a copyright notice
+
+#include "sensor_msgs/msg/PointCloud.idl"
+#include "std_msgs/msg/Header.idl"
+
+module hellocm_msgs {
+  module msg {
+    @verbatim (language="comment", text=
+      " Message from CarMaker ROS Node to external ROS Node")
+    struct RadarData {
+      std_msgs::msg::Header header;
+
+      string frame_id;
+
+      sensor_msgs::msg::PointCloud pointcloud;
+
+      double velocity;
+
+      double distance;
+    };
+  };
+};

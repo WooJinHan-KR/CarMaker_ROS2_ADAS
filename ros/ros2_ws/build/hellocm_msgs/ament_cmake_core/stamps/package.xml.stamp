@@ -6,8 +6,8 @@
   <description>
     Messages for simple communication between CarMaker and external ROS Node.
   </description>
-  <maintainer email="no@support.com">IPG Automotive GmbH/dbe</maintainer>
-  <license>IPG Automotive GmbH</license>
+  <maintainer email="no@support.com">IPG Automotive KR/dbe</maintainer>
+  <license>IPG Automotive KR</license>
 
   <buildtool_depend>ament_cmake</buildtool_depend>
 
@@ -16,6 +16,7 @@
   <member_of_group>rosidl_interface_packages</member_of_group>
 
   <depend>std_msgs</depend>
+  <depend>sensor_msgs</depend>
   <depend>builtin_interfaces</depend>
 
   <test_depend>ament_lint_auto</test_depend>

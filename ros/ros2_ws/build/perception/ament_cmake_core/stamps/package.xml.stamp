@@ -5,13 +5,17 @@
   <version>1.0.0</version>
   <description>Perception Autonomous drive</description>
   <maintainer email="woojin.han@ipg-automotive.com">IPG Automotive KR</maintainer>
-  <license>IPG Automotive GmbH</license>
+  <license>IPG Automotive KR</license>
 
   <buildtool_depend>ament_cmake</buildtool_depend>
 
   <depend>rclcpp</depend>
   <depend>cmrosutils</depend>
   <depend>hellocm_msgs</depend>
+  <depend>image_transport</depend>
+  <depend>tf2</depend>
+  <depend>tf2_ros</depend>
+  <depend>tf2_geometry_msgs</depend>
   
   <test_depend>ament_lint_auto</test_depend>
   <test_depend>ament_lint_common</test_depend>

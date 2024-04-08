@@ -18,9 +18,10 @@ set(CMAKE_TARGET_DEFINITIONS_CXX
 
 # The include file search paths:
 set(CMAKE_CXX_TARGET_INCLUDE_PATH
+  "/home/ipg-pc-30/CM-Projects/work_woh/240404_CM13_ROS2/ros/ros2_ws/src/control/include"
+  "/opt/ros/foxy/include"
   "/home/ipg-pc-30/CM-Projects/work_woh/240404_CM13_ROS2/ros/ros2_ws/install/hellocm_msgs/include"
   "/home/ipg-pc-30/CM-Projects/work_woh/240404_CM13_ROS2/ros/ros2_ws/install/cmrosutils/include"
-  "/opt/ros/foxy/include"
   "/opt/ipg/carmaker/linux64-13.0.1/include"
   )
 

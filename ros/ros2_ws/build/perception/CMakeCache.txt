@@ -37,6 +37,12 @@ AMENT_TEST_RESULTS_DIR:PATH=/home/ipg-pc-30/CM-Projects/work_woh/240404_CM13_ROS
 //Build the testing tree.
 BUILD_TESTING:BOOL=ON
 
+//No help, variable specified on the command line.
+CARMAKER_DIR:PATH=/opt/ipg/carmaker/linux64-13.0.1
+
+//No help, variable specified on the command line.
+CARMAKER_VER:STRING=13.0.1
+
 //Path to a program.
 CMAKE_ADDR2LINE:FILEPATH=/usr/bin/addr2line
 
@@ -232,6 +238,9 @@ CMAKE_STRIP:FILEPATH=/usr/bin/strip
 // Studio IDE projects all commands are done without /nologo.
 CMAKE_VERBOSE_MAKEFILE:BOOL=FALSE
 
+//The directory containing a CMake configuration file for Eigen3.
+Eigen3_DIR:PATH=/usr/lib/cmake/eigen3
+
 //Path to a library.
 FastCDR_LIBRARY_DEBUG:FILEPATH=FastCDR_LIBRARY_DEBUG-NOTFOUND
 
@@ -268,11 +277,20 @@ PYTHON_VERSION:STRING=
 //Name of the computer/site where compile is being run
 SITE:STRING=ipg-pc-30
 
+//Path to a file.
+TINYXML2_INCLUDE_DIR:PATH=/usr/include
+
+//Path to a library.
+TINYXML2_LIBRARY:FILEPATH=/usr/lib/x86_64-linux-gnu/libtinyxml2.so
+
 //The directory containing a CMake configuration file for TinyXML2.
 TinyXML2_DIR:PATH=TinyXML2_DIR-NOTFOUND
 
 //Path to a library.
-_lib:FILEPATH=/home/ipg-pc-30/CM-Projects/work_woh/240404_CM13_ROS2/ros/ros2_ws/install/hellocm_msgs/lib/libhellocm_msgs__rosidl_typesupport_fastrtps_cpp.so
+_lib:FILEPATH=/opt/ros/foxy/lib/libvisualization_msgs__rosidl_typesupport_fastrtps_cpp.so
+
+//The directory containing a CMake configuration file for action_msgs.
+action_msgs_DIR:PATH=/opt/ros/foxy/share/action_msgs/cmake
 
 //The directory containing a CMake configuration file for ament_cmake.
 ament_cmake_DIR:PATH=/opt/ros/foxy/share/ament_cmake/cmake
@@ -352,6 +370,12 @@ ament_cppcheck_BIN:FILEPATH=/opt/ros/foxy/bin/ament_cppcheck
 //Path to a program.
 ament_cpplint_BIN:FILEPATH=/opt/ros/foxy/bin/ament_cpplint
 
+//Path to a program.
+ament_flake8_BIN:FILEPATH=/opt/ros/foxy/bin/ament_flake8
+
+//The directory containing a CMake configuration file for ament_index_cpp.
+ament_index_cpp_DIR:PATH=/opt/ros/foxy/share/ament_index_cpp/cmake
+
 //The directory containing a CMake configuration file for ament_lint_auto.
 ament_lint_auto_DIR:PATH=/opt/ros/foxy/share/ament_lint_auto/cmake
 
@@ -362,6 +386,9 @@ ament_lint_cmake_BIN:FILEPATH=/opt/ros/foxy/bin/ament_lint_cmake
 ament_lint_common_DIR:PATH=/opt/ros/foxy/share/ament_lint_common/cmake
 
 //Path to a program.
+ament_pep257_BIN:FILEPATH=/opt/ros/foxy/bin/ament_pep257
+
+//Path to a program.
 ament_uncrustify_BIN:FILEPATH=/opt/ros/foxy/bin/ament_uncrustify
 
 //Path to a program.
@@ -370,8 +397,20 @@ ament_xmllint_BIN:FILEPATH=/opt/ros/foxy/bin/ament_xmllint
 //The directory containing a CMake configuration file for builtin_interfaces.
 builtin_interfaces_DIR:PATH=/opt/ros/foxy/share/builtin_interfaces/cmake
 
+//The directory containing a CMake configuration file for class_loader.
+class_loader_DIR:PATH=/opt/ros/foxy/share/class_loader/cmake
+
 //The directory containing a CMake configuration file for cmrosutils.
 cmrosutils_DIR:PATH=/home/ipg-pc-30/CM-Projects/work_woh/240404_CM13_ROS2/ros/ros2_ws/install/cmrosutils/share/cmrosutils/cmake
+
+//The directory containing a CMake configuration file for composition_interfaces.
+composition_interfaces_DIR:PATH=/opt/ros/foxy/share/composition_interfaces/cmake
+
+//The directory containing a CMake configuration file for console_bridge.
+console_bridge_DIR:PATH=/opt/ros/foxy/lib/x86_64-linux-gnu/console_bridge/cmake
+
+//The directory containing a CMake configuration file for eigen3_cmake_module.
+eigen3_cmake_module_DIR:PATH=/opt/ros/foxy/share/eigen3_cmake_module/cmake
 
 //The directory containing a CMake configuration file for fastcdr.
 fastcdr_DIR:PATH=/opt/ros/foxy/lib/cmake/fastcdr
@@ -385,8 +424,14 @@ fastrtps_cmake_module_DIR:PATH=/opt/ros/foxy/share/fastrtps_cmake_module/cmake
 //The directory containing a CMake configuration file for foonathan_memory.
 foonathan_memory_DIR:PATH=/opt/ros/foxy/lib/foonathan_memory/cmake
 
+//The directory containing a CMake configuration file for geometry_msgs.
+geometry_msgs_DIR:PATH=/opt/ros/foxy/share/geometry_msgs/cmake
+
 //The directory containing a CMake configuration file for hellocm_msgs.
 hellocm_msgs_DIR:PATH=/home/ipg-pc-30/CM-Projects/work_woh/240404_CM13_ROS2/ros/ros2_ws/install/hellocm_msgs/share/hellocm_msgs/cmake
+
+//The directory containing a CMake configuration file for image_transport.
+image_transport_DIR:PATH=/opt/ros/foxy/share/image_transport/cmake
 
 //The directory containing a CMake configuration file for libstatistics_collector.
 libstatistics_collector_DIR:PATH=/opt/ros/foxy/share/libstatistics_collector/cmake
@@ -394,11 +439,20 @@ libstatistics_collector_DIR:PATH=/opt/ros/foxy/share/libstatistics_collector/cma
 //The directory containing a CMake configuration file for libyaml_vendor.
 libyaml_vendor_DIR:PATH=/opt/ros/foxy/share/libyaml_vendor/cmake
 
+//The directory containing a CMake configuration file for message_filters.
+message_filters_DIR:PATH=/opt/ros/foxy/share/message_filters/cmake
+
+//The directory containing a CMake configuration file for nav_msgs.
+nav_msgs_DIR:PATH=/opt/ros/foxy/share/nav_msgs/cmake
+
+//The directory containing a CMake configuration file for orocos_kdl.
+orocos_kdl_DIR:PATH=/opt/ros/foxy/share/orocos_kdl/cmake
+
 //Value Computed by CMake
 perception_BINARY_DIR:STATIC=/home/ipg-pc-30/CM-Projects/work_woh/240404_CM13_ROS2/ros/ros2_ws/build/perception
 
 //Dependencies for the target
-perception_LIB_DEPENDS:STATIC=general;rclcpp::rclcpp;general;cmrosutils::cmrosutils__rosidl_generator_c;general;cmrosutils::cmrosutils__rosidl_typesupport_introspection_c;general;cmrosutils::cmrosutils__rosidl_typesupport_c;general;cmrosutils::cmrosutils__rosidl_typesupport_introspection_cpp;general;cmrosutils::cmrosutils__rosidl_typesupport_cpp;general;cmrosutils::cmrosif;general;hellocm_msgs::hellocm_msgs__rosidl_generator_c;general;hellocm_msgs::hellocm_msgs__rosidl_typesupport_introspection_c;general;hellocm_msgs::hellocm_msgs__rosidl_typesupport_c;general;hellocm_msgs::hellocm_msgs__rosidl_typesupport_introspection_cpp;general;hellocm_msgs::hellocm_msgs__rosidl_typesupport_cpp;
+perception_LIB_DEPENDS:STATIC=general;rclcpp::rclcpp;general;cmrosutils::cmrosutils__rosidl_generator_c;general;cmrosutils::cmrosutils__rosidl_typesupport_introspection_c;general;cmrosutils::cmrosutils__rosidl_typesupport_c;general;cmrosutils::cmrosutils__rosidl_typesupport_introspection_cpp;general;cmrosutils::cmrosutils__rosidl_typesupport_cpp;general;cmrosutils::cmrosif;general;hellocm_msgs::hellocm_msgs__rosidl_generator_c;general;hellocm_msgs::hellocm_msgs__rosidl_typesupport_introspection_c;general;hellocm_msgs::hellocm_msgs__rosidl_typesupport_c;general;hellocm_msgs::hellocm_msgs__rosidl_typesupport_introspection_cpp;general;hellocm_msgs::hellocm_msgs__rosidl_typesupport_cpp;general;tf2::tf2;general;tf2_ros::tf2_ros;general;tf2_ros::static_transform_broadcaster_node;general;nav_msgs::nav_msgs__rosidl_generator_c;general;nav_msgs::nav_msgs__rosidl_typesupport_introspection_c;general;nav_msgs::nav_msgs__rosidl_typesupport_c;general;nav_msgs::nav_msgs__rosidl_typesupport_introspection_cpp;general;nav_msgs::nav_msgs__rosidl_typesupport_cpp;general;sensor_msgs::sensor_msgs__rosidl_generator_c;general;sensor_msgs::sensor_msgs__rosidl_typesupport_introspection_c;general;sensor_msgs::sensor_msgs__rosidl_typesupport_c;general;sensor_msgs::sensor_msgs__rosidl_typesupport_introspection_cpp;general;sensor_msgs::sensor_msgs__rosidl_typesupport_cpp;general;visualization_msgs::visualization_msgs__rosidl_generator_c;general;visualization_msgs::visualization_msgs__rosidl_typesupport_introspection_c;general;visualization_msgs::visualization_msgs__rosidl_typesupport_c;general;visualization_msgs::visualization_msgs__rosidl_typesupport_introspection_cpp;general;visualization_msgs::visualization_msgs__rosidl_typesupport_cpp;
 
 //Value Computed by CMake
 perception_SOURCE_DIR:STATIC=/home/ipg-pc-30/CM-Projects/work_woh/240404_CM13_ROS2/ros/ros2_ws/src/perception
@@ -409,8 +463,14 @@ pkgcfg_lib__OPENSSL_crypto:FILEPATH=/usr/lib/x86_64-linux-gnu/libcrypto.so
 //Path to a library.
 pkgcfg_lib__OPENSSL_ssl:FILEPATH=/usr/lib/x86_64-linux-gnu/libssl.so
 
+//The directory containing a CMake configuration file for pluginlib.
+pluginlib_DIR:PATH=/opt/ros/foxy/share/pluginlib/cmake
+
 //The directory containing a CMake configuration file for rcl.
 rcl_DIR:PATH=/opt/ros/foxy/share/rcl/cmake
+
+//The directory containing a CMake configuration file for rcl_action.
+rcl_action_DIR:PATH=/opt/ros/foxy/share/rcl_action/cmake
 
 //The directory containing a CMake configuration file for rcl_interfaces.
 rcl_interfaces_DIR:PATH=/opt/ros/foxy/share/rcl_interfaces/cmake
@@ -423,6 +483,12 @@ rcl_yaml_param_parser_DIR:PATH=/opt/ros/foxy/share/rcl_yaml_param_parser/cmake
 
 //The directory containing a CMake configuration file for rclcpp.
 rclcpp_DIR:PATH=/opt/ros/foxy/share/rclcpp/cmake
+
+//The directory containing a CMake configuration file for rclcpp_action.
+rclcpp_action_DIR:PATH=/opt/ros/foxy/share/rclcpp_action/cmake
+
+//The directory containing a CMake configuration file for rclcpp_components.
+rclcpp_components_DIR:PATH=/opt/ros/foxy/share/rclcpp_components/cmake
 
 //The directory containing a CMake configuration file for rcpputils.
 rcpputils_DIR:PATH=/opt/ros/foxy/share/rcpputils/cmake
@@ -484,6 +550,9 @@ rosidl_typesupport_introspection_c_DIR:PATH=/opt/ros/foxy/share/rosidl_typesuppo
 //The directory containing a CMake configuration file for rosidl_typesupport_introspection_cpp.
 rosidl_typesupport_introspection_cpp_DIR:PATH=/opt/ros/foxy/share/rosidl_typesupport_introspection_cpp/cmake
 
+//The directory containing a CMake configuration file for sensor_msgs.
+sensor_msgs_DIR:PATH=/opt/ros/foxy/share/sensor_msgs/cmake
+
 //The directory containing a CMake configuration file for spdlog.
 spdlog_DIR:PATH=/usr/lib/x86_64-linux-gnu/cmake/spdlog
 
@@ -496,8 +565,29 @@ statistics_msgs_DIR:PATH=/opt/ros/foxy/share/statistics_msgs/cmake
 //The directory containing a CMake configuration file for std_msgs.
 std_msgs_DIR:PATH=/opt/ros/foxy/share/std_msgs/cmake
 
+//The directory containing a CMake configuration file for tf2.
+tf2_DIR:PATH=/opt/ros/foxy/share/tf2/cmake
+
+//The directory containing a CMake configuration file for tf2_geometry_msgs.
+tf2_geometry_msgs_DIR:PATH=/opt/ros/foxy/share/tf2_geometry_msgs/cmake
+
+//The directory containing a CMake configuration file for tf2_msgs.
+tf2_msgs_DIR:PATH=/opt/ros/foxy/share/tf2_msgs/cmake
+
+//The directory containing a CMake configuration file for tf2_ros.
+tf2_ros_DIR:PATH=/opt/ros/foxy/share/tf2_ros/cmake
+
+//The directory containing a CMake configuration file for tinyxml2_vendor.
+tinyxml2_vendor_DIR:PATH=/opt/ros/foxy/share/tinyxml2_vendor/cmake
+
 //The directory containing a CMake configuration file for tracetools.
 tracetools_DIR:PATH=/opt/ros/foxy/share/tracetools/cmake
+
+//The directory containing a CMake configuration file for unique_identifier_msgs.
+unique_identifier_msgs_DIR:PATH=/opt/ros/foxy/share/unique_identifier_msgs/cmake
+
+//The directory containing a CMake configuration file for visualization_msgs.
+visualization_msgs_DIR:PATH=/opt/ros/foxy/share/visualization_msgs/cmake
 
 //Path to a program.
 xmllint_BIN:FILEPATH=/usr/bin/xmllint
@@ -661,6 +751,8 @@ CMAKE_STRIP-ADVANCED:INTERNAL=1
 CMAKE_UNAME:INTERNAL=/usr/bin/uname
 //ADVANCED property for variable: CMAKE_VERBOSE_MAKEFILE
 CMAKE_VERBOSE_MAKEFILE-ADVANCED:INTERNAL=1
+//Details about finding Eigen3
+FIND_PACKAGE_MESSAGE_DETAILS_Eigen3:INTERNAL=[1][v3.3.7()]
 //Details about finding FastRTPS
 FIND_PACKAGE_MESSAGE_DETAILS_FastRTPS:INTERNAL=[/opt/ros/foxy/include][/opt/ros/foxy/lib/libfastrtps.so;/opt/ros/foxy/lib/libfastcdr.so][v()]
 //Details about finding OpenSSL
@@ -679,6 +771,10 @@ OPENSSL_SSL_LIBRARY-ADVANCED:INTERNAL=1
 PKG_CONFIG_EXECUTABLE-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: PYTHON_EXECUTABLE
 PYTHON_EXECUTABLE-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: TINYXML2_INCLUDE_DIR
+TINYXML2_INCLUDE_DIR-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: TINYXML2_LIBRARY
+TINYXML2_LIBRARY-ADVANCED:INTERNAL=1
 _OPENSSL_CFLAGS:INTERNAL=
 _OPENSSL_CFLAGS_I:INTERNAL=
 _OPENSSL_CFLAGS_OTHER:INTERNAL=

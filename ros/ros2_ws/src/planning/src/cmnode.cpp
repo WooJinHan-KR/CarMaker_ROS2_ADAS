@@ -9,7 +9,7 @@
  ******************************************************************************
  */
 
-#include "include/cmnode.hpp"
+#include "planning/cmnode.hpp"
 
 using cm_ros::CMNode;
 using CMJob::Log;

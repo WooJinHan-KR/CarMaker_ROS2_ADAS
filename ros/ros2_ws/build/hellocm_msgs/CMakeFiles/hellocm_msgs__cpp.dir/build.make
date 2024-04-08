@@ -68,6 +68,11 @@ CMakeFiles/hellocm_msgs__cpp: rosidl_generator_cpp/hellocm_msgs/srv/detail/init_
 CMakeFiles/hellocm_msgs__cpp: rosidl_generator_cpp/hellocm_msgs/srv/detail/init__struct.hpp
 CMakeFiles/hellocm_msgs__cpp: rosidl_generator_cpp/hellocm_msgs/srv/detail/init__traits.hpp
 CMakeFiles/hellocm_msgs__cpp: rosidl_generator_cpp/hellocm_msgs/srv/detail/init__type_support.hpp
+CMakeFiles/hellocm_msgs__cpp: rosidl_generator_cpp/hellocm_msgs/msg/radar_data.hpp
+CMakeFiles/hellocm_msgs__cpp: rosidl_generator_cpp/hellocm_msgs/msg/detail/radar_data__builder.hpp
+CMakeFiles/hellocm_msgs__cpp: rosidl_generator_cpp/hellocm_msgs/msg/detail/radar_data__struct.hpp
+CMakeFiles/hellocm_msgs__cpp: rosidl_generator_cpp/hellocm_msgs/msg/detail/radar_data__traits.hpp
+CMakeFiles/hellocm_msgs__cpp: rosidl_generator_cpp/hellocm_msgs/msg/detail/radar_data__type_support.hpp
 CMakeFiles/hellocm_msgs__cpp: rosidl_generator_cpp/hellocm_msgs/msg/rosidl_generator_cpp__visibility_control.hpp
 
 
@@ -93,6 +98,7 @@ rosidl_generator_cpp/hellocm_msgs/msg/cm2_ext.hpp: /opt/ros/foxy/share/rosidl_ge
 rosidl_generator_cpp/hellocm_msgs/msg/cm2_ext.hpp: rosidl_adapter/hellocm_msgs/msg/CM2Ext.idl
 rosidl_generator_cpp/hellocm_msgs/msg/cm2_ext.hpp: rosidl_adapter/hellocm_msgs/msg/Ext2CM.idl
 rosidl_generator_cpp/hellocm_msgs/msg/cm2_ext.hpp: rosidl_adapter/hellocm_msgs/srv/Init.idl
+rosidl_generator_cpp/hellocm_msgs/msg/cm2_ext.hpp: rosidl_adapter/hellocm_msgs/msg/RadarData.idl
 rosidl_generator_cpp/hellocm_msgs/msg/cm2_ext.hpp: /opt/ros/foxy/share/std_msgs/msg/Bool.idl
 rosidl_generator_cpp/hellocm_msgs/msg/cm2_ext.hpp: /opt/ros/foxy/share/std_msgs/msg/Byte.idl
 rosidl_generator_cpp/hellocm_msgs/msg/cm2_ext.hpp: /opt/ros/foxy/share/std_msgs/msg/ByteMultiArray.idl
@@ -125,6 +131,63 @@ rosidl_generator_cpp/hellocm_msgs/msg/cm2_ext.hpp: /opt/ros/foxy/share/std_msgs/
 rosidl_generator_cpp/hellocm_msgs/msg/cm2_ext.hpp: /opt/ros/foxy/share/std_msgs/msg/UInt8MultiArray.idl
 rosidl_generator_cpp/hellocm_msgs/msg/cm2_ext.hpp: /opt/ros/foxy/share/builtin_interfaces/msg/Duration.idl
 rosidl_generator_cpp/hellocm_msgs/msg/cm2_ext.hpp: /opt/ros/foxy/share/builtin_interfaces/msg/Time.idl
+rosidl_generator_cpp/hellocm_msgs/msg/cm2_ext.hpp: /opt/ros/foxy/share/sensor_msgs/msg/BatteryState.idl
+rosidl_generator_cpp/hellocm_msgs/msg/cm2_ext.hpp: /opt/ros/foxy/share/sensor_msgs/msg/CameraInfo.idl
+rosidl_generator_cpp/hellocm_msgs/msg/cm2_ext.hpp: /opt/ros/foxy/share/sensor_msgs/msg/ChannelFloat32.idl
+rosidl_generator_cpp/hellocm_msgs/msg/cm2_ext.hpp: /opt/ros/foxy/share/sensor_msgs/msg/CompressedImage.idl
+rosidl_generator_cpp/hellocm_msgs/msg/cm2_ext.hpp: /opt/ros/foxy/share/sensor_msgs/msg/FluidPressure.idl
+rosidl_generator_cpp/hellocm_msgs/msg/cm2_ext.hpp: /opt/ros/foxy/share/sensor_msgs/msg/Illuminance.idl
+rosidl_generator_cpp/hellocm_msgs/msg/cm2_ext.hpp: /opt/ros/foxy/share/sensor_msgs/msg/Image.idl
+rosidl_generator_cpp/hellocm_msgs/msg/cm2_ext.hpp: /opt/ros/foxy/share/sensor_msgs/msg/Imu.idl
+rosidl_generator_cpp/hellocm_msgs/msg/cm2_ext.hpp: /opt/ros/foxy/share/sensor_msgs/msg/JointState.idl
+rosidl_generator_cpp/hellocm_msgs/msg/cm2_ext.hpp: /opt/ros/foxy/share/sensor_msgs/msg/Joy.idl
+rosidl_generator_cpp/hellocm_msgs/msg/cm2_ext.hpp: /opt/ros/foxy/share/sensor_msgs/msg/JoyFeedback.idl
+rosidl_generator_cpp/hellocm_msgs/msg/cm2_ext.hpp: /opt/ros/foxy/share/sensor_msgs/msg/JoyFeedbackArray.idl
+rosidl_generator_cpp/hellocm_msgs/msg/cm2_ext.hpp: /opt/ros/foxy/share/sensor_msgs/msg/LaserEcho.idl
+rosidl_generator_cpp/hellocm_msgs/msg/cm2_ext.hpp: /opt/ros/foxy/share/sensor_msgs/msg/LaserScan.idl
+rosidl_generator_cpp/hellocm_msgs/msg/cm2_ext.hpp: /opt/ros/foxy/share/sensor_msgs/msg/MagneticField.idl
+rosidl_generator_cpp/hellocm_msgs/msg/cm2_ext.hpp: /opt/ros/foxy/share/sensor_msgs/msg/MultiDOFJointState.idl
+rosidl_generator_cpp/hellocm_msgs/msg/cm2_ext.hpp: /opt/ros/foxy/share/sensor_msgs/msg/MultiEchoLaserScan.idl
+rosidl_generator_cpp/hellocm_msgs/msg/cm2_ext.hpp: /opt/ros/foxy/share/sensor_msgs/msg/NavSatFix.idl
+rosidl_generator_cpp/hellocm_msgs/msg/cm2_ext.hpp: /opt/ros/foxy/share/sensor_msgs/msg/NavSatStatus.idl
+rosidl_generator_cpp/hellocm_msgs/msg/cm2_ext.hpp: /opt/ros/foxy/share/sensor_msgs/msg/PointCloud.idl
+rosidl_generator_cpp/hellocm_msgs/msg/cm2_ext.hpp: /opt/ros/foxy/share/sensor_msgs/msg/PointCloud2.idl
+rosidl_generator_cpp/hellocm_msgs/msg/cm2_ext.hpp: /opt/ros/foxy/share/sensor_msgs/msg/PointField.idl
+rosidl_generator_cpp/hellocm_msgs/msg/cm2_ext.hpp: /opt/ros/foxy/share/sensor_msgs/msg/Range.idl
+rosidl_generator_cpp/hellocm_msgs/msg/cm2_ext.hpp: /opt/ros/foxy/share/sensor_msgs/msg/RegionOfInterest.idl
+rosidl_generator_cpp/hellocm_msgs/msg/cm2_ext.hpp: /opt/ros/foxy/share/sensor_msgs/msg/RelativeHumidity.idl
+rosidl_generator_cpp/hellocm_msgs/msg/cm2_ext.hpp: /opt/ros/foxy/share/sensor_msgs/msg/Temperature.idl
+rosidl_generator_cpp/hellocm_msgs/msg/cm2_ext.hpp: /opt/ros/foxy/share/sensor_msgs/msg/TimeReference.idl
+rosidl_generator_cpp/hellocm_msgs/msg/cm2_ext.hpp: /opt/ros/foxy/share/sensor_msgs/srv/SetCameraInfo.idl
+rosidl_generator_cpp/hellocm_msgs/msg/cm2_ext.hpp: /opt/ros/foxy/share/geometry_msgs/msg/Accel.idl
+rosidl_generator_cpp/hellocm_msgs/msg/cm2_ext.hpp: /opt/ros/foxy/share/geometry_msgs/msg/AccelStamped.idl
+rosidl_generator_cpp/hellocm_msgs/msg/cm2_ext.hpp: /opt/ros/foxy/share/geometry_msgs/msg/AccelWithCovariance.idl
+rosidl_generator_cpp/hellocm_msgs/msg/cm2_ext.hpp: /opt/ros/foxy/share/geometry_msgs/msg/AccelWithCovarianceStamped.idl
+rosidl_generator_cpp/hellocm_msgs/msg/cm2_ext.hpp: /opt/ros/foxy/share/geometry_msgs/msg/Inertia.idl
+rosidl_generator_cpp/hellocm_msgs/msg/cm2_ext.hpp: /opt/ros/foxy/share/geometry_msgs/msg/InertiaStamped.idl
+rosidl_generator_cpp/hellocm_msgs/msg/cm2_ext.hpp: /opt/ros/foxy/share/geometry_msgs/msg/Point.idl
+rosidl_generator_cpp/hellocm_msgs/msg/cm2_ext.hpp: /opt/ros/foxy/share/geometry_msgs/msg/Point32.idl
+rosidl_generator_cpp/hellocm_msgs/msg/cm2_ext.hpp: /opt/ros/foxy/share/geometry_msgs/msg/PointStamped.idl
+rosidl_generator_cpp/hellocm_msgs/msg/cm2_ext.hpp: /opt/ros/foxy/share/geometry_msgs/msg/Polygon.idl
+rosidl_generator_cpp/hellocm_msgs/msg/cm2_ext.hpp: /opt/ros/foxy/share/geometry_msgs/msg/PolygonStamped.idl
+rosidl_generator_cpp/hellocm_msgs/msg/cm2_ext.hpp: /opt/ros/foxy/share/geometry_msgs/msg/Pose.idl
+rosidl_generator_cpp/hellocm_msgs/msg/cm2_ext.hpp: /opt/ros/foxy/share/geometry_msgs/msg/Pose2D.idl
+rosidl_generator_cpp/hellocm_msgs/msg/cm2_ext.hpp: /opt/ros/foxy/share/geometry_msgs/msg/PoseArray.idl
+rosidl_generator_cpp/hellocm_msgs/msg/cm2_ext.hpp: /opt/ros/foxy/share/geometry_msgs/msg/PoseStamped.idl
+rosidl_generator_cpp/hellocm_msgs/msg/cm2_ext.hpp: /opt/ros/foxy/share/geometry_msgs/msg/PoseWithCovariance.idl
+rosidl_generator_cpp/hellocm_msgs/msg/cm2_ext.hpp: /opt/ros/foxy/share/geometry_msgs/msg/PoseWithCovarianceStamped.idl
+rosidl_generator_cpp/hellocm_msgs/msg/cm2_ext.hpp: /opt/ros/foxy/share/geometry_msgs/msg/Quaternion.idl
+rosidl_generator_cpp/hellocm_msgs/msg/cm2_ext.hpp: /opt/ros/foxy/share/geometry_msgs/msg/QuaternionStamped.idl
+rosidl_generator_cpp/hellocm_msgs/msg/cm2_ext.hpp: /opt/ros/foxy/share/geometry_msgs/msg/Transform.idl
+rosidl_generator_cpp/hellocm_msgs/msg/cm2_ext.hpp: /opt/ros/foxy/share/geometry_msgs/msg/TransformStamped.idl
+rosidl_generator_cpp/hellocm_msgs/msg/cm2_ext.hpp: /opt/ros/foxy/share/geometry_msgs/msg/Twist.idl
+rosidl_generator_cpp/hellocm_msgs/msg/cm2_ext.hpp: /opt/ros/foxy/share/geometry_msgs/msg/TwistStamped.idl
+rosidl_generator_cpp/hellocm_msgs/msg/cm2_ext.hpp: /opt/ros/foxy/share/geometry_msgs/msg/TwistWithCovariance.idl
+rosidl_generator_cpp/hellocm_msgs/msg/cm2_ext.hpp: /opt/ros/foxy/share/geometry_msgs/msg/TwistWithCovarianceStamped.idl
+rosidl_generator_cpp/hellocm_msgs/msg/cm2_ext.hpp: /opt/ros/foxy/share/geometry_msgs/msg/Vector3.idl
+rosidl_generator_cpp/hellocm_msgs/msg/cm2_ext.hpp: /opt/ros/foxy/share/geometry_msgs/msg/Vector3Stamped.idl
+rosidl_generator_cpp/hellocm_msgs/msg/cm2_ext.hpp: /opt/ros/foxy/share/geometry_msgs/msg/Wrench.idl
+rosidl_generator_cpp/hellocm_msgs/msg/cm2_ext.hpp: /opt/ros/foxy/share/geometry_msgs/msg/WrenchStamped.idl
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/ipg-pc-30/CM-Projects/work_woh/240404_CM13_ROS2/ros/ros2_ws/build/hellocm_msgs/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Generating C++ code for ROS interfaces"
 	/usr/bin/python3 /opt/ros/foxy/share/rosidl_generator_cpp/cmake/../../../lib/rosidl_generator_cpp/rosidl_generator_cpp --generator-arguments-file /home/ipg-pc-30/CM-Projects/work_woh/240404_CM13_ROS2/ros/ros2_ws/build/hellocm_msgs/rosidl_generator_cpp__arguments.json
 
@@ -170,6 +233,21 @@ rosidl_generator_cpp/hellocm_msgs/srv/detail/init__traits.hpp: rosidl_generator_
 rosidl_generator_cpp/hellocm_msgs/srv/detail/init__type_support.hpp: rosidl_generator_cpp/hellocm_msgs/msg/cm2_ext.hpp
 	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_cpp/hellocm_msgs/srv/detail/init__type_support.hpp
 
+rosidl_generator_cpp/hellocm_msgs/msg/radar_data.hpp: rosidl_generator_cpp/hellocm_msgs/msg/cm2_ext.hpp
+	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_cpp/hellocm_msgs/msg/radar_data.hpp
+
+rosidl_generator_cpp/hellocm_msgs/msg/detail/radar_data__builder.hpp: rosidl_generator_cpp/hellocm_msgs/msg/cm2_ext.hpp
+	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_cpp/hellocm_msgs/msg/detail/radar_data__builder.hpp
+
+rosidl_generator_cpp/hellocm_msgs/msg/detail/radar_data__struct.hpp: rosidl_generator_cpp/hellocm_msgs/msg/cm2_ext.hpp
+	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_cpp/hellocm_msgs/msg/detail/radar_data__struct.hpp
+
+rosidl_generator_cpp/hellocm_msgs/msg/detail/radar_data__traits.hpp: rosidl_generator_cpp/hellocm_msgs/msg/cm2_ext.hpp
+	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_cpp/hellocm_msgs/msg/detail/radar_data__traits.hpp
+
+rosidl_generator_cpp/hellocm_msgs/msg/detail/radar_data__type_support.hpp: rosidl_generator_cpp/hellocm_msgs/msg/cm2_ext.hpp
+	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_cpp/hellocm_msgs/msg/detail/radar_data__type_support.hpp
+
 hellocm_msgs__cpp: CMakeFiles/hellocm_msgs__cpp
 hellocm_msgs__cpp: rosidl_generator_cpp/hellocm_msgs/msg/cm2_ext.hpp
 hellocm_msgs__cpp: rosidl_generator_cpp/hellocm_msgs/msg/detail/cm2_ext__builder.hpp
@@ -186,6 +264,11 @@ hellocm_msgs__cpp: rosidl_generator_cpp/hellocm_msgs/srv/detail/init__builder.hp
 hellocm_msgs__cpp: rosidl_generator_cpp/hellocm_msgs/srv/detail/init__struct.hpp
 hellocm_msgs__cpp: rosidl_generator_cpp/hellocm_msgs/srv/detail/init__traits.hpp
 hellocm_msgs__cpp: rosidl_generator_cpp/hellocm_msgs/srv/detail/init__type_support.hpp
+hellocm_msgs__cpp: rosidl_generator_cpp/hellocm_msgs/msg/radar_data.hpp
+hellocm_msgs__cpp: rosidl_generator_cpp/hellocm_msgs/msg/detail/radar_data__builder.hpp
+hellocm_msgs__cpp: rosidl_generator_cpp/hellocm_msgs/msg/detail/radar_data__struct.hpp
+hellocm_msgs__cpp: rosidl_generator_cpp/hellocm_msgs/msg/detail/radar_data__traits.hpp
+hellocm_msgs__cpp: rosidl_generator_cpp/hellocm_msgs/msg/detail/radar_data__type_support.hpp
 hellocm_msgs__cpp: CMakeFiles/hellocm_msgs__cpp.dir/build.make
 
 .PHONY : hellocm_msgs__cpp

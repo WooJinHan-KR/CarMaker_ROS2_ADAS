@@ -80,6 +80,28 @@ install/local/fast: preinstall/fast
 	/usr/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
 .PHONY : install/local/fast
 
+# Special rule for the target edit_cache
+edit_cache:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
+	/usr/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
+.PHONY : edit_cache
+
+# Special rule for the target edit_cache
+edit_cache/fast: edit_cache
+
+.PHONY : edit_cache/fast
+
+# Special rule for the target test
+test:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running tests..."
+	/usr/bin/ctest --force-new-ctest-process $(ARGS)
+.PHONY : test
+
+# Special rule for the target test
+test/fast: test
+
+.PHONY : test/fast
+
 # Special rule for the target install
 install: preinstall
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
@@ -113,28 +135,6 @@ rebuild_cache/fast: rebuild_cache
 
 .PHONY : rebuild_cache/fast
 
-# Special rule for the target edit_cache
-edit_cache:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
-	/usr/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
-.PHONY : edit_cache
-
-# Special rule for the target edit_cache
-edit_cache/fast: edit_cache
-
-.PHONY : edit_cache/fast
-
-# Special rule for the target test
-test:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running tests..."
-	/usr/bin/ctest --force-new-ctest-process $(ARGS)
-.PHONY : test
-
-# Special rule for the target test
-test/fast: test
-
-.PHONY : test/fast
-
 # The main all target
 all: cmake_check_build_system
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/ipg-pc-30/CM-Projects/work_woh/240404_CM13_ROS2/ros/ros2_ws/build/perception/CMakeFiles /home/ipg-pc-30/CM-Projects/work_woh/240404_CM13_ROS2/ros/ros2_ws/build/perception/CMakeFiles/progress.marks
@@ -166,6 +166,19 @@ preinstall/fast:
 depend:
 	$(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
+
+#=============================================================================
+# Target rules for targets named perception_node
+
+# Build rule for target.
+perception_node: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 perception_node
+.PHONY : perception_node
+
+# fast build rule for target.
+perception_node/fast:
+	$(MAKE) -f CMakeFiles/perception_node.dir/build.make CMakeFiles/perception_node.dir/build
+.PHONY : perception_node/fast
 
 #=============================================================================
 # Target rules for targets named perception
@@ -206,6 +219,60 @@ uninstall/fast:
 	$(MAKE) -f CMakeFiles/uninstall.dir/build.make CMakeFiles/uninstall.dir/build
 .PHONY : uninstall/fast
 
+src/LidarRSI_IF.o: src/LidarRSI_IF.cpp.o
+
+.PHONY : src/LidarRSI_IF.o
+
+# target to build an object file
+src/LidarRSI_IF.cpp.o:
+	$(MAKE) -f CMakeFiles/perception.dir/build.make CMakeFiles/perception.dir/src/LidarRSI_IF.cpp.o
+.PHONY : src/LidarRSI_IF.cpp.o
+
+src/LidarRSI_IF.i: src/LidarRSI_IF.cpp.i
+
+.PHONY : src/LidarRSI_IF.i
+
+# target to preprocess a source file
+src/LidarRSI_IF.cpp.i:
+	$(MAKE) -f CMakeFiles/perception.dir/build.make CMakeFiles/perception.dir/src/LidarRSI_IF.cpp.i
+.PHONY : src/LidarRSI_IF.cpp.i
+
+src/LidarRSI_IF.s: src/LidarRSI_IF.cpp.s
+
+.PHONY : src/LidarRSI_IF.s
+
+# target to generate assembly for a file
+src/LidarRSI_IF.cpp.s:
+	$(MAKE) -f CMakeFiles/perception.dir/build.make CMakeFiles/perception.dir/src/LidarRSI_IF.cpp.s
+.PHONY : src/LidarRSI_IF.cpp.s
+
+src/carmaker_vds_client_node.o: src/carmaker_vds_client_node.cpp.o
+
+.PHONY : src/carmaker_vds_client_node.o
+
+# target to build an object file
+src/carmaker_vds_client_node.cpp.o:
+	$(MAKE) -f CMakeFiles/perception_node.dir/build.make CMakeFiles/perception_node.dir/src/carmaker_vds_client_node.cpp.o
+.PHONY : src/carmaker_vds_client_node.cpp.o
+
+src/carmaker_vds_client_node.i: src/carmaker_vds_client_node.cpp.i
+
+.PHONY : src/carmaker_vds_client_node.i
+
+# target to preprocess a source file
+src/carmaker_vds_client_node.cpp.i:
+	$(MAKE) -f CMakeFiles/perception_node.dir/build.make CMakeFiles/perception_node.dir/src/carmaker_vds_client_node.cpp.i
+.PHONY : src/carmaker_vds_client_node.cpp.i
+
+src/carmaker_vds_client_node.s: src/carmaker_vds_client_node.cpp.s
+
+.PHONY : src/carmaker_vds_client_node.s
+
+# target to generate assembly for a file
+src/carmaker_vds_client_node.cpp.s:
+	$(MAKE) -f CMakeFiles/perception_node.dir/build.make CMakeFiles/perception_node.dir/src/carmaker_vds_client_node.cpp.s
+.PHONY : src/carmaker_vds_client_node.cpp.s
+
 src/cmnode.o: src/cmnode.cpp.o
 
 .PHONY : src/cmnode.o
@@ -241,14 +308,21 @@ help:
 	@echo "... depend"
 	@echo "... install/strip"
 	@echo "... install/local"
+	@echo "... edit_cache"
+	@echo "... test"
 	@echo "... install"
 	@echo "... list_install_components"
 	@echo "... rebuild_cache"
-	@echo "... edit_cache"
-	@echo "... test"
+	@echo "... perception_node"
 	@echo "... perception"
 	@echo "... perception_uninstall"
 	@echo "... uninstall"
+	@echo "... src/LidarRSI_IF.o"
+	@echo "... src/LidarRSI_IF.i"
+	@echo "... src/LidarRSI_IF.s"
+	@echo "... src/carmaker_vds_client_node.o"
+	@echo "... src/carmaker_vds_client_node.i"
+	@echo "... src/carmaker_vds_client_node.s"
 	@echo "... src/cmnode.o"
 	@echo "... src/cmnode.i"
 	@echo "... src/cmnode.s"

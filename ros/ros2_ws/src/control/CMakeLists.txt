@@ -21,6 +21,15 @@ find_package(rclcpp REQUIRED)
 find_package(cmrosutils REQUIRED)
 find_package(hellocm_msgs REQUIRED)
 
+include_directories(
+  include
+  include ${rclcpp_INCLUDE_DIRS}
+  include ${image_transport_INCLUDE_DIRS}
+  include ${tf2_INCLUDE_DIRS}
+  include ${tf2_ros_INCLUDE_DIRS}
+  include ${tf2_geometry_msgs_INCLUDE_DIRS}
+)
+
 
 add_library(${PROJECT_NAME} SHARED
   src/cmnode.cpp

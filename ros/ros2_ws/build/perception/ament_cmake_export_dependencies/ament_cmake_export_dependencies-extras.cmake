@@ -1,6 +1,6 @@
 # generated from ament_cmake_export_dependencies/cmake/ament_cmake_export_dependencies-extras.cmake.in
 
-set(_exported_dependencies "rclcpp;cmrosutils;hellocm_msgs;rosidl_default_runtime")
+set(_exported_dependencies "rclcpp;cmrosutils;hellocm_msgs;tf2;tf2_ros;tf2_geometry_msgs;nav_msgs;sensor_msgs;visualization_msgs;rosidl_default_runtime")
 
 find_package(ament_cmake_libraries QUIET REQUIRED)
 

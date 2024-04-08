@@ -15,6 +15,15 @@ if(CMAKE_COMPILER_IS_GNUCXX OR CMAKE_CXX_COMPILER_ID MATCHES "Clang")
   add_compile_options(-Wall -Wextra -Wpedantic)
 endif()
 
+include_directories(
+  include
+  include ${rclcpp_INCLUDE_DIRS}
+  include ${image_transport_INCLUDE_DIRS}
+  include ${tf2_INCLUDE_DIRS}
+  include ${tf2_ros_INCLUDE_DIRS}
+  include ${tf2_geometry_msgs_INCLUDE_DIRS}
+)
+
 # find dependencies
 find_package(ament_cmake REQUIRED)
 find_package(rclcpp REQUIRED)

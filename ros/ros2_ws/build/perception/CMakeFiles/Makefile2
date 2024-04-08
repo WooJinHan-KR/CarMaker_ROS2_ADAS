@@ -53,6 +53,7 @@ CMAKE_BINARY_DIR = /home/ipg-pc-30/CM-Projects/work_woh/240404_CM13_ROS2/ros/ros
 # Directory level rules for the build root directory
 
 # The main recursive "all" target.
+all: CMakeFiles/perception_node.dir/all
 all: CMakeFiles/perception.dir/all
 
 .PHONY : all
@@ -63,11 +64,39 @@ preinstall:
 .PHONY : preinstall
 
 # The main recursive "clean" target.
+clean: CMakeFiles/perception_node.dir/clean
 clean: CMakeFiles/perception.dir/clean
 clean: CMakeFiles/perception_uninstall.dir/clean
 clean: CMakeFiles/uninstall.dir/clean
 
 .PHONY : clean
+
+#=============================================================================
+# Target rules for target CMakeFiles/perception_node.dir
+
+# All Build rule for target.
+CMakeFiles/perception_node.dir/all:
+	$(MAKE) -f CMakeFiles/perception_node.dir/build.make CMakeFiles/perception_node.dir/depend
+	$(MAKE) -f CMakeFiles/perception_node.dir/build.make CMakeFiles/perception_node.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/ipg-pc-30/CM-Projects/work_woh/240404_CM13_ROS2/ros/ros2_ws/build/perception/CMakeFiles --progress-num=4,5 "Built target perception_node"
+.PHONY : CMakeFiles/perception_node.dir/all
+
+# Build rule for subdir invocation for target.
+CMakeFiles/perception_node.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/ipg-pc-30/CM-Projects/work_woh/240404_CM13_ROS2/ros/ros2_ws/build/perception/CMakeFiles 2
+	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/perception_node.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/ipg-pc-30/CM-Projects/work_woh/240404_CM13_ROS2/ros/ros2_ws/build/perception/CMakeFiles 0
+.PHONY : CMakeFiles/perception_node.dir/rule
+
+# Convenience name for target.
+perception_node: CMakeFiles/perception_node.dir/rule
+
+.PHONY : perception_node
+
+# clean rule for target.
+CMakeFiles/perception_node.dir/clean:
+	$(MAKE) -f CMakeFiles/perception_node.dir/build.make CMakeFiles/perception_node.dir/clean
+.PHONY : CMakeFiles/perception_node.dir/clean
 
 #=============================================================================
 # Target rules for target CMakeFiles/perception.dir
@@ -76,12 +105,12 @@ clean: CMakeFiles/uninstall.dir/clean
 CMakeFiles/perception.dir/all:
 	$(MAKE) -f CMakeFiles/perception.dir/build.make CMakeFiles/perception.dir/depend
 	$(MAKE) -f CMakeFiles/perception.dir/build.make CMakeFiles/perception.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/ipg-pc-30/CM-Projects/work_woh/240404_CM13_ROS2/ros/ros2_ws/build/perception/CMakeFiles --progress-num=1,2 "Built target perception"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/ipg-pc-30/CM-Projects/work_woh/240404_CM13_ROS2/ros/ros2_ws/build/perception/CMakeFiles --progress-num=1,2,3 "Built target perception"
 .PHONY : CMakeFiles/perception.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/perception.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/ipg-pc-30/CM-Projects/work_woh/240404_CM13_ROS2/ros/ros2_ws/build/perception/CMakeFiles 2
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/ipg-pc-30/CM-Projects/work_woh/240404_CM13_ROS2/ros/ros2_ws/build/perception/CMakeFiles 3
 	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/perception.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/ipg-pc-30/CM-Projects/work_woh/240404_CM13_ROS2/ros/ros2_ws/build/perception/CMakeFiles 0
 .PHONY : CMakeFiles/perception.dir/rule

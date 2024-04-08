@@ -2,6 +2,8 @@ msg/CM2Ext.idl
 msg/CM2Ext.msg
 msg/Ext2CM.idl
 msg/Ext2CM.msg
+msg/RadarData.idl
+msg/RadarData.msg
 srv/Init.idl
 srv/Init.srv
 srv/Init_Request.msg

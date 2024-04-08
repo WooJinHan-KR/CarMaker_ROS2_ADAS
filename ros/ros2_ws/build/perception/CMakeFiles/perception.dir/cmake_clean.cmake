@@ -1,4 +1,5 @@
 file(REMOVE_RECURSE
+  "CMakeFiles/perception.dir/src/LidarRSI_IF.cpp.o"
   "CMakeFiles/perception.dir/src/cmnode.cpp.o"
   "libperception.pdb"
   "libperception.so"

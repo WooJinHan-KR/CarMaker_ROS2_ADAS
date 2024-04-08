@@ -12,12 +12,11 @@
 #include "tf2_ros/transform_broadcaster.h"              /* Publish TF2 transforms */
 #include "tf2_ros/static_transform_broadcaster.h"
 #include <angles/angles.h>
+#include <cmath>
 
 // CarMaker header
 #include "CarMaker.h"
 #include "Vehicle/Sensor_RadarRSI.h"
-
-#define VLP_16_NUMBER_OF_POINTS 28800
 
 struct {
     int             Beam_nRow;
@@ -28,7 +27,7 @@ struct {
     
 } RadarRSI_IF;
 
-void    RadarRSI_Data_Fill (sensor_msgs::msg::PointCloud2& msg);
+void    RadarRSI_Data_Fill (hellocm_msgs::msg::RadarData& msg);
 int     CMNode_RadarRSI_IF_TestrunStartAtEnd(cm_ros::CMNode *CMNode);
 int     CMNode_RadarRSI_IF_TestrunEnd (cm_ros::CMNode *CMNode);
 

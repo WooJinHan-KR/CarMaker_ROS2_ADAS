@@ -114,6 +114,16 @@ hellocm: /opt/ros/foxy/lib/libstatistics_msgs__rosidl_typesupport_introspection_
 hellocm: /opt/ros/foxy/lib/libstatistics_msgs__rosidl_typesupport_cpp.so
 hellocm: /opt/ros/foxy/lib/libtracetools.so
 hellocm: /home/ipg-pc-30/CM-Projects/work_woh/240404_CM13_ROS2/ros/ros2_ws/install/hellocm_msgs/lib/libhellocm_msgs__rosidl_generator_c.so
+hellocm: /opt/ros/foxy/lib/libsensor_msgs__rosidl_typesupport_introspection_c.so
+hellocm: /opt/ros/foxy/lib/libsensor_msgs__rosidl_generator_c.so
+hellocm: /opt/ros/foxy/lib/libsensor_msgs__rosidl_typesupport_c.so
+hellocm: /opt/ros/foxy/lib/libsensor_msgs__rosidl_typesupport_introspection_cpp.so
+hellocm: /opt/ros/foxy/lib/libsensor_msgs__rosidl_typesupport_cpp.so
+hellocm: /opt/ros/foxy/lib/libgeometry_msgs__rosidl_typesupport_introspection_c.so
+hellocm: /opt/ros/foxy/lib/libgeometry_msgs__rosidl_generator_c.so
+hellocm: /opt/ros/foxy/lib/libgeometry_msgs__rosidl_typesupport_c.so
+hellocm: /opt/ros/foxy/lib/libgeometry_msgs__rosidl_typesupport_introspection_cpp.so
+hellocm: /opt/ros/foxy/lib/libgeometry_msgs__rosidl_typesupport_cpp.so
 hellocm: /opt/ros/foxy/lib/libstd_msgs__rosidl_typesupport_introspection_c.so
 hellocm: /opt/ros/foxy/lib/libstd_msgs__rosidl_generator_c.so
 hellocm: /opt/ros/foxy/lib/libstd_msgs__rosidl_typesupport_c.so

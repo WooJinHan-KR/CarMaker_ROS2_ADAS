@@ -70,14 +70,29 @@ CMakeFiles/perception.dir/src/cmnode.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/perception.dir/src/cmnode.cpp.s"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ipg-pc-30/CM-Projects/work_woh/240404_CM13_ROS2/ros/ros2_ws/src/perception/src/cmnode.cpp -o CMakeFiles/perception.dir/src/cmnode.cpp.s
 
+CMakeFiles/perception.dir/src/LidarRSI_IF.cpp.o: CMakeFiles/perception.dir/flags.make
+CMakeFiles/perception.dir/src/LidarRSI_IF.cpp.o: /home/ipg-pc-30/CM-Projects/work_woh/240404_CM13_ROS2/ros/ros2_ws/src/perception/src/LidarRSI_IF.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ipg-pc-30/CM-Projects/work_woh/240404_CM13_ROS2/ros/ros2_ws/build/perception/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/perception.dir/src/LidarRSI_IF.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/perception.dir/src/LidarRSI_IF.cpp.o -c /home/ipg-pc-30/CM-Projects/work_woh/240404_CM13_ROS2/ros/ros2_ws/src/perception/src/LidarRSI_IF.cpp
+
+CMakeFiles/perception.dir/src/LidarRSI_IF.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/perception.dir/src/LidarRSI_IF.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/ipg-pc-30/CM-Projects/work_woh/240404_CM13_ROS2/ros/ros2_ws/src/perception/src/LidarRSI_IF.cpp > CMakeFiles/perception.dir/src/LidarRSI_IF.cpp.i
+
+CMakeFiles/perception.dir/src/LidarRSI_IF.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/perception.dir/src/LidarRSI_IF.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ipg-pc-30/CM-Projects/work_woh/240404_CM13_ROS2/ros/ros2_ws/src/perception/src/LidarRSI_IF.cpp -o CMakeFiles/perception.dir/src/LidarRSI_IF.cpp.s
+
 # Object files for target perception
 perception_OBJECTS = \
-"CMakeFiles/perception.dir/src/cmnode.cpp.o"
+"CMakeFiles/perception.dir/src/cmnode.cpp.o" \
+"CMakeFiles/perception.dir/src/LidarRSI_IF.cpp.o"
 
 # External object files for target perception
 perception_EXTERNAL_OBJECTS =
 
 libperception.so: CMakeFiles/perception.dir/src/cmnode.cpp.o
+libperception.so: CMakeFiles/perception.dir/src/LidarRSI_IF.cpp.o
 libperception.so: CMakeFiles/perception.dir/build.make
 libperception.so: /home/ipg-pc-30/CM-Projects/work_woh/240404_CM13_ROS2/ros/ros2_ws/install/cmrosutils/lib/libcmrosutils__rosidl_typesupport_introspection_c.so
 libperception.so: /home/ipg-pc-30/CM-Projects/work_woh/240404_CM13_ROS2/ros/ros2_ws/install/cmrosutils/lib/libcmrosutils__rosidl_typesupport_c.so
@@ -87,7 +102,45 @@ libperception.so: /home/ipg-pc-30/CM-Projects/work_woh/240404_CM13_ROS2/ros/ros2
 libperception.so: /home/ipg-pc-30/CM-Projects/work_woh/240404_CM13_ROS2/ros/ros2_ws/install/hellocm_msgs/lib/libhellocm_msgs__rosidl_typesupport_c.so
 libperception.so: /home/ipg-pc-30/CM-Projects/work_woh/240404_CM13_ROS2/ros/ros2_ws/install/hellocm_msgs/lib/libhellocm_msgs__rosidl_typesupport_introspection_cpp.so
 libperception.so: /home/ipg-pc-30/CM-Projects/work_woh/240404_CM13_ROS2/ros/ros2_ws/install/hellocm_msgs/lib/libhellocm_msgs__rosidl_typesupport_cpp.so
+libperception.so: /opt/ros/foxy/lib/libnav_msgs__rosidl_typesupport_introspection_c.so
+libperception.so: /opt/ros/foxy/lib/libnav_msgs__rosidl_typesupport_c.so
+libperception.so: /opt/ros/foxy/lib/libnav_msgs__rosidl_typesupport_introspection_cpp.so
+libperception.so: /opt/ros/foxy/lib/libnav_msgs__rosidl_typesupport_cpp.so
+libperception.so: /opt/ros/foxy/lib/libvisualization_msgs__rosidl_typesupport_introspection_c.so
+libperception.so: /opt/ros/foxy/lib/libvisualization_msgs__rosidl_typesupport_c.so
+libperception.so: /opt/ros/foxy/lib/libvisualization_msgs__rosidl_typesupport_introspection_cpp.so
+libperception.so: /opt/ros/foxy/lib/libvisualization_msgs__rosidl_typesupport_cpp.so
 libperception.so: /home/ipg-pc-30/CM-Projects/work_woh/240404_CM13_ROS2/ros/ros2_ws/install/cmrosutils/lib/libcmrosutils__rosidl_generator_c.so
+libperception.so: /home/ipg-pc-30/CM-Projects/work_woh/240404_CM13_ROS2/ros/ros2_ws/install/cmrosutils/lib/libcmrosutils__rosidl_typesupport_cpp.so
+libperception.so: /home/ipg-pc-30/CM-Projects/work_woh/240404_CM13_ROS2/ros/ros2_ws/src/cmrosutils/lib/libCMJob.a
+libperception.so: /home/ipg-pc-30/CM-Projects/work_woh/240404_CM13_ROS2/ros/ros2_ws/install/hellocm_msgs/lib/libhellocm_msgs__rosidl_generator_c.so
+libperception.so: /opt/ros/foxy/lib/libsensor_msgs__rosidl_typesupport_introspection_c.so
+libperception.so: /opt/ros/foxy/lib/libsensor_msgs__rosidl_generator_c.so
+libperception.so: /opt/ros/foxy/lib/libsensor_msgs__rosidl_typesupport_c.so
+libperception.so: /opt/ros/foxy/lib/libsensor_msgs__rosidl_typesupport_introspection_cpp.so
+libperception.so: /opt/ros/foxy/lib/libsensor_msgs__rosidl_typesupport_cpp.so
+libperception.so: /opt/ros/foxy/lib/libstatic_transform_broadcaster_node.so
+libperception.so: /opt/ros/foxy/lib/libtf2_ros.so
+libperception.so: /opt/ros/foxy/lib/libtf2.so
+libperception.so: /opt/ros/foxy/lib/libmessage_filters.so
+libperception.so: /opt/ros/foxy/lib/librclcpp_action.so
+libperception.so: /opt/ros/foxy/lib/librcl_action.so
+libperception.so: /opt/ros/foxy/lib/libtf2_msgs__rosidl_typesupport_introspection_c.so
+libperception.so: /opt/ros/foxy/lib/libtf2_msgs__rosidl_generator_c.so
+libperception.so: /opt/ros/foxy/lib/libtf2_msgs__rosidl_typesupport_c.so
+libperception.so: /opt/ros/foxy/lib/libtf2_msgs__rosidl_typesupport_introspection_cpp.so
+libperception.so: /opt/ros/foxy/lib/libtf2_msgs__rosidl_typesupport_cpp.so
+libperception.so: /opt/ros/foxy/lib/libaction_msgs__rosidl_typesupport_introspection_c.so
+libperception.so: /opt/ros/foxy/lib/libaction_msgs__rosidl_generator_c.so
+libperception.so: /opt/ros/foxy/lib/libaction_msgs__rosidl_typesupport_c.so
+libperception.so: /opt/ros/foxy/lib/libaction_msgs__rosidl_typesupport_introspection_cpp.so
+libperception.so: /opt/ros/foxy/lib/libaction_msgs__rosidl_typesupport_cpp.so
+libperception.so: /opt/ros/foxy/lib/libunique_identifier_msgs__rosidl_typesupport_introspection_c.so
+libperception.so: /opt/ros/foxy/lib/libunique_identifier_msgs__rosidl_generator_c.so
+libperception.so: /opt/ros/foxy/lib/libunique_identifier_msgs__rosidl_typesupport_c.so
+libperception.so: /opt/ros/foxy/lib/libunique_identifier_msgs__rosidl_typesupport_introspection_cpp.so
+libperception.so: /opt/ros/foxy/lib/libunique_identifier_msgs__rosidl_typesupport_cpp.so
+libperception.so: /opt/ros/foxy/lib/libcomponent_manager.so
 libperception.so: /opt/ros/foxy/lib/librclcpp.so
 libperception.so: /opt/ros/foxy/lib/liblibstatistics_collector.so
 libperception.so: /opt/ros/foxy/lib/liblibstatistics_collector_test_msgs__rosidl_typesupport_introspection_c.so
@@ -96,11 +149,6 @@ libperception.so: /opt/ros/foxy/lib/liblibstatistics_collector_test_msgs__rosidl
 libperception.so: /opt/ros/foxy/lib/liblibstatistics_collector_test_msgs__rosidl_typesupport_introspection_cpp.so
 libperception.so: /opt/ros/foxy/lib/liblibstatistics_collector_test_msgs__rosidl_typesupport_cpp.so
 libperception.so: /opt/ros/foxy/lib/librcl.so
-libperception.so: /opt/ros/foxy/lib/librcl_interfaces__rosidl_typesupport_introspection_c.so
-libperception.so: /opt/ros/foxy/lib/librcl_interfaces__rosidl_generator_c.so
-libperception.so: /opt/ros/foxy/lib/librcl_interfaces__rosidl_typesupport_c.so
-libperception.so: /opt/ros/foxy/lib/librcl_interfaces__rosidl_typesupport_introspection_cpp.so
-libperception.so: /opt/ros/foxy/lib/librcl_interfaces__rosidl_typesupport_cpp.so
 libperception.so: /opt/ros/foxy/lib/librmw_implementation.so
 libperception.so: /opt/ros/foxy/lib/librmw.so
 libperception.so: /opt/ros/foxy/lib/librcl_logging_spdlog.so
@@ -118,9 +166,27 @@ libperception.so: /opt/ros/foxy/lib/libstatistics_msgs__rosidl_typesupport_c.so
 libperception.so: /opt/ros/foxy/lib/libstatistics_msgs__rosidl_typesupport_introspection_cpp.so
 libperception.so: /opt/ros/foxy/lib/libstatistics_msgs__rosidl_typesupport_cpp.so
 libperception.so: /opt/ros/foxy/lib/libtracetools.so
-libperception.so: /home/ipg-pc-30/CM-Projects/work_woh/240404_CM13_ROS2/ros/ros2_ws/install/cmrosutils/lib/libcmrosutils__rosidl_typesupport_cpp.so
-libperception.so: /home/ipg-pc-30/CM-Projects/work_woh/240404_CM13_ROS2/ros/ros2_ws/src/cmrosutils/lib/libCMJob.a
-libperception.so: /home/ipg-pc-30/CM-Projects/work_woh/240404_CM13_ROS2/ros/ros2_ws/install/hellocm_msgs/lib/libhellocm_msgs__rosidl_generator_c.so
+libperception.so: /opt/ros/foxy/lib/libament_index_cpp.so
+libperception.so: /opt/ros/foxy/lib/libclass_loader.so
+libperception.so: /opt/ros/foxy/lib/x86_64-linux-gnu/libconsole_bridge.so.1.0
+libperception.so: /opt/ros/foxy/lib/libcomposition_interfaces__rosidl_typesupport_introspection_c.so
+libperception.so: /opt/ros/foxy/lib/libcomposition_interfaces__rosidl_generator_c.so
+libperception.so: /opt/ros/foxy/lib/libcomposition_interfaces__rosidl_typesupport_c.so
+libperception.so: /opt/ros/foxy/lib/libcomposition_interfaces__rosidl_typesupport_introspection_cpp.so
+libperception.so: /opt/ros/foxy/lib/libcomposition_interfaces__rosidl_typesupport_cpp.so
+libperception.so: /opt/ros/foxy/lib/librcl_interfaces__rosidl_typesupport_introspection_c.so
+libperception.so: /opt/ros/foxy/lib/librcl_interfaces__rosidl_generator_c.so
+libperception.so: /opt/ros/foxy/lib/librcl_interfaces__rosidl_typesupport_c.so
+libperception.so: /opt/ros/foxy/lib/librcl_interfaces__rosidl_typesupport_introspection_cpp.so
+libperception.so: /opt/ros/foxy/lib/librcl_interfaces__rosidl_typesupport_cpp.so
+libperception.so: /opt/ros/foxy/lib/liborocos-kdl.so.1.4.0
+libperception.so: /opt/ros/foxy/lib/libnav_msgs__rosidl_generator_c.so
+libperception.so: /opt/ros/foxy/lib/libvisualization_msgs__rosidl_generator_c.so
+libperception.so: /opt/ros/foxy/lib/libgeometry_msgs__rosidl_typesupport_introspection_c.so
+libperception.so: /opt/ros/foxy/lib/libgeometry_msgs__rosidl_generator_c.so
+libperception.so: /opt/ros/foxy/lib/libgeometry_msgs__rosidl_typesupport_c.so
+libperception.so: /opt/ros/foxy/lib/libgeometry_msgs__rosidl_typesupport_introspection_cpp.so
+libperception.so: /opt/ros/foxy/lib/libgeometry_msgs__rosidl_typesupport_cpp.so
 libperception.so: /opt/ros/foxy/lib/libstd_msgs__rosidl_typesupport_introspection_c.so
 libperception.so: /opt/ros/foxy/lib/libstd_msgs__rosidl_generator_c.so
 libperception.so: /opt/ros/foxy/lib/libstd_msgs__rosidl_typesupport_c.so
@@ -139,7 +205,7 @@ libperception.so: /opt/ros/foxy/lib/librcpputils.so
 libperception.so: /opt/ros/foxy/lib/librosidl_runtime_c.so
 libperception.so: /opt/ros/foxy/lib/librcutils.so
 libperception.so: CMakeFiles/perception.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/ipg-pc-30/CM-Projects/work_woh/240404_CM13_ROS2/ros/ros2_ws/build/perception/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX shared library libperception.so"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/ipg-pc-30/CM-Projects/work_woh/240404_CM13_ROS2/ros/ros2_ws/build/perception/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking CXX shared library libperception.so"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/perception.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
