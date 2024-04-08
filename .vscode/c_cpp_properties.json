@@ -1,0 +1,17 @@
+{
+    "configurations": [
+        {
+            "name": "Win32",
+            "includePath": [
+                "${workspaceFolder}/**", // 작업 영역 내 모든 디렉터리 포함
+                "C:/IPG/carmaker/win64-13.0/include" // CarMaker 헤더 파일이 있는 디렉터리
+            ],
+            "defines": [],
+            "compilerPath": "C:/msys-2023",
+            "cStandard": "c11",
+            "cppStandard": "c++17",
+            "intelliSenseMode": "msvc-x64"
+        }
+    ],
+    "version": 4
+}

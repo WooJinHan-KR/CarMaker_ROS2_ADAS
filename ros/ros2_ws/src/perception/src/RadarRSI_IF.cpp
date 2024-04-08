@@ -12,6 +12,7 @@ RadarRSI_Data_Fill (sensor_msgs::msg::PointCloud2& msg)
 
 	//clearing vector data to avoid overflows
 	channels.values.clear();
+    
 
 	//Lidar Quantity processing
 	for (int j = 0; j < LidarRSI[0].nScanPoints; j++) {

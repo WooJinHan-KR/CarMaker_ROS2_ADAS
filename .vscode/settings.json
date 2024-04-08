@@ -1,7 +1,21 @@
 {
-    "files.associations": {
-        "array": "cpp",
-        "string": "cpp",
-        "string_view": "cpp"
-    }
+ "makefile.makeDirectory": "src",
+ "makefile.dryrunSwitches": [
+ "--always-make",
+ "--keep-going",
+ "--print-directory"
+ ],
+ "C_Cpp.default.configurationProvider": "ms-vscode.makefile-tools",
+ "C_Cpp.intelliSenseEngineFallback": "enabled",
+ "C_Cpp.default.mergeConfigurations": true,
+ "C_Cpp.inlayHints.parameterNames.enabled": true,
+ "C_Cpp.inlayHints.autoDeclarationTypes.showOnLeft": true,
+ "C_Cpp.inlayHints.autoDeclarationTypes.enabled": true,
+ "C_Cpp.inlayHints.referenceOperator.enabled": true,
+ "C_Cpp.inlayHints.referenceOperator.showSpace": true,
+ "C_Cpp.inlayHints.parameterNames.hideLeadingUnderscores": true,
+"C_Cpp.inlayHints.parameterNames.suppressWhenArgumentContainsName": true,
+"files.associations": {
+    "vehicle_car.h": "c"
+}
 }
