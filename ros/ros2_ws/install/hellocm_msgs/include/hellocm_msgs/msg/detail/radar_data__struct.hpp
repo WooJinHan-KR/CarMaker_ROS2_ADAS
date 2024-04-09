@@ -17,8 +17,8 @@
 // Include directives for member types
 // Member 'header'
 #include "std_msgs/msg/detail/header__struct.hpp"
-// Member 'pointcloud'
-#include "sensor_msgs/msg/detail/point_cloud__struct.hpp"
+// Member 'pointcloud2'
+#include "sensor_msgs/msg/detail/point_cloud2__struct.hpp"
 
 #ifndef _WIN32
 # define DEPRECATED__hellocm_msgs__msg__RadarData __attribute__((deprecated))
@@ -40,28 +40,24 @@ struct RadarData_
 
   explicit RadarData_(rosidl_runtime_cpp::MessageInitialization _init = rosidl_runtime_cpp::MessageInitialization::ALL)
   : header(_init),
-    pointcloud(_init)
+    pointcloud2(_init)
   {
     if (rosidl_runtime_cpp::MessageInitialization::ALL == _init ||
       rosidl_runtime_cpp::MessageInitialization::ZERO == _init)
     {
       this->frame_id = "";
-      this->velocity = 0.0;
-      this->distance = 0.0;
     }
   }
 
   explicit RadarData_(const ContainerAllocator & _alloc, rosidl_runtime_cpp::MessageInitialization _init = rosidl_runtime_cpp::MessageInitialization::ALL)
   : header(_alloc, _init),
     frame_id(_alloc),
-    pointcloud(_alloc, _init)
+    pointcloud2(_alloc, _init)
   {
     if (rosidl_runtime_cpp::MessageInitialization::ALL == _init ||
       rosidl_runtime_cpp::MessageInitialization::ZERO == _init)
     {
       this->frame_id = "";
-      this->velocity = 0.0;
-      this->distance = 0.0;
     }
   }
 
@@ -72,14 +68,14 @@ struct RadarData_
   using _frame_id_type =
     std::basic_string<char, std::char_traits<char>, typename ContainerAllocator::template rebind<char>::other>;
   _frame_id_type frame_id;
-  using _pointcloud_type =
-    sensor_msgs::msg::PointCloud_<ContainerAllocator>;
-  _pointcloud_type pointcloud;
+  using _pointcloud2_type =
+    sensor_msgs::msg::PointCloud2_<ContainerAllocator>;
+  _pointcloud2_type pointcloud2;
   using _velocity_type =
-    double;
+    std::vector<double, typename ContainerAllocator::template rebind<double>::other>;
   _velocity_type velocity;
   using _distance_type =
-    double;
+    std::vector<double, typename ContainerAllocator::template rebind<double>::other>;
   _distance_type distance;
 
   // setters for named parameter idiom
@@ -95,20 +91,20 @@ struct RadarData_
     this->frame_id = _arg;
     return *this;
   }
-  Type & set__pointcloud(
-    const sensor_msgs::msg::PointCloud_<ContainerAllocator> & _arg)
+  Type & set__pointcloud2(
+    const sensor_msgs::msg::PointCloud2_<ContainerAllocator> & _arg)
   {
-    this->pointcloud = _arg;
+    this->pointcloud2 = _arg;
     return *this;
   }
   Type & set__velocity(
-    const double & _arg)
+    const std::vector<double, typename ContainerAllocator::template rebind<double>::other> & _arg)
   {
     this->velocity = _arg;
     return *this;
   }
   Type & set__distance(
-    const double & _arg)
+    const std::vector<double, typename ContainerAllocator::template rebind<double>::other> & _arg)
   {
     this->distance = _arg;
     return *this;
@@ -162,7 +158,7 @@ struct RadarData_
     if (this->frame_id != other.frame_id) {
       return false;
     }
-    if (this->pointcloud != other.pointcloud) {
+    if (this->pointcloud2 != other.pointcloud2) {
       return false;
     }
     if (this->velocity != other.velocity) {

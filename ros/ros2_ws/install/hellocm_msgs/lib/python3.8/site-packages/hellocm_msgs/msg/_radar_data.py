@@ -5,6 +5,10 @@
 
 # Import statements for member types
 
+# Member 'velocity'
+# Member 'distance'
+import array  # noqa: E402, I100
+
 import rosidl_parser.definition  # noqa: E402, I100
 
 
@@ -40,9 +44,9 @@ class Metaclass_RadarData(type):
             cls._TYPE_SUPPORT = module.type_support_msg__msg__radar_data
             cls._DESTROY_ROS_MESSAGE = module.destroy_ros_message_msg__msg__radar_data
 
-            from sensor_msgs.msg import PointCloud
-            if PointCloud.__class__._TYPE_SUPPORT is None:
-                PointCloud.__class__.__import_type_support__()
+            from sensor_msgs.msg import PointCloud2
+            if PointCloud2.__class__._TYPE_SUPPORT is None:
+                PointCloud2.__class__.__import_type_support__()
 
             from std_msgs.msg import Header
             if Header.__class__._TYPE_SUPPORT is None:
@@ -63,7 +67,7 @@ class RadarData(metaclass=Metaclass_RadarData):
     __slots__ = [
         '_header',
         '_frame_id',
-        '_pointcloud',
+        '_pointcloud2',
         '_velocity',
         '_distance',
     ]
@@ -71,17 +75,17 @@ class RadarData(metaclass=Metaclass_RadarData):
     _fields_and_field_types = {
         'header': 'std_msgs/Header',
         'frame_id': 'string',
-        'pointcloud': 'sensor_msgs/PointCloud',
-        'velocity': 'double',
-        'distance': 'double',
+        'pointcloud2': 'sensor_msgs/PointCloud2',
+        'velocity': 'sequence<double>',
+        'distance': 'sequence<double>',
     }
 
     SLOT_TYPES = (
         rosidl_parser.definition.NamespacedType(['std_msgs', 'msg'], 'Header'),  # noqa: E501
         rosidl_parser.definition.UnboundedString(),  # noqa: E501
-        rosidl_parser.definition.NamespacedType(['sensor_msgs', 'msg'], 'PointCloud'),  # noqa: E501
-        rosidl_parser.definition.BasicType('double'),  # noqa: E501
-        rosidl_parser.definition.BasicType('double'),  # noqa: E501
+        rosidl_parser.definition.NamespacedType(['sensor_msgs', 'msg'], 'PointCloud2'),  # noqa: E501
+        rosidl_parser.definition.UnboundedSequence(rosidl_parser.definition.BasicType('double')),  # noqa: E501
+        rosidl_parser.definition.UnboundedSequence(rosidl_parser.definition.BasicType('double')),  # noqa: E501
     )
 
     def __init__(self, **kwargs):
@@ -91,10 +95,10 @@ class RadarData(metaclass=Metaclass_RadarData):
         from std_msgs.msg import Header
         self.header = kwargs.get('header', Header())
         self.frame_id = kwargs.get('frame_id', str())
-        from sensor_msgs.msg import PointCloud
-        self.pointcloud = kwargs.get('pointcloud', PointCloud())
-        self.velocity = kwargs.get('velocity', float())
-        self.distance = kwargs.get('distance', float())
+        from sensor_msgs.msg import PointCloud2
+        self.pointcloud2 = kwargs.get('pointcloud2', PointCloud2())
+        self.velocity = array.array('d', kwargs.get('velocity', []))
+        self.distance = array.array('d', kwargs.get('distance', []))
 
     def __repr__(self):
         typename = self.__class__.__module__.split('.')
@@ -129,7 +133,7 @@ class RadarData(metaclass=Metaclass_RadarData):
             return False
         if self.frame_id != other.frame_id:
             return False
-        if self.pointcloud != other.pointcloud:
+        if self.pointcloud2 != other.pointcloud2:
             return False
         if self.velocity != other.velocity:
             return False
@@ -170,18 +174,18 @@ class RadarData(metaclass=Metaclass_RadarData):
         self._frame_id = value
 
     @property
-    def pointcloud(self):
-        """Message field 'pointcloud'."""
-        return self._pointcloud
+    def pointcloud2(self):
+        """Message field 'pointcloud2'."""
+        return self._pointcloud2
 
-    @pointcloud.setter
-    def pointcloud(self, value):
+    @pointcloud2.setter
+    def pointcloud2(self, value):
         if __debug__:
-            from sensor_msgs.msg import PointCloud
+            from sensor_msgs.msg import PointCloud2
             assert \
-                isinstance(value, PointCloud), \
-                "The 'pointcloud' field must be a sub message of type 'PointCloud'"
-        self._pointcloud = value
+                isinstance(value, PointCloud2), \
+                "The 'pointcloud2' field must be a sub message of type 'PointCloud2'"
+        self._pointcloud2 = value
 
     @property
     def velocity(self):
@@ -190,11 +194,26 @@ class RadarData(metaclass=Metaclass_RadarData):
 
     @velocity.setter
     def velocity(self, value):
+        if isinstance(value, array.array):
+            assert value.typecode == 'd', \
+                "The 'velocity' array.array() must have the type code of 'd'"
+            self._velocity = value
+            return
         if __debug__:
+            from collections.abc import Sequence
+            from collections.abc import Set
+            from collections import UserList
+            from collections import UserString
             assert \
-                isinstance(value, float), \
-                "The 'velocity' field must be of type 'float'"
-        self._velocity = value
+                ((isinstance(value, Sequence) or
+                  isinstance(value, Set) or
+                  isinstance(value, UserList)) and
+                 not isinstance(value, str) and
+                 not isinstance(value, UserString) and
+                 all(isinstance(v, float) for v in value) and
+                 True), \
+                "The 'velocity' field must be a set or sequence and each value of type 'float'"
+        self._velocity = array.array('d', value)
 
     @property
     def distance(self):
@@ -203,8 +222,23 @@ class RadarData(metaclass=Metaclass_RadarData):
 
     @distance.setter
     def distance(self, value):
+        if isinstance(value, array.array):
+            assert value.typecode == 'd', \
+                "The 'distance' array.array() must have the type code of 'd'"
+            self._distance = value
+            return
         if __debug__:
+            from collections.abc import Sequence
+            from collections.abc import Set
+            from collections import UserList
+            from collections import UserString
             assert \
-                isinstance(value, float), \
-                "The 'distance' field must be of type 'float'"
-        self._distance = value
+                ((isinstance(value, Sequence) or
+                  isinstance(value, Set) or
+                  isinstance(value, UserList)) and
+                 not isinstance(value, str) and
+                 not isinstance(value, UserString) and
+                 all(isinstance(v, float) for v in value) and
+                 True), \
+                "The 'distance' field must be a set or sequence and each value of type 'float'"
+        self._distance = array.array('d', value)

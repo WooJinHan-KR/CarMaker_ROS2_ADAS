@@ -16,7 +16,7 @@ LidarRSI_Data_Fill (sensor_msgs::msg::PointCloud2& msg)
 	//Lidar Quantity processing
 	for (int j = 0; j < LidarRSI[0].nScanPoints; j++) {
 
-		const int beam_id = LidarRSI[0].ScanPoint[j].BeamID;
+		//const int beam_id = LidarRSI[0].ScanPoint[j].BeamID;
 		const double azimuth    = angles::from_degrees(LidarRSI_IF.BeamTable[4*LidarRSI_IF.Beam_nRow + LidarRSI[0].ScanPoint[j].BeamID]);      // BeamID is the table row, and Azimuth is column 5
 		const double elevation  = angles::from_degrees(LidarRSI_IF.BeamTable[5*LidarRSI_IF.Beam_nRow + LidarRSI[0].ScanPoint[j].BeamID]);      // BeamID is the table row, and Elevation is column 6
 		const double ray_length = 0.5 * LidarRSI[0].ScanPoint[j].LengthOF; // length of flight is back and forth
@@ -39,6 +39,73 @@ LidarRSI_Data_Fill (sensor_msgs::msg::PointCloud2& msg)
 	msg.header.frame_id = "Lidar_example";
 
 }
+
+/*
+void LidarRSI_Data_Fill(sensor_msgs::msg::PointCloud2& msg)
+{
+    const int num_points = LidarRSI[0].nScanPoints;
+    const size_t point_step = 16; // 4 floats for x, y, z, intensity
+
+    // Clearing vector data to avoid overflows
+    std::vector<float> point_cloud_data(num_points * point_step);
+    
+    // Lidar Quantity processing
+    for (int j = 0; j < num_points; ++j) {
+        const double azimuth = angles::from_degrees(LidarRSI_IF.BeamTable[4 * LidarRSI_IF.Beam_nRow + LidarRSI[0].ScanPoint[j].BeamID]);
+        const double elevation = angles::from_degrees(LidarRSI_IF.BeamTable[5 * LidarRSI_IF.Beam_nRow + LidarRSI[0].ScanPoint[j].BeamID]);
+        const double ray_length = 0.5 * LidarRSI[0].ScanPoint[j].LengthOF;
+
+        // XYZ-coordinates of scan point
+        const float x = ray_length * cos(elevation) * cos(azimuth);
+        const float y = ray_length * cos(elevation) * sin(azimuth);
+        const float z = ray_length * sin(elevation);
+
+        // Intensity value
+        const float intensity = LidarRSI[0].ScanPoint[j].Intensity;
+
+        // Offset for the current point in the point cloud data buffer
+        const size_t offset = j * point_step;
+
+        // Fill in point data
+        std::memcpy(&point_cloud_data[offset], &x, sizeof(float));
+        std::memcpy(&point_cloud_data[offset + 4], &y, sizeof(float));
+        std::memcpy(&point_cloud_data[offset + 8], &z, sizeof(float));
+        std::memcpy(&point_cloud_data[offset + 12], &intensity, sizeof(float));
+    }
+
+    // Fill in the header of the PointCloud2 message
+    msg.header.stamp = rclcpp::Clock().now();
+    msg.header.frame_id = "Lidar_example";
+    msg.height = 1;
+    msg.width = num_points; // Number of points
+    msg.fields.resize(4); // x, y, z, intensity
+    msg.fields[0].name = "x";
+    msg.fields[0].offset = 0;
+    msg.fields[0].datatype = sensor_msgs::msg::PointField::FLOAT32;
+    msg.fields[0].count = 1;
+    msg.fields[1].name = "y";
+    msg.fields[1].offset = 4;
+    msg.fields[1].datatype = sensor_msgs::msg::PointField::FLOAT32;
+    msg.fields[1].count = 1;
+    msg.fields[2].name = "z";
+    msg.fields[2].offset = 8;
+    msg.fields[2].datatype = sensor_msgs::msg::PointField::FLOAT32;
+    msg.fields[2].count = 1;
+    msg.fields[3].name = "intensity";
+    msg.fields[3].offset = 12;
+    msg.fields[3].datatype = sensor_msgs::msg::PointField::FLOAT32;
+    msg.fields[3].count = 1;
+    msg.is_bigendian = false;
+    msg.point_step = point_step; // Size of a single point in bytes (x, y, z, intensity)
+    msg.row_step = point_step * num_points; // Total size of the point cloud in bytes
+    msg.is_dense = true; // All points are finite
+
+    // Resize the data buffer to hold all points
+    msg.data.resize(num_points * point_step);
+
+    // Copy point data into the message data buffer
+    std::memcpy(&msg.data[0], &point_cloud_data[0], num_points * point_step * sizeof(float));
+}*/
 
 int
 CMNode_LidarRSI_IF_TestrunStartAtEnd (cm_ros::CMNode *CMNode)
@@ -77,7 +144,7 @@ CMNode_LidarRSI_IF_TestrunStartAtEnd (cm_ros::CMNode *CMNode)
     
     position[0] = 2.2;  //x
     position[1] = 0;    //y
-    position[2] = 1.4;  //z
+    position[2] = 1.6;  //z
     rotation[0] = 0;    //x
     rotation[1] = 0;    //y
     rotation[2] = 0;    //z

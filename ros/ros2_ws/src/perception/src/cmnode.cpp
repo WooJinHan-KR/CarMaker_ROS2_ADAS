@@ -9,9 +9,9 @@
  ******************************************************************************
  */
 
-#include "cmnode.hpp"
-#include "LidarRSI_IF.hpp"
-#include "RadarRSI_IF.hpp"
+#include "perception/cmnode.hpp"
+#include "perception/LidarRSI_IF.hpp"
+#include "perception/RadarRSI_IF.hpp"
 
 
 using cm_ros::CMNode;
@@ -47,6 +47,7 @@ void CMNode::userIn() {
 }
 
 int CMNode::userDrivmanCalc(const double& dt) {
+	printf("\nhihihihihi\n");
 	return 1;
 }
 

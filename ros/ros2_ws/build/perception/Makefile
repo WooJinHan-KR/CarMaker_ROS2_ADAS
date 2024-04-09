@@ -246,6 +246,33 @@ src/LidarRSI_IF.cpp.s:
 	$(MAKE) -f CMakeFiles/perception.dir/build.make CMakeFiles/perception.dir/src/LidarRSI_IF.cpp.s
 .PHONY : src/LidarRSI_IF.cpp.s
 
+src/RadarRSI_IF.o: src/RadarRSI_IF.cpp.o
+
+.PHONY : src/RadarRSI_IF.o
+
+# target to build an object file
+src/RadarRSI_IF.cpp.o:
+	$(MAKE) -f CMakeFiles/perception.dir/build.make CMakeFiles/perception.dir/src/RadarRSI_IF.cpp.o
+.PHONY : src/RadarRSI_IF.cpp.o
+
+src/RadarRSI_IF.i: src/RadarRSI_IF.cpp.i
+
+.PHONY : src/RadarRSI_IF.i
+
+# target to preprocess a source file
+src/RadarRSI_IF.cpp.i:
+	$(MAKE) -f CMakeFiles/perception.dir/build.make CMakeFiles/perception.dir/src/RadarRSI_IF.cpp.i
+.PHONY : src/RadarRSI_IF.cpp.i
+
+src/RadarRSI_IF.s: src/RadarRSI_IF.cpp.s
+
+.PHONY : src/RadarRSI_IF.s
+
+# target to generate assembly for a file
+src/RadarRSI_IF.cpp.s:
+	$(MAKE) -f CMakeFiles/perception.dir/build.make CMakeFiles/perception.dir/src/RadarRSI_IF.cpp.s
+.PHONY : src/RadarRSI_IF.cpp.s
+
 src/carmaker_vds_client_node.o: src/carmaker_vds_client_node.cpp.o
 
 .PHONY : src/carmaker_vds_client_node.o
@@ -253,6 +280,7 @@ src/carmaker_vds_client_node.o: src/carmaker_vds_client_node.cpp.o
 # target to build an object file
 src/carmaker_vds_client_node.cpp.o:
 	$(MAKE) -f CMakeFiles/perception_node.dir/build.make CMakeFiles/perception_node.dir/src/carmaker_vds_client_node.cpp.o
+	$(MAKE) -f CMakeFiles/perception.dir/build.make CMakeFiles/perception.dir/src/carmaker_vds_client_node.cpp.o
 .PHONY : src/carmaker_vds_client_node.cpp.o
 
 src/carmaker_vds_client_node.i: src/carmaker_vds_client_node.cpp.i
@@ -262,6 +290,7 @@ src/carmaker_vds_client_node.i: src/carmaker_vds_client_node.cpp.i
 # target to preprocess a source file
 src/carmaker_vds_client_node.cpp.i:
 	$(MAKE) -f CMakeFiles/perception_node.dir/build.make CMakeFiles/perception_node.dir/src/carmaker_vds_client_node.cpp.i
+	$(MAKE) -f CMakeFiles/perception.dir/build.make CMakeFiles/perception.dir/src/carmaker_vds_client_node.cpp.i
 .PHONY : src/carmaker_vds_client_node.cpp.i
 
 src/carmaker_vds_client_node.s: src/carmaker_vds_client_node.cpp.s
@@ -271,6 +300,7 @@ src/carmaker_vds_client_node.s: src/carmaker_vds_client_node.cpp.s
 # target to generate assembly for a file
 src/carmaker_vds_client_node.cpp.s:
 	$(MAKE) -f CMakeFiles/perception_node.dir/build.make CMakeFiles/perception_node.dir/src/carmaker_vds_client_node.cpp.s
+	$(MAKE) -f CMakeFiles/perception.dir/build.make CMakeFiles/perception.dir/src/carmaker_vds_client_node.cpp.s
 .PHONY : src/carmaker_vds_client_node.cpp.s
 
 src/cmnode.o: src/cmnode.cpp.o
@@ -320,6 +350,9 @@ help:
 	@echo "... src/LidarRSI_IF.o"
 	@echo "... src/LidarRSI_IF.i"
 	@echo "... src/LidarRSI_IF.s"
+	@echo "... src/RadarRSI_IF.o"
+	@echo "... src/RadarRSI_IF.i"
+	@echo "... src/RadarRSI_IF.s"
 	@echo "... src/carmaker_vds_client_node.o"
 	@echo "... src/carmaker_vds_client_node.i"
 	@echo "... src/carmaker_vds_client_node.s"

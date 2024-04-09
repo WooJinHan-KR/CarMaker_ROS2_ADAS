@@ -52,15 +52,15 @@ private:
   ::hellocm_msgs::msg::RadarData msg_;
 };
 
-class Init_RadarData_pointcloud
+class Init_RadarData_pointcloud2
 {
 public:
-  explicit Init_RadarData_pointcloud(::hellocm_msgs::msg::RadarData & msg)
+  explicit Init_RadarData_pointcloud2(::hellocm_msgs::msg::RadarData & msg)
   : msg_(msg)
   {}
-  Init_RadarData_velocity pointcloud(::hellocm_msgs::msg::RadarData::_pointcloud_type arg)
+  Init_RadarData_velocity pointcloud2(::hellocm_msgs::msg::RadarData::_pointcloud2_type arg)
   {
-    msg_.pointcloud = std::move(arg);
+    msg_.pointcloud2 = std::move(arg);
     return Init_RadarData_velocity(msg_);
   }
 
@@ -74,10 +74,10 @@ public:
   explicit Init_RadarData_frame_id(::hellocm_msgs::msg::RadarData & msg)
   : msg_(msg)
   {}
-  Init_RadarData_pointcloud frame_id(::hellocm_msgs::msg::RadarData::_frame_id_type arg)
+  Init_RadarData_pointcloud2 frame_id(::hellocm_msgs::msg::RadarData::_frame_id_type arg)
   {
     msg_.frame_id = std::move(arg);
-    return Init_RadarData_pointcloud(msg_);
+    return Init_RadarData_pointcloud2(msg_);
   }
 
 private:

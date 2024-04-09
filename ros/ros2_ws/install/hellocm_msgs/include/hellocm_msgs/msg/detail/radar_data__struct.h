@@ -22,17 +22,20 @@ extern "C"
 #include "std_msgs/msg/detail/header__struct.h"
 // Member 'frame_id'
 #include "rosidl_runtime_c/string.h"
-// Member 'pointcloud'
-#include "sensor_msgs/msg/detail/point_cloud__struct.h"
+// Member 'pointcloud2'
+#include "sensor_msgs/msg/detail/point_cloud2__struct.h"
+// Member 'velocity'
+// Member 'distance'
+#include "rosidl_runtime_c/primitives_sequence.h"
 
 // Struct defined in msg/RadarData in the package hellocm_msgs.
 typedef struct hellocm_msgs__msg__RadarData
 {
   std_msgs__msg__Header header;
   rosidl_runtime_c__String frame_id;
-  sensor_msgs__msg__PointCloud pointcloud;
-  double velocity;
-  double distance;
+  sensor_msgs__msg__PointCloud2 pointcloud2;
+  rosidl_runtime_c__double__Sequence velocity;
+  rosidl_runtime_c__double__Sequence distance;
 } hellocm_msgs__msg__RadarData;
 
 // Struct for a sequence of hellocm_msgs__msg__RadarData.

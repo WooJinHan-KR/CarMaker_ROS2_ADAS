@@ -31,7 +31,10 @@ find_package(visualization_msgs REQUIRED)
 add_library(${PROJECT_NAME} SHARED
   src/cmnode.cpp
   src/LidarRSI_IF.cpp
+  src/RadarRSI_IF.cpp
+  src/carmaker_vds_client_node.cpp
 )
+
 
 include_directories(
   include
@@ -56,6 +59,7 @@ ament_target_dependencies(${PROJECT_NAME}
 
 add_executable(${PROJECT_NAME}_node src/carmaker_vds_client_node.cpp)
 
+ament_target_dependencies(${PROJECT_NAME}_node rclcpp image_transport tf2 tf2_ros tf2_geometry_msgs)
 
 install(TARGETS
    ${PROJECT_NAME}

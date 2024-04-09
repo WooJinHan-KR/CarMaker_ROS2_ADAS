@@ -8,6 +8,13 @@ set(CMAKE_DEPENDS_CHECK_CXX
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 
+# Preprocessor definitions for this target.
+set(CMAKE_TARGET_DEFINITIONS_CXX
+  "DEFAULT_RMW_IMPLEMENTATION=rmw_fastrtps_cpp"
+  "RCUTILS_ENABLE_FAULT_INJECTION"
+  "SPDLOG_COMPILED_LIB"
+  )
+
 # The include file search paths:
 set(CMAKE_CXX_TARGET_INCLUDE_PATH
   "/home/ipg-pc-30/CM-Projects/work_woh/240404_CM13_ROS2/ros/ros2_ws/src/perception/include"

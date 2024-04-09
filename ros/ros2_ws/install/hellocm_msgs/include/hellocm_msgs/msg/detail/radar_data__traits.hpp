@@ -13,8 +13,8 @@
 // Include directives for member types
 // Member 'header'
 #include "std_msgs/msg/detail/header__traits.hpp"
-// Member 'pointcloud'
-#include "sensor_msgs/msg/detail/point_cloud__traits.hpp"
+// Member 'pointcloud2'
+#include "sensor_msgs/msg/detail/point_cloud2__traits.hpp"
 
 namespace rosidl_generator_traits
 {

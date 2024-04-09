@@ -42,15 +42,13 @@ void CMNode::userIn() {
 }
 
 int CMNode::userDrivmanCalc(const double& dt) {
-	return 1;
+	printf("\nlololol\n");
 }
 
 int CMNode::userVehicleControlCalc(const double& dt) {
-	return 1;
 }
 
 int CMNode::userCalc(const double& dt) {
-	return 1;
 }
 
 void CMNode::userOut() {

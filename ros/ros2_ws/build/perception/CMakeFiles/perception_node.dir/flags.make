@@ -4,7 +4,7 @@
 # compile CXX with /usr/bin/c++
 CXX_FLAGS =   -Wall -Wextra -Wpedantic -std=gnu++14
 
-CXX_DEFINES = 
+CXX_DEFINES = -DDEFAULT_RMW_IMPLEMENTATION=rmw_fastrtps_cpp -DRCUTILS_ENABLE_FAULT_INJECTION -DSPDLOG_COMPILED_LIB
 
-CXX_INCLUDES = -I/home/ipg-pc-30/CM-Projects/work_woh/240404_CM13_ROS2/ros/ros2_ws/src/perception/include -I/opt/ros/foxy/include -I/usr/include/eigen3 
+CXX_INCLUDES = -I/home/ipg-pc-30/CM-Projects/work_woh/240404_CM13_ROS2/ros/ros2_ws/src/perception/include -isystem /opt/ros/foxy/include -isystem /usr/include/eigen3 
 

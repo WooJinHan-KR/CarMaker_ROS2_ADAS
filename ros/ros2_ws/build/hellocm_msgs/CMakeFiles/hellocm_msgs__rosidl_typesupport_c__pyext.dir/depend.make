@@ -3,7 +3,6 @@
 
 CMakeFiles/hellocm_msgs__rosidl_typesupport_c__pyext.dir/rosidl_generator_py/hellocm_msgs/_hellocm_msgs_s.ep.rosidl_typesupport_c.c.o: rosidl_generator_py/hellocm_msgs/_hellocm_msgs_s.ep.rosidl_typesupport_c.c
 CMakeFiles/hellocm_msgs__rosidl_typesupport_c__pyext.dir/rosidl_generator_py/hellocm_msgs/_hellocm_msgs_s.ep.rosidl_typesupport_c.c.o: /opt/ros/foxy/include/builtin_interfaces/msg/detail/time__struct.h
-CMakeFiles/hellocm_msgs__rosidl_typesupport_c__pyext.dir/rosidl_generator_py/hellocm_msgs/_hellocm_msgs_s.ep.rosidl_typesupport_c.c.o: /opt/ros/foxy/include/geometry_msgs/msg/detail/point32__struct.h
 CMakeFiles/hellocm_msgs__rosidl_typesupport_c__pyext.dir/rosidl_generator_py/hellocm_msgs/_hellocm_msgs_s.ep.rosidl_typesupport_c.c.o: /opt/ros/foxy/include/rosidl_runtime_c/action_type_support_struct.h
 CMakeFiles/hellocm_msgs__rosidl_typesupport_c__pyext.dir/rosidl_generator_py/hellocm_msgs/_hellocm_msgs_s.ep.rosidl_typesupport_c.c.o: /opt/ros/foxy/include/rosidl_runtime_c/message_type_support_struct.h
 CMakeFiles/hellocm_msgs__rosidl_typesupport_c__pyext.dir/rosidl_generator_py/hellocm_msgs/_hellocm_msgs_s.ep.rosidl_typesupport_c.c.o: /opt/ros/foxy/include/rosidl_runtime_c/primitives_sequence.h
@@ -11,8 +10,8 @@ CMakeFiles/hellocm_msgs__rosidl_typesupport_c__pyext.dir/rosidl_generator_py/hel
 CMakeFiles/hellocm_msgs__rosidl_typesupport_c__pyext.dir/rosidl_generator_py/hellocm_msgs/_hellocm_msgs_s.ep.rosidl_typesupport_c.c.o: /opt/ros/foxy/include/rosidl_runtime_c/string.h
 CMakeFiles/hellocm_msgs__rosidl_typesupport_c__pyext.dir/rosidl_generator_py/hellocm_msgs/_hellocm_msgs_s.ep.rosidl_typesupport_c.c.o: /opt/ros/foxy/include/rosidl_runtime_c/visibility_control.h
 CMakeFiles/hellocm_msgs__rosidl_typesupport_c__pyext.dir/rosidl_generator_py/hellocm_msgs/_hellocm_msgs_s.ep.rosidl_typesupport_c.c.o: /opt/ros/foxy/include/rosidl_typesupport_interface/macros.h
-CMakeFiles/hellocm_msgs__rosidl_typesupport_c__pyext.dir/rosidl_generator_py/hellocm_msgs/_hellocm_msgs_s.ep.rosidl_typesupport_c.c.o: /opt/ros/foxy/include/sensor_msgs/msg/detail/channel_float32__struct.h
-CMakeFiles/hellocm_msgs__rosidl_typesupport_c__pyext.dir/rosidl_generator_py/hellocm_msgs/_hellocm_msgs_s.ep.rosidl_typesupport_c.c.o: /opt/ros/foxy/include/sensor_msgs/msg/detail/point_cloud__struct.h
+CMakeFiles/hellocm_msgs__rosidl_typesupport_c__pyext.dir/rosidl_generator_py/hellocm_msgs/_hellocm_msgs_s.ep.rosidl_typesupport_c.c.o: /opt/ros/foxy/include/sensor_msgs/msg/detail/point_cloud2__struct.h
+CMakeFiles/hellocm_msgs__rosidl_typesupport_c__pyext.dir/rosidl_generator_py/hellocm_msgs/_hellocm_msgs_s.ep.rosidl_typesupport_c.c.o: /opt/ros/foxy/include/sensor_msgs/msg/detail/point_field__struct.h
 CMakeFiles/hellocm_msgs__rosidl_typesupport_c__pyext.dir/rosidl_generator_py/hellocm_msgs/_hellocm_msgs_s.ep.rosidl_typesupport_c.c.o: /opt/ros/foxy/include/std_msgs/msg/detail/header__struct.h
 CMakeFiles/hellocm_msgs__rosidl_typesupport_c__pyext.dir/rosidl_generator_py/hellocm_msgs/_hellocm_msgs_s.ep.rosidl_typesupport_c.c.o: /usr/include/python3.8/Python.h
 CMakeFiles/hellocm_msgs__rosidl_typesupport_c__pyext.dir/rosidl_generator_py/hellocm_msgs/_hellocm_msgs_s.ep.rosidl_typesupport_c.c.o: /usr/include/python3.8/abstract.h

@@ -6,12 +6,13 @@
 #include "cmnode.hpp"
 
 // ROS Package header
-#include "sensor_msgs/point_cloud_conversion.hpp"
 #include "sensor_msgs/msg/point_cloud2.hpp"
 #include "tf2/LinearMath/Quaternion.h"                  /* Ros TF2 quaternion */
 #include "tf2_ros/transform_broadcaster.h"              /* Publish TF2 transforms */
 #include "tf2_ros/static_transform_broadcaster.h"
+#include "sensor_msgs/point_cloud_conversion.hpp"
 #include <angles/angles.h>
+#include <cstring>
 
 // CarMaker header
 #include "CarMaker.h"

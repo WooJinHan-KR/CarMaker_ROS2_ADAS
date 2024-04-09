@@ -1,6 +1,6 @@
 #INFOFILE1.1 (UTF-8) - Do not remove this line!
-TestRig.StartTime1970Str = 2024-04-04 13:35:08
-TestRig.StartTime1970 = 1712205308
+TestRig.StartTime1970Str = 2024-04-09 17:39:41
+TestRig.StartTime1970 = 1712651981
 CarMaker.Library = linux64 13.0.1 #3
 CarMaker.Compiled = jetbrains@6be5821ad487 2024-01-30 13:04:58
 CarMaker.CompileFlags:
@@ -258,8 +258,8 @@ TrfFollow.Models:
 TrfLaneChange.Models:
 	HDMbased            	v1 (compat. v1)
 Application.Version = Car_Generic <insert.your.version.no> with CMRosIF
-Application.BuildVersion = 1
-Application.CompileTime = 2024-04-04 09:00:13
+Application.BuildVersion = 2
+Application.CompileTime = 2024-04-08 17:12:20
 Application.CompileUser = ipg-pc-30
 Application.CompileSystem = ipg-pc-30
 Application.CompileFlags:

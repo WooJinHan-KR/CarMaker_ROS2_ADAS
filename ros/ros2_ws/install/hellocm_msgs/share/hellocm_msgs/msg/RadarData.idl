@@ -2,7 +2,7 @@
 // with input from hellocm_msgs/msg/RadarData.msg
 // generated code does not contain a copyright notice
 
-#include "sensor_msgs/msg/PointCloud.idl"
+#include "sensor_msgs/msg/PointCloud2.idl"
 #include "std_msgs/msg/Header.idl"
 
 module hellocm_msgs {
@@ -14,11 +14,11 @@ module hellocm_msgs {
 
       string frame_id;
 
-      sensor_msgs::msg::PointCloud pointcloud;
+      sensor_msgs::msg::PointCloud2 pointcloud2;
 
-      double velocity;
+      sequence<double> velocity;
 
-      double distance;
+      sequence<double> distance;
     };
   };
 };

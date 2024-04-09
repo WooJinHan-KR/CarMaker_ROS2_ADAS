@@ -43,7 +43,6 @@ CMakeFiles/hellocm_msgs__rosidl_generator_c.dir/rosidl_generator_c/hellocm_msgs/
 
 CMakeFiles/hellocm_msgs__rosidl_generator_c.dir/rosidl_generator_c/hellocm_msgs/msg/detail/radar_data__functions.c.o: rosidl_generator_c/hellocm_msgs/msg/detail/radar_data__functions.c
 CMakeFiles/hellocm_msgs__rosidl_generator_c.dir/rosidl_generator_c/hellocm_msgs/msg/detail/radar_data__functions.c.o: /opt/ros/foxy/include/builtin_interfaces/msg/detail/time__struct.h
-CMakeFiles/hellocm_msgs__rosidl_generator_c.dir/rosidl_generator_c/hellocm_msgs/msg/detail/radar_data__functions.c.o: /opt/ros/foxy/include/geometry_msgs/msg/detail/point32__struct.h
 CMakeFiles/hellocm_msgs__rosidl_generator_c.dir/rosidl_generator_c/hellocm_msgs/msg/detail/radar_data__functions.c.o: /opt/ros/foxy/include/rcutils/allocator.h
 CMakeFiles/hellocm_msgs__rosidl_generator_c.dir/rosidl_generator_c/hellocm_msgs/msg/detail/radar_data__functions.c.o: /opt/ros/foxy/include/rcutils/macros.h
 CMakeFiles/hellocm_msgs__rosidl_generator_c.dir/rosidl_generator_c/hellocm_msgs/msg/detail/radar_data__functions.c.o: /opt/ros/foxy/include/rcutils/testing/fault_injection.h
@@ -51,12 +50,13 @@ CMakeFiles/hellocm_msgs__rosidl_generator_c.dir/rosidl_generator_c/hellocm_msgs/
 CMakeFiles/hellocm_msgs__rosidl_generator_c.dir/rosidl_generator_c/hellocm_msgs/msg/detail/radar_data__functions.c.o: /opt/ros/foxy/include/rcutils/visibility_control.h
 CMakeFiles/hellocm_msgs__rosidl_generator_c.dir/rosidl_generator_c/hellocm_msgs/msg/detail/radar_data__functions.c.o: /opt/ros/foxy/include/rcutils/visibility_control_macros.h
 CMakeFiles/hellocm_msgs__rosidl_generator_c.dir/rosidl_generator_c/hellocm_msgs/msg/detail/radar_data__functions.c.o: /opt/ros/foxy/include/rosidl_runtime_c/primitives_sequence.h
+CMakeFiles/hellocm_msgs__rosidl_generator_c.dir/rosidl_generator_c/hellocm_msgs/msg/detail/radar_data__functions.c.o: /opt/ros/foxy/include/rosidl_runtime_c/primitives_sequence_functions.h
 CMakeFiles/hellocm_msgs__rosidl_generator_c.dir/rosidl_generator_c/hellocm_msgs/msg/detail/radar_data__functions.c.o: /opt/ros/foxy/include/rosidl_runtime_c/string.h
 CMakeFiles/hellocm_msgs__rosidl_generator_c.dir/rosidl_generator_c/hellocm_msgs/msg/detail/radar_data__functions.c.o: /opt/ros/foxy/include/rosidl_runtime_c/string_functions.h
 CMakeFiles/hellocm_msgs__rosidl_generator_c.dir/rosidl_generator_c/hellocm_msgs/msg/detail/radar_data__functions.c.o: /opt/ros/foxy/include/rosidl_runtime_c/visibility_control.h
-CMakeFiles/hellocm_msgs__rosidl_generator_c.dir/rosidl_generator_c/hellocm_msgs/msg/detail/radar_data__functions.c.o: /opt/ros/foxy/include/sensor_msgs/msg/detail/channel_float32__struct.h
-CMakeFiles/hellocm_msgs__rosidl_generator_c.dir/rosidl_generator_c/hellocm_msgs/msg/detail/radar_data__functions.c.o: /opt/ros/foxy/include/sensor_msgs/msg/detail/point_cloud__functions.h
-CMakeFiles/hellocm_msgs__rosidl_generator_c.dir/rosidl_generator_c/hellocm_msgs/msg/detail/radar_data__functions.c.o: /opt/ros/foxy/include/sensor_msgs/msg/detail/point_cloud__struct.h
+CMakeFiles/hellocm_msgs__rosidl_generator_c.dir/rosidl_generator_c/hellocm_msgs/msg/detail/radar_data__functions.c.o: /opt/ros/foxy/include/sensor_msgs/msg/detail/point_cloud2__functions.h
+CMakeFiles/hellocm_msgs__rosidl_generator_c.dir/rosidl_generator_c/hellocm_msgs/msg/detail/radar_data__functions.c.o: /opt/ros/foxy/include/sensor_msgs/msg/detail/point_cloud2__struct.h
+CMakeFiles/hellocm_msgs__rosidl_generator_c.dir/rosidl_generator_c/hellocm_msgs/msg/detail/radar_data__functions.c.o: /opt/ros/foxy/include/sensor_msgs/msg/detail/point_field__struct.h
 CMakeFiles/hellocm_msgs__rosidl_generator_c.dir/rosidl_generator_c/hellocm_msgs/msg/detail/radar_data__functions.c.o: /opt/ros/foxy/include/sensor_msgs/msg/rosidl_generator_c__visibility_control.h
 CMakeFiles/hellocm_msgs__rosidl_generator_c.dir/rosidl_generator_c/hellocm_msgs/msg/detail/radar_data__functions.c.o: /opt/ros/foxy/include/std_msgs/msg/detail/header__functions.h
 CMakeFiles/hellocm_msgs__rosidl_generator_c.dir/rosidl_generator_c/hellocm_msgs/msg/detail/radar_data__functions.c.o: /opt/ros/foxy/include/std_msgs/msg/detail/header__struct.h

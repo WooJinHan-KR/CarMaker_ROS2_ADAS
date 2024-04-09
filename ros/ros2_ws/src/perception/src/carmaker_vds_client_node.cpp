@@ -374,7 +374,7 @@ void PrintEmbeddedData (const char* data, unsigned int dataLen)
     }
 }
 
-void termination_handler(int signum)
+void termination_handler(int /*signum*/)
 {
     VDScfg.TerminationRequested = 1;
     rclcpp::shutdown();

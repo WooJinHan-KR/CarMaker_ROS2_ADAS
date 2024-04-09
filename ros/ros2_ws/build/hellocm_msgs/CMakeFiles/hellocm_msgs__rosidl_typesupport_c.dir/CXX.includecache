@@ -98,14 +98,6 @@ stddef.h
 stdint.h
 -
 
-/opt/ros/foxy/include/geometry_msgs/msg/detail/point32__struct.h
-stdbool.h
--
-stddef.h
--
-stdint.h
--
-
 /opt/ros/foxy/include/rosidl_runtime_c/message_type_support_struct.h
 rosidl_runtime_c/visibility_control.h
 /opt/ros/foxy/include/rosidl_runtime_c/rosidl_runtime_c/visibility_control.h
@@ -158,19 +150,7 @@ cstddef
 
 /opt/ros/foxy/include/rosidl_typesupport_interface/macros.h
 
-/opt/ros/foxy/include/sensor_msgs/msg/detail/channel_float32__struct.h
-stdbool.h
--
-stddef.h
--
-stdint.h
--
-rosidl_runtime_c/string.h
-/opt/ros/foxy/include/sensor_msgs/msg/detail/rosidl_runtime_c/string.h
-rosidl_runtime_c/primitives_sequence.h
-/opt/ros/foxy/include/sensor_msgs/msg/detail/rosidl_runtime_c/primitives_sequence.h
-
-/opt/ros/foxy/include/sensor_msgs/msg/detail/point_cloud__struct.h
+/opt/ros/foxy/include/sensor_msgs/msg/detail/point_cloud2__struct.h
 stdbool.h
 -
 stddef.h
@@ -179,10 +159,20 @@ stdint.h
 -
 std_msgs/msg/detail/header__struct.h
 /opt/ros/foxy/include/sensor_msgs/msg/detail/std_msgs/msg/detail/header__struct.h
-geometry_msgs/msg/detail/point32__struct.h
-/opt/ros/foxy/include/sensor_msgs/msg/detail/geometry_msgs/msg/detail/point32__struct.h
-sensor_msgs/msg/detail/channel_float32__struct.h
-/opt/ros/foxy/include/sensor_msgs/msg/detail/sensor_msgs/msg/detail/channel_float32__struct.h
+sensor_msgs/msg/detail/point_field__struct.h
+/opt/ros/foxy/include/sensor_msgs/msg/detail/sensor_msgs/msg/detail/point_field__struct.h
+rosidl_runtime_c/primitives_sequence.h
+/opt/ros/foxy/include/sensor_msgs/msg/detail/rosidl_runtime_c/primitives_sequence.h
+
+/opt/ros/foxy/include/sensor_msgs/msg/detail/point_field__struct.h
+stdbool.h
+-
+stddef.h
+-
+stdint.h
+-
+rosidl_runtime_c/string.h
+/opt/ros/foxy/include/sensor_msgs/msg/detail/rosidl_runtime_c/string.h
 
 /opt/ros/foxy/include/std_msgs/msg/detail/header__struct.h
 stdbool.h
@@ -231,8 +221,10 @@ std_msgs/msg/detail/header__struct.h
 rosidl_generator_c/hellocm_msgs/msg/detail/std_msgs/msg/detail/header__struct.h
 rosidl_runtime_c/string.h
 rosidl_generator_c/hellocm_msgs/msg/detail/rosidl_runtime_c/string.h
-sensor_msgs/msg/detail/point_cloud__struct.h
-rosidl_generator_c/hellocm_msgs/msg/detail/sensor_msgs/msg/detail/point_cloud__struct.h
+sensor_msgs/msg/detail/point_cloud2__struct.h
+rosidl_generator_c/hellocm_msgs/msg/detail/sensor_msgs/msg/detail/point_cloud2__struct.h
+rosidl_runtime_c/primitives_sequence.h
+rosidl_generator_c/hellocm_msgs/msg/detail/rosidl_runtime_c/primitives_sequence.h
 
 rosidl_generator_c/hellocm_msgs/srv/detail/init__struct.h
 stdbool.h

@@ -16,8 +16,11 @@
 #include "std_msgs/msg/detail/header__functions.h"
 // Member `frame_id`
 #include "rosidl_runtime_c/string_functions.h"
-// Member `pointcloud`
-#include "sensor_msgs/msg/detail/point_cloud__functions.h"
+// Member `pointcloud2`
+#include "sensor_msgs/msg/detail/point_cloud2__functions.h"
+// Member `velocity`
+// Member `distance`
+#include "rosidl_runtime_c/primitives_sequence_functions.h"
 
 bool
 hellocm_msgs__msg__RadarData__init(hellocm_msgs__msg__RadarData * msg)
@@ -35,13 +38,21 @@ hellocm_msgs__msg__RadarData__init(hellocm_msgs__msg__RadarData * msg)
     hellocm_msgs__msg__RadarData__fini(msg);
     return false;
   }
-  // pointcloud
-  if (!sensor_msgs__msg__PointCloud__init(&msg->pointcloud)) {
+  // pointcloud2
+  if (!sensor_msgs__msg__PointCloud2__init(&msg->pointcloud2)) {
     hellocm_msgs__msg__RadarData__fini(msg);
     return false;
   }
   // velocity
+  if (!rosidl_runtime_c__double__Sequence__init(&msg->velocity, 0)) {
+    hellocm_msgs__msg__RadarData__fini(msg);
+    return false;
+  }
   // distance
+  if (!rosidl_runtime_c__double__Sequence__init(&msg->distance, 0)) {
+    hellocm_msgs__msg__RadarData__fini(msg);
+    return false;
+  }
   return true;
 }
 
@@ -55,10 +66,12 @@ hellocm_msgs__msg__RadarData__fini(hellocm_msgs__msg__RadarData * msg)
   std_msgs__msg__Header__fini(&msg->header);
   // frame_id
   rosidl_runtime_c__String__fini(&msg->frame_id);
-  // pointcloud
-  sensor_msgs__msg__PointCloud__fini(&msg->pointcloud);
+  // pointcloud2
+  sensor_msgs__msg__PointCloud2__fini(&msg->pointcloud2);
   // velocity
+  rosidl_runtime_c__double__Sequence__fini(&msg->velocity);
   // distance
+  rosidl_runtime_c__double__Sequence__fini(&msg->distance);
 }
 
 bool
@@ -79,18 +92,22 @@ hellocm_msgs__msg__RadarData__are_equal(const hellocm_msgs__msg__RadarData * lhs
   {
     return false;
   }
-  // pointcloud
-  if (!sensor_msgs__msg__PointCloud__are_equal(
-      &(lhs->pointcloud), &(rhs->pointcloud)))
+  // pointcloud2
+  if (!sensor_msgs__msg__PointCloud2__are_equal(
+      &(lhs->pointcloud2), &(rhs->pointcloud2)))
   {
     return false;
   }
   // velocity
-  if (lhs->velocity != rhs->velocity) {
+  if (!rosidl_runtime_c__double__Sequence__are_equal(
+      &(lhs->velocity), &(rhs->velocity)))
+  {
     return false;
   }
   // distance
-  if (lhs->distance != rhs->distance) {
+  if (!rosidl_runtime_c__double__Sequence__are_equal(
+      &(lhs->distance), &(rhs->distance)))
+  {
     return false;
   }
   return true;
@@ -116,16 +133,24 @@ hellocm_msgs__msg__RadarData__copy(
   {
     return false;
   }
-  // pointcloud
-  if (!sensor_msgs__msg__PointCloud__copy(
-      &(input->pointcloud), &(output->pointcloud)))
+  // pointcloud2
+  if (!sensor_msgs__msg__PointCloud2__copy(
+      &(input->pointcloud2), &(output->pointcloud2)))
   {
     return false;
   }
   // velocity
-  output->velocity = input->velocity;
+  if (!rosidl_runtime_c__double__Sequence__copy(
+      &(input->velocity), &(output->velocity)))
+  {
+    return false;
+  }
   // distance
-  output->distance = input->distance;
+  if (!rosidl_runtime_c__double__Sequence__copy(
+      &(input->distance), &(output->distance)))
+  {
+    return false;
+  }
   return true;
 }
 

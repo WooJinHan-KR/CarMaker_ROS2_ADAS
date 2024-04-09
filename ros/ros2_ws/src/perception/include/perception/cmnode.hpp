@@ -15,6 +15,7 @@
 #include "cmrosutils/cmrosif.hpp"
 #include "hellocm_msgs/msg/cm2_ext.hpp"
 #include "hellocm_msgs/msg/ext2_cm.hpp"
+#include "hellocm_msgs/msg/radar_data.hpp"
 #include "hellocm_msgs/srv/init.hpp"
 
 namespace cm_ros {

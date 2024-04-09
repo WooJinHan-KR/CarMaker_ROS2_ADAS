@@ -34,25 +34,27 @@ extern "C"
 {
 #endif
 
+#include "rosidl_runtime_c/primitives_sequence.h"  // distance, velocity
+#include "rosidl_runtime_c/primitives_sequence_functions.h"  // distance, velocity
 #include "rosidl_runtime_c/string.h"  // frame_id
 #include "rosidl_runtime_c/string_functions.h"  // frame_id
-#include "sensor_msgs/msg/detail/point_cloud__functions.h"  // pointcloud
+#include "sensor_msgs/msg/detail/point_cloud2__functions.h"  // pointcloud2
 #include "std_msgs/msg/detail/header__functions.h"  // header
 
 // forward declare type support functions
 ROSIDL_TYPESUPPORT_FASTRTPS_C_IMPORT_hellocm_msgs
-size_t get_serialized_size_sensor_msgs__msg__PointCloud(
+size_t get_serialized_size_sensor_msgs__msg__PointCloud2(
   const void * untyped_ros_message,
   size_t current_alignment);
 
 ROSIDL_TYPESUPPORT_FASTRTPS_C_IMPORT_hellocm_msgs
-size_t max_serialized_size_sensor_msgs__msg__PointCloud(
+size_t max_serialized_size_sensor_msgs__msg__PointCloud2(
   bool & full_bounded,
   size_t current_alignment);
 
 ROSIDL_TYPESUPPORT_FASTRTPS_C_IMPORT_hellocm_msgs
 const rosidl_message_type_support_t *
-  ROSIDL_TYPESUPPORT_INTERFACE__MESSAGE_SYMBOL_NAME(rosidl_typesupport_fastrtps_c, sensor_msgs, msg, PointCloud)();
+  ROSIDL_TYPESUPPORT_INTERFACE__MESSAGE_SYMBOL_NAME(rosidl_typesupport_fastrtps_c, sensor_msgs, msg, PointCloud2)();
 ROSIDL_TYPESUPPORT_FASTRTPS_C_IMPORT_hellocm_msgs
 size_t get_serialized_size_std_msgs__msg__Header(
   const void * untyped_ros_message,
@@ -107,15 +109,15 @@ static bool _RadarData__cdr_serialize(
     cdr << str->data;
   }
 
-  // Field name: pointcloud
+  // Field name: pointcloud2
   {
     const message_type_support_callbacks_t * callbacks =
       static_cast<const message_type_support_callbacks_t *>(
       ROSIDL_TYPESUPPORT_INTERFACE__MESSAGE_SYMBOL_NAME(
-        rosidl_typesupport_fastrtps_c, sensor_msgs, msg, PointCloud
+        rosidl_typesupport_fastrtps_c, sensor_msgs, msg, PointCloud2
       )()->data);
     if (!callbacks->cdr_serialize(
-        &ros_message->pointcloud, cdr))
+        &ros_message->pointcloud2, cdr))
     {
       return false;
     }
@@ -123,12 +125,18 @@ static bool _RadarData__cdr_serialize(
 
   // Field name: velocity
   {
-    cdr << ros_message->velocity;
+    size_t size = ros_message->velocity.size;
+    auto array_ptr = ros_message->velocity.data;
+    cdr << static_cast<uint32_t>(size);
+    cdr.serializeArray(array_ptr, size);
   }
 
   // Field name: distance
   {
-    cdr << ros_message->distance;
+    size_t size = ros_message->distance.size;
+    auto array_ptr = ros_message->distance.data;
+    cdr << static_cast<uint32_t>(size);
+    cdr.serializeArray(array_ptr, size);
   }
 
   return true;
@@ -173,15 +181,15 @@ static bool _RadarData__cdr_deserialize(
     }
   }
 
-  // Field name: pointcloud
+  // Field name: pointcloud2
   {
     const message_type_support_callbacks_t * callbacks =
       static_cast<const message_type_support_callbacks_t *>(
       ROSIDL_TYPESUPPORT_INTERFACE__MESSAGE_SYMBOL_NAME(
-        rosidl_typesupport_fastrtps_c, sensor_msgs, msg, PointCloud
+        rosidl_typesupport_fastrtps_c, sensor_msgs, msg, PointCloud2
       )()->data);
     if (!callbacks->cdr_deserialize(
-        cdr, &ros_message->pointcloud))
+        cdr, &ros_message->pointcloud2))
     {
       return false;
     }
@@ -189,12 +197,32 @@ static bool _RadarData__cdr_deserialize(
 
   // Field name: velocity
   {
-    cdr >> ros_message->velocity;
+    uint32_t cdrSize;
+    cdr >> cdrSize;
+    size_t size = static_cast<size_t>(cdrSize);
+    if (ros_message->velocity.data) {
+      rosidl_runtime_c__double__Sequence__fini(&ros_message->velocity);
+    }
+    if (!rosidl_runtime_c__double__Sequence__init(&ros_message->velocity, size)) {
+      return "failed to create array for field 'velocity'";
+    }
+    auto array_ptr = ros_message->velocity.data;
+    cdr.deserializeArray(array_ptr, size);
   }
 
   // Field name: distance
   {
-    cdr >> ros_message->distance;
+    uint32_t cdrSize;
+    cdr >> cdrSize;
+    size_t size = static_cast<size_t>(cdrSize);
+    if (ros_message->distance.data) {
+      rosidl_runtime_c__double__Sequence__fini(&ros_message->distance);
+    }
+    if (!rosidl_runtime_c__double__Sequence__init(&ros_message->distance, size)) {
+      return "failed to create array for field 'distance'";
+    }
+    auto array_ptr = ros_message->distance.data;
+    cdr.deserializeArray(array_ptr, size);
   }
 
   return true;
@@ -222,20 +250,30 @@ size_t get_serialized_size_hellocm_msgs__msg__RadarData(
   current_alignment += padding +
     eprosima::fastcdr::Cdr::alignment(current_alignment, padding) +
     (ros_message->frame_id.size + 1);
-  // field.name pointcloud
+  // field.name pointcloud2
 
-  current_alignment += get_serialized_size_sensor_msgs__msg__PointCloud(
-    &(ros_message->pointcloud), current_alignment);
+  current_alignment += get_serialized_size_sensor_msgs__msg__PointCloud2(
+    &(ros_message->pointcloud2), current_alignment);
   // field.name velocity
   {
-    size_t item_size = sizeof(ros_message->velocity);
-    current_alignment += item_size +
+    size_t array_size = ros_message->velocity.size;
+    auto array_ptr = ros_message->velocity.data;
+    current_alignment += padding +
+      eprosima::fastcdr::Cdr::alignment(current_alignment, padding);
+    (void)array_ptr;
+    size_t item_size = sizeof(array_ptr[0]);
+    current_alignment += array_size * item_size +
       eprosima::fastcdr::Cdr::alignment(current_alignment, item_size);
   }
   // field.name distance
   {
-    size_t item_size = sizeof(ros_message->distance);
-    current_alignment += item_size +
+    size_t array_size = ros_message->distance.size;
+    auto array_ptr = ros_message->distance.data;
+    current_alignment += padding +
+      eprosima::fastcdr::Cdr::alignment(current_alignment, padding);
+    (void)array_ptr;
+    size_t item_size = sizeof(array_ptr[0]);
+    current_alignment += array_size * item_size +
       eprosima::fastcdr::Cdr::alignment(current_alignment, item_size);
   }
 
@@ -284,27 +322,33 @@ size_t max_serialized_size_hellocm_msgs__msg__RadarData(
         1;
     }
   }
-  // member: pointcloud
+  // member: pointcloud2
   {
     size_t array_size = 1;
 
 
     for (size_t index = 0; index < array_size; ++index) {
       current_alignment +=
-        max_serialized_size_sensor_msgs__msg__PointCloud(
+        max_serialized_size_sensor_msgs__msg__PointCloud2(
         full_bounded, current_alignment);
     }
   }
   // member: velocity
   {
-    size_t array_size = 1;
+    size_t array_size = 0;
+    full_bounded = false;
+    current_alignment += padding +
+      eprosima::fastcdr::Cdr::alignment(current_alignment, padding);
 
     current_alignment += array_size * sizeof(uint64_t) +
       eprosima::fastcdr::Cdr::alignment(current_alignment, sizeof(uint64_t));
   }
   // member: distance
   {
-    size_t array_size = 1;
+    size_t array_size = 0;
+    full_bounded = false;
+    current_alignment += padding +
+      eprosima::fastcdr::Cdr::alignment(current_alignment, padding);
 
     current_alignment += array_size * sizeof(uint64_t) +
       eprosima::fastcdr::Cdr::alignment(current_alignment, sizeof(uint64_t));

@@ -46,16 +46,16 @@ namespace msg
 namespace typesupport_fastrtps_cpp
 {
 bool cdr_serialize(
-  const sensor_msgs::msg::PointCloud &,
+  const sensor_msgs::msg::PointCloud2 &,
   eprosima::fastcdr::Cdr &);
 bool cdr_deserialize(
   eprosima::fastcdr::Cdr &,
-  sensor_msgs::msg::PointCloud &);
+  sensor_msgs::msg::PointCloud2 &);
 size_t get_serialized_size(
-  const sensor_msgs::msg::PointCloud &,
+  const sensor_msgs::msg::PointCloud2 &,
   size_t current_alignment);
 size_t
-max_serialized_size_PointCloud(
+max_serialized_size_PointCloud2(
   bool & full_bounded,
   size_t current_alignment);
 }  // namespace typesupport_fastrtps_cpp
@@ -84,14 +84,18 @@ cdr_serialize(
     cdr);
   // Member: frame_id
   cdr << ros_message.frame_id;
-  // Member: pointcloud
+  // Member: pointcloud2
   sensor_msgs::msg::typesupport_fastrtps_cpp::cdr_serialize(
-    ros_message.pointcloud,
+    ros_message.pointcloud2,
     cdr);
   // Member: velocity
-  cdr << ros_message.velocity;
+  {
+    cdr << ros_message.velocity;
+  }
   // Member: distance
-  cdr << ros_message.distance;
+  {
+    cdr << ros_message.distance;
+  }
   return true;
 }
 
@@ -108,15 +112,19 @@ cdr_deserialize(
   // Member: frame_id
   cdr >> ros_message.frame_id;
 
-  // Member: pointcloud
+  // Member: pointcloud2
   sensor_msgs::msg::typesupport_fastrtps_cpp::cdr_deserialize(
-    cdr, ros_message.pointcloud);
+    cdr, ros_message.pointcloud2);
 
   // Member: velocity
-  cdr >> ros_message.velocity;
+  {
+    cdr >> ros_message.velocity;
+  }
 
   // Member: distance
-  cdr >> ros_message.distance;
+  {
+    cdr >> ros_message.distance;
+  }
 
   return true;
 }
@@ -143,21 +151,29 @@ get_serialized_size(
   current_alignment += padding +
     eprosima::fastcdr::Cdr::alignment(current_alignment, padding) +
     (ros_message.frame_id.size() + 1);
-  // Member: pointcloud
+  // Member: pointcloud2
 
   current_alignment +=
     sensor_msgs::msg::typesupport_fastrtps_cpp::get_serialized_size(
-    ros_message.pointcloud, current_alignment);
+    ros_message.pointcloud2, current_alignment);
   // Member: velocity
   {
-    size_t item_size = sizeof(ros_message.velocity);
-    current_alignment += item_size +
+    size_t array_size = ros_message.velocity.size();
+
+    current_alignment += padding +
+      eprosima::fastcdr::Cdr::alignment(current_alignment, padding);
+    size_t item_size = sizeof(ros_message.velocity[0]);
+    current_alignment += array_size * item_size +
       eprosima::fastcdr::Cdr::alignment(current_alignment, item_size);
   }
   // Member: distance
   {
-    size_t item_size = sizeof(ros_message.distance);
-    current_alignment += item_size +
+    size_t array_size = ros_message.distance.size();
+
+    current_alignment += padding +
+      eprosima::fastcdr::Cdr::alignment(current_alignment, padding);
+    size_t item_size = sizeof(ros_message.distance[0]);
+    current_alignment += array_size * item_size +
       eprosima::fastcdr::Cdr::alignment(current_alignment, item_size);
   }
 
@@ -203,21 +219,24 @@ max_serialized_size_RadarData(
     }
   }
 
-  // Member: pointcloud
+  // Member: pointcloud2
   {
     size_t array_size = 1;
 
 
     for (size_t index = 0; index < array_size; ++index) {
       current_alignment +=
-        sensor_msgs::msg::typesupport_fastrtps_cpp::max_serialized_size_PointCloud(
+        sensor_msgs::msg::typesupport_fastrtps_cpp::max_serialized_size_PointCloud2(
         full_bounded, current_alignment);
     }
   }
 
   // Member: velocity
   {
-    size_t array_size = 1;
+    size_t array_size = 0;
+    full_bounded = false;
+    current_alignment += padding +
+      eprosima::fastcdr::Cdr::alignment(current_alignment, padding);
 
     current_alignment += array_size * sizeof(uint64_t) +
       eprosima::fastcdr::Cdr::alignment(current_alignment, sizeof(uint64_t));
@@ -225,7 +244,10 @@ max_serialized_size_RadarData(
 
   // Member: distance
   {
-    size_t array_size = 1;
+    size_t array_size = 0;
+    full_bounded = false;
+    current_alignment += padding +
+      eprosima::fastcdr::Cdr::alignment(current_alignment, padding);
 
     current_alignment += array_size * sizeof(uint64_t) +
       eprosima::fastcdr::Cdr::alignment(current_alignment, sizeof(uint64_t));

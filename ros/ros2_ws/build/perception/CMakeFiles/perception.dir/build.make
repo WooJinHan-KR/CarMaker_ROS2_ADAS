@@ -83,16 +83,46 @@ CMakeFiles/perception.dir/src/LidarRSI_IF.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/perception.dir/src/LidarRSI_IF.cpp.s"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ipg-pc-30/CM-Projects/work_woh/240404_CM13_ROS2/ros/ros2_ws/src/perception/src/LidarRSI_IF.cpp -o CMakeFiles/perception.dir/src/LidarRSI_IF.cpp.s
 
+CMakeFiles/perception.dir/src/RadarRSI_IF.cpp.o: CMakeFiles/perception.dir/flags.make
+CMakeFiles/perception.dir/src/RadarRSI_IF.cpp.o: /home/ipg-pc-30/CM-Projects/work_woh/240404_CM13_ROS2/ros/ros2_ws/src/perception/src/RadarRSI_IF.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ipg-pc-30/CM-Projects/work_woh/240404_CM13_ROS2/ros/ros2_ws/build/perception/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/perception.dir/src/RadarRSI_IF.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/perception.dir/src/RadarRSI_IF.cpp.o -c /home/ipg-pc-30/CM-Projects/work_woh/240404_CM13_ROS2/ros/ros2_ws/src/perception/src/RadarRSI_IF.cpp
+
+CMakeFiles/perception.dir/src/RadarRSI_IF.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/perception.dir/src/RadarRSI_IF.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/ipg-pc-30/CM-Projects/work_woh/240404_CM13_ROS2/ros/ros2_ws/src/perception/src/RadarRSI_IF.cpp > CMakeFiles/perception.dir/src/RadarRSI_IF.cpp.i
+
+CMakeFiles/perception.dir/src/RadarRSI_IF.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/perception.dir/src/RadarRSI_IF.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ipg-pc-30/CM-Projects/work_woh/240404_CM13_ROS2/ros/ros2_ws/src/perception/src/RadarRSI_IF.cpp -o CMakeFiles/perception.dir/src/RadarRSI_IF.cpp.s
+
+CMakeFiles/perception.dir/src/carmaker_vds_client_node.cpp.o: CMakeFiles/perception.dir/flags.make
+CMakeFiles/perception.dir/src/carmaker_vds_client_node.cpp.o: /home/ipg-pc-30/CM-Projects/work_woh/240404_CM13_ROS2/ros/ros2_ws/src/perception/src/carmaker_vds_client_node.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ipg-pc-30/CM-Projects/work_woh/240404_CM13_ROS2/ros/ros2_ws/build/perception/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/perception.dir/src/carmaker_vds_client_node.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/perception.dir/src/carmaker_vds_client_node.cpp.o -c /home/ipg-pc-30/CM-Projects/work_woh/240404_CM13_ROS2/ros/ros2_ws/src/perception/src/carmaker_vds_client_node.cpp
+
+CMakeFiles/perception.dir/src/carmaker_vds_client_node.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/perception.dir/src/carmaker_vds_client_node.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/ipg-pc-30/CM-Projects/work_woh/240404_CM13_ROS2/ros/ros2_ws/src/perception/src/carmaker_vds_client_node.cpp > CMakeFiles/perception.dir/src/carmaker_vds_client_node.cpp.i
+
+CMakeFiles/perception.dir/src/carmaker_vds_client_node.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/perception.dir/src/carmaker_vds_client_node.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ipg-pc-30/CM-Projects/work_woh/240404_CM13_ROS2/ros/ros2_ws/src/perception/src/carmaker_vds_client_node.cpp -o CMakeFiles/perception.dir/src/carmaker_vds_client_node.cpp.s
+
 # Object files for target perception
 perception_OBJECTS = \
 "CMakeFiles/perception.dir/src/cmnode.cpp.o" \
-"CMakeFiles/perception.dir/src/LidarRSI_IF.cpp.o"
+"CMakeFiles/perception.dir/src/LidarRSI_IF.cpp.o" \
+"CMakeFiles/perception.dir/src/RadarRSI_IF.cpp.o" \
+"CMakeFiles/perception.dir/src/carmaker_vds_client_node.cpp.o"
 
 # External object files for target perception
 perception_EXTERNAL_OBJECTS =
 
 libperception.so: CMakeFiles/perception.dir/src/cmnode.cpp.o
 libperception.so: CMakeFiles/perception.dir/src/LidarRSI_IF.cpp.o
+libperception.so: CMakeFiles/perception.dir/src/RadarRSI_IF.cpp.o
+libperception.so: CMakeFiles/perception.dir/src/carmaker_vds_client_node.cpp.o
 libperception.so: CMakeFiles/perception.dir/build.make
 libperception.so: /home/ipg-pc-30/CM-Projects/work_woh/240404_CM13_ROS2/ros/ros2_ws/install/cmrosutils/lib/libcmrosutils__rosidl_typesupport_introspection_c.so
 libperception.so: /home/ipg-pc-30/CM-Projects/work_woh/240404_CM13_ROS2/ros/ros2_ws/install/cmrosutils/lib/libcmrosutils__rosidl_typesupport_c.so
@@ -205,7 +235,7 @@ libperception.so: /opt/ros/foxy/lib/librcpputils.so
 libperception.so: /opt/ros/foxy/lib/librosidl_runtime_c.so
 libperception.so: /opt/ros/foxy/lib/librcutils.so
 libperception.so: CMakeFiles/perception.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/ipg-pc-30/CM-Projects/work_woh/240404_CM13_ROS2/ros/ros2_ws/build/perception/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking CXX shared library libperception.so"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/ipg-pc-30/CM-Projects/work_woh/240404_CM13_ROS2/ros/ros2_ws/build/perception/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Linking CXX shared library libperception.so"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/perception.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

@@ -19,10 +19,13 @@
 #include "std_msgs/msg/detail/header__rosidl_typesupport_introspection_c.h"
 // Member `frame_id`
 #include "rosidl_runtime_c/string_functions.h"
-// Member `pointcloud`
-#include "sensor_msgs/msg/point_cloud.h"
-// Member `pointcloud`
-#include "sensor_msgs/msg/detail/point_cloud__rosidl_typesupport_introspection_c.h"
+// Member `pointcloud2`
+#include "sensor_msgs/msg/point_cloud2.h"
+// Member `pointcloud2`
+#include "sensor_msgs/msg/detail/point_cloud2__rosidl_typesupport_introspection_c.h"
+// Member `velocity`
+// Member `distance`
+#include "rosidl_runtime_c/primitives_sequence_functions.h"
 
 #ifdef __cplusplus
 extern "C"
@@ -75,14 +78,14 @@ static rosidl_typesupport_introspection_c__MessageMember RadarData__rosidl_types
     NULL  // resize(index) function pointer
   },
   {
-    "pointcloud",  // name
+    "pointcloud2",  // name
     rosidl_typesupport_introspection_c__ROS_TYPE_MESSAGE,  // type
     0,  // upper bound of string
     NULL,  // members of sub message (initialized later)
     false,  // is array
     0,  // array size
     false,  // is upper bound
-    offsetof(hellocm_msgs__msg__RadarData, pointcloud),  // bytes offset in struct
+    offsetof(hellocm_msgs__msg__RadarData, pointcloud2),  // bytes offset in struct
     NULL,  // default value
     NULL,  // size() function pointer
     NULL,  // get_const(index) function pointer
@@ -94,7 +97,7 @@ static rosidl_typesupport_introspection_c__MessageMember RadarData__rosidl_types
     rosidl_typesupport_introspection_c__ROS_TYPE_DOUBLE,  // type
     0,  // upper bound of string
     NULL,  // members of sub message
-    false,  // is array
+    true,  // is array
     0,  // array size
     false,  // is upper bound
     offsetof(hellocm_msgs__msg__RadarData, velocity),  // bytes offset in struct
@@ -109,7 +112,7 @@ static rosidl_typesupport_introspection_c__MessageMember RadarData__rosidl_types
     rosidl_typesupport_introspection_c__ROS_TYPE_DOUBLE,  // type
     0,  // upper bound of string
     NULL,  // members of sub message
-    false,  // is array
+    true,  // is array
     0,  // array size
     false,  // is upper bound
     offsetof(hellocm_msgs__msg__RadarData, distance),  // bytes offset in struct
@@ -145,7 +148,7 @@ ROSIDL_TYPESUPPORT_INTERFACE__MESSAGE_SYMBOL_NAME(rosidl_typesupport_introspecti
   RadarData__rosidl_typesupport_introspection_c__RadarData_message_member_array[0].members_ =
     ROSIDL_TYPESUPPORT_INTERFACE__MESSAGE_SYMBOL_NAME(rosidl_typesupport_introspection_c, std_msgs, msg, Header)();
   RadarData__rosidl_typesupport_introspection_c__RadarData_message_member_array[2].members_ =
-    ROSIDL_TYPESUPPORT_INTERFACE__MESSAGE_SYMBOL_NAME(rosidl_typesupport_introspection_c, sensor_msgs, msg, PointCloud)();
+    ROSIDL_TYPESUPPORT_INTERFACE__MESSAGE_SYMBOL_NAME(rosidl_typesupport_introspection_c, sensor_msgs, msg, PointCloud2)();
   if (!RadarData__rosidl_typesupport_introspection_c__RadarData_message_type_support_handle.typesupport_identifier) {
     RadarData__rosidl_typesupport_introspection_c__RadarData_message_type_support_handle.typesupport_identifier =
       rosidl_typesupport_introspection_c__identifier;
