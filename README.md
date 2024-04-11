@@ -49,7 +49,7 @@ Access CMRosIFParameters with `Edit Parameters` on {CarMaker Main GUI}/Extras
 
 ROS Library Path
 ```
-Cfg.Lib.Path = libcmnode_hellocm.so
+Cfg.Lib.Path = libperception.so
 ```
 
 Namespace settings
