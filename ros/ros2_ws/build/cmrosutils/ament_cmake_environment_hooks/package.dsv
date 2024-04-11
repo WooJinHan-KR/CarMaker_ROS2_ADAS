@@ -1,4 +1,0 @@
-source;share/cmrosutils/local_setup.bash
-source;share/cmrosutils/local_setup.dsv
-source;share/cmrosutils/local_setup.sh
-source;share/cmrosutils/local_setup.zsh

@@ -1,4 +1,0 @@
-source;share/carmaker_vds_client/local_setup.bash
-source;share/carmaker_vds_client/local_setup.dsv
-source;share/carmaker_vds_client/local_setup.sh
-source;share/carmaker_vds_client/local_setup.zsh

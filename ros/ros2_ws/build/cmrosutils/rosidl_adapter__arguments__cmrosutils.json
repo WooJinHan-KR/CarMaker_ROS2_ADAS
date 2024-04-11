@@ -1,6 +1,0 @@
-{
-  "package_name": "cmrosutils",
-  "non_idl_tuples": [
-    "/home/ipg-pc-30/CM-Projects/work_woh/240404_CM13_ROS2/ros/ros2_ws/src/cmrosutils:srv/CMRemoteControl.srv"
-  ]
-}
