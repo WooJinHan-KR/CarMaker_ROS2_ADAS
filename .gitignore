@@ -9,11 +9,12 @@ dist/
 
 # Ignore Folders
 bin/*
-!bin/*
+ros/ros2_ws/build/*
+ros/ros2_ws/install/*
+ros/ros2_ws/log/*
 Data/*
 !Data/*
 doc/*
-!doc/*
 include/*
 !include/*
 lib/*
@@ -27,9 +28,7 @@ Plugins/*
 SimInput/*
 !SimInput/*
 SimOutput/*
-!SimOutput/*
 src_cm4sl/*
-!src_cm4sl/*
 src/.settings/org.eclipse.cdt.core.prefs
 src/.settings/org.eclipse.core.resources.prefs
 
