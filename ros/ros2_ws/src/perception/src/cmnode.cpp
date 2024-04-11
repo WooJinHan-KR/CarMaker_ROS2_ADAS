@@ -47,7 +47,7 @@ void CMNode::userIn() {
 }
 
 int CMNode::userDrivmanCalc(const double& dt) {
-	printf("\nhihihihihi\n");
+	//printf("\nhihihihihi\n");
 	return 1;
 }
 

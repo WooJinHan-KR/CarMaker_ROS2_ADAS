@@ -22,6 +22,7 @@ print_and_execute() { echo "  -> run '${1}'"; eval ${1}; }
 
 print_and_execute "source \"/opt/ros/${ROS_DISTRO_NAME}/setup.bash\""
 print_and_execute "${BUILD_CMD} $@"
+print_and_execute "source install/setup.bash" 
 
 unset ROS_DISTRO_NAME BUILD_CMD
 unset -f print_and_execute
