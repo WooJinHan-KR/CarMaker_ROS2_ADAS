@@ -5,10 +5,10 @@
   -->
 
   <arg name="use_sim_time" default="false"/>
-  <arg name="ns" default="/hellocm"/>
+  <arg name="ns" default="/control"/>
 
   <!-- HelloCM: External ROS Node communicating with CarMaker -->
-  <node pkg="hellocm" exec="hellocm" name="hellocm" namespace="$(var ns)" output="screen" required="true">
+  <node pkg="control" exec="control" name="control" namespace="$(var ns)" output="screen" required="true">
     <param name="use_sim_time" value="$(var use_sim_time)" />
     <remap from="$(var ns)/cm2ext" to="/carmaker/cm2ext"/>
   </node>

@@ -12,23 +12,32 @@
 #include <chrono>
 #include <memory>
 
-#include "hellocm_msgs/msg/cm2_ext.hpp"
-#include "hellocm_msgs/msg/ext2_cm.hpp"
+#include "hellocm_msgs/msg/radar_data.hpp"
 #include "hellocm_msgs/srv/init.hpp"
+#include "hellocm_msgs/msg/aeb_system.hpp"
 #include "rclcpp/create_timer.hpp"
 #include "rclcpp/rclcpp.hpp"
+
+// ROS Package header
+#include "sensor_msgs/msg/point_cloud2.hpp"
+#include "tf2/LinearMath/Quaternion.h"                  /* Ros TF2 quaternion */
+#include "tf2_ros/transform_broadcaster.h"              /* Publish TF2 transforms */
+#include "tf2_ros/static_transform_broadcaster.h"
+#include "sensor_msgs/point_cloud_conversion.hpp"
+#include <angles/angles.h>
+#include <cstring>
 
 using namespace std::chrono_literals;
 using namespace std::placeholders;
 
-class HelloCM : public rclcpp::Node {
+class Planning : public rclcpp::Node {
  public:
-  HelloCM() : Node("hellocm"), cycle_no_(0), delay_(0) {
-    RCLCPP_INFO(this->get_logger(), "Start spinning...");
+  Planning() : Node("Planning"), cycle_no_(0), delay_(0) {
+    RCLCPP_INFO(this->get_logger(), "Start spinning(Planning)...");
     init();
   }
 
-  ~HelloCM() { RCLCPP_INFO(this->get_logger(), "Shutdown"); }
+  ~Planning() { RCLCPP_INFO(this->get_logger(), "Shutdown"); }
 
  private:
   /*! Cyclic log dependent on wall time (system time) */
@@ -38,8 +47,8 @@ class HelloCM : public rclcpp::Node {
   void on_timer();
 
   /*! Subscription callback function */
-  void topic_callback(const hellocm_msgs::msg::CM2Ext::SharedPtr msg);
-
+  void topic_callback_Lidar(const sensor_msgs::msg::PointCloud2::SharedPtr msg);
+  void topic_callback_Radar(const hellocm_msgs::msg::RadarData::SharedPtr msg);
   /*! Service callback function */
   void handle_service(
       const std::shared_ptr<rmw_request_id_t> request_header,
@@ -61,8 +70,10 @@ class HelloCM : public rclcpp::Node {
   /*!< Delay in seconds to demonstrate synchronization mechanism */
   double delay_;
 
-  rclcpp::Publisher<hellocm_msgs::msg::Ext2CM>::SharedPtr publisher_;
-  rclcpp::Subscription<hellocm_msgs::msg::CM2Ext>::SharedPtr subscription_;
+  rclcpp::Publisher<hellocm_msgs::msg::AEBSystem>::SharedPtr publisher_;
+  rclcpp::Subscription<sensor_msgs::msg::PointCloud2>::SharedPtr subscriptionL_;
+  rclcpp::Subscription<hellocm_msgs::msg::RadarData>::SharedPtr subscriptionR_;
+
 
   /*!< Service for resetting this node e.g. when simulation starts */
   rclcpp::Service<hellocm_msgs::srv::Init>::SharedPtr service_;
@@ -74,12 +85,14 @@ class HelloCM : public rclcpp::Node {
   rclcpp::TimerBase::SharedPtr timer_;
 };
 
-void HelloCM::init() {
-  publisher_ = this->create_publisher<hellocm_msgs::msg::Ext2CM>("ext2cm", 10);
-  subscription_ = this->create_subscription<hellocm_msgs::msg::CM2Ext>(
-      "cm2ext", 10, std::bind(&HelloCM::topic_callback, this, _1));
+void Planning::init() {
+  publisher_ = this->create_publisher<hellocm_msgs::msg::AEBSystem>("AEB_System", 10);
+  subscriptionL_ = this->create_subscription<sensor_msgs::msg::PointCloud2>(
+      "carmaker/perception/LidarRSI", 10, std::bind(&Planning::topic_callback_Lidar, this, _1));
+  subscriptionR_ = this->create_subscription<hellocm_msgs::msg::RadarData>(
+      "carmaker/perception/RadarRSI", 10, std::bind(&Planning::topic_callback_Radar, this, _1));
   service_ = this->create_service<hellocm_msgs::srv::Init>(
-      "init", std::bind(&HelloCM::handle_service, this, _1, _2, _3));
+      "init", std::bind(&Planning::handle_service, this, _1, _2, _3));
 
   bool use_sim_time;
   this->get_parameter("use_sim_time", use_sim_time);
@@ -96,10 +109,10 @@ void HelloCM::init() {
   RCLCPP_INFO(this->get_logger(), "  -> Cycle time = %dms", cycle_time_);
 
   wall_timer_ =
-      create_wall_timer(10s, std::bind(&HelloCM::on_wall_timer, this));
+      create_wall_timer(10s, std::bind(&Planning::on_wall_timer, this));
   timer_ = rclcpp::create_timer(this, this->get_clock(),
                                 std::chrono::milliseconds(cycle_time_),
-                                std::bind(&HelloCM::on_timer, this));
+                                std::bind(&Planning::on_timer, this));
 
   // Print general information after everything is done
   RCLCPP_INFO(this->get_logger(), "%s", "Initialization of ROS Node finished!");
@@ -123,8 +136,8 @@ void HelloCM::init() {
   }
 }
 
-void HelloCM::on_timer() {
-  hellocm_msgs::msg::Ext2CM msg;
+void Planning::on_timer() {
+  hellocm_msgs::msg::AEBSystem msg;
   msg.cycleno = static_cast<long>(++cycle_no_);
   msg.time = this->now();
 
@@ -147,7 +160,14 @@ void HelloCM::on_timer() {
               msg.cycleno);
 }
 
-void HelloCM::topic_callback(const hellocm_msgs::msg::CM2Ext::SharedPtr msg) {
+void Planning::topic_callback_Lidar(const sensor_msgs::msg::PointCloud2::SharedPtr /*msg*/) {
+  // Update variables
+  //printf("Lidar\n");
+  //RCLCPP_INFO(this->get_logger(), "[%.3f]: Sub Msg: Time %.3fs",
+  //            this->now().seconds(), rclcpp::Time(msg->time).seconds());
+}
+
+void Planning::topic_callback_Radar(const hellocm_msgs::msg::RadarData::SharedPtr msg) {
   // Update variables
   delay_ = msg->synthdelay;
   RCLCPP_INFO(this->get_logger(), "[%.3f]: Sub Msg: Time %.3fs, Cycle %lu",
@@ -155,7 +175,7 @@ void HelloCM::topic_callback(const hellocm_msgs::msg::CM2Ext::SharedPtr msg) {
               msg->cycleno);
 }
 
-void HelloCM::handle_service(
+void Planning::handle_service(
     const std::shared_ptr<rmw_request_id_t> request_header,
     const std::shared_ptr<hellocm_msgs::srv::Init::Request> request,
     const std::shared_ptr<hellocm_msgs::srv::Init::Response> response) {
@@ -185,7 +205,7 @@ void HelloCM::handle_service(
 
       timer_ = create_timer(this, this->get_clock(),
                             std::chrono::milliseconds(cycle_time_),
-                            std::bind(&HelloCM::on_timer, this));
+                            std::bind(&Planning::on_timer, this));
     }
   }
 
@@ -195,7 +215,7 @@ void HelloCM::handle_service(
 
 int main(int argc, char* argv[]) {
   rclcpp::init(argc, argv);
-  rclcpp::spin(std::make_shared<HelloCM>());
+  rclcpp::spin(std::make_shared<Planning>());
   rclcpp::shutdown();
   return 0;
 }

@@ -29,22 +29,28 @@ find_package(ament_cmake REQUIRED)
 find_package(rclcpp REQUIRED)
 find_package(cmrosutils REQUIRED)
 find_package(hellocm_msgs REQUIRED)
+find_package(std_msgs REQUIRED)
+find_package(sensor_msgs REQUIRED)
 
-add_library(${PROJECT_NAME} SHARED
-  src/cmnode.cpp
- )
+add_executable(${PROJECT_NAME} src/planning.cpp)
 
 ament_target_dependencies(${PROJECT_NAME}
     rclcpp
     cmrosutils
     hellocm_msgs
+    std_msgs
+    sensor_msgs
  )
 
 install(TARGETS
-   ${PROJECT_NAME}
-   DESTINATION lib
- )
+ ${PROJECT_NAME}
+ DESTINATION lib/${PROJECT_NAME}
+)
 
+install(DIRECTORY
+  launch
+  DESTINATION share/${PROJECT_NAME}/
+)
 #install(DIRECTORY include/
 #  DESTINATION include
 # )

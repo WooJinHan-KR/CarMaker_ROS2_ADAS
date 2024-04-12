@@ -2,17 +2,18 @@
 <?xml-model href="http://download.ros.org/schema/package_format3.xsd" schematypens="http://www.w3.org/2001/XMLSchema"?>
 <package format="3">
   <name>control</name>
-  <version>1.0.0</version>
-  <description>Control Autonomous drive</description>
-  <maintainer email="woojin.han@ipg-automotive.com">IPG Automotive KR</maintainer>
+  <version>0.1.0</version>
+  <description>
+    External ROS Node for simple communication with CarMaker.
+  </description>
+  <maintainer email="no@support.com">IPG Automotive GmbH/dbe</maintainer>
   <license>IPG Automotive GmbH</license>
 
   <buildtool_depend>ament_cmake</buildtool_depend>
 
   <depend>rclcpp</depend>
-  <depend>cmrosutils</depend>
   <depend>hellocm_msgs</depend>
-  
+
   <test_depend>ament_lint_auto</test_depend>
   <test_depend>ament_lint_common</test_depend>
 

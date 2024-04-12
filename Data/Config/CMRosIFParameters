@@ -79,7 +79,7 @@ Cfg.LaunchProc = ::MyCMRosIFUtils::LaunchProc
 #Launch.Args = hellocm hellocm.launch use_sim_time:="true"
 
 ## Launch arguments for ROS 2 (ros2 launch <args>)
-Launch.Args = hellocm hellocm.launch.py use_sim_time:=True
+Launch.Args = control control.launch.py use_sim_time:=True
 
 rqt.Args =
 

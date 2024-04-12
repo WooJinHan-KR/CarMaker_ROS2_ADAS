@@ -2,11 +2,10 @@
 # Message from CarMaker ROS Node to external ROS Node
 #
 
+# General ROS Header (optional)
 std_msgs/Header header
-string frame_id
-sensor_msgs/PointCloud2 pointcloud2
-float64[] velocity
-float64[] distance
+
+bool aebact
 
 # ROS time when message was sent (optional)
 builtin_interfaces/Time time

@@ -1,4 +1,4 @@
-#include "include/Filter.hpp"
+#include "control/Filter.hpp"
 #include <vector>
 
 void initMovingAverage(MovingAverageFilter *filter, int size) {

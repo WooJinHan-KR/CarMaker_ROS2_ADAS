@@ -1,4 +1,4 @@
-#include "include/PIDController.hpp"
+#include "control/PIDController.hpp"
 
 void PID_Init(PIDController *pid, double kp, double ki, double kd,
               double setpoint) {

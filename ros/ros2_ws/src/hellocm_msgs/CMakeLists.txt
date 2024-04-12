@@ -23,10 +23,11 @@ find_package(sensor_msgs REQUIRED)
 find_package(builtin_interfaces REQUIRED)
 
 rosidl_generate_interfaces(${PROJECT_NAME}
-  "msg/CM2Ext.msg"
-  "msg/Ext2CM.msg"
+  "msg/ControlInfo.msg"
+  "msg/VehicleInfo.msg"
   "srv/Init.srv"
   "msg/RadarData.msg"
+  "msg/AEBSystem.msg"
   DEPENDENCIES
     std_msgs
     sensor_msgs

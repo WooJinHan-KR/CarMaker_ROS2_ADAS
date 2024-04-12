@@ -22,7 +22,7 @@ startup_delay="bash -c 'sleep " + str(float(delay_factor) * int(vds_config)) + "
 vds_host=carmaker_host
 vds_port=str(2210 + int(vds_config))
 connection_tries="5"
-camera_name="vds_node_" + vds_host + "_" + vds_port
+camera_name="carmaker/perception/vds_node_" + vds_host + "_" + vds_port
 camera_frame=camera_name
 #<!-- VDS client -->
 
@@ -122,7 +122,7 @@ def generate_launch_description():
         ),        
         DeclareLaunchArgument(
             'ns',
-            default_value='/hellocm',
+            default_value='/control',
             description='Node namespace'),
         DeclareLaunchArgument(
             'use_sim_time',
@@ -134,16 +134,42 @@ def generate_launch_description():
             description='Node cycle time'),
         Node(
             namespace=LaunchConfiguration('ns'),
-            package="hellocm",
-            executable='hellocm',
-            name='hellocm',
+            package="control",
+            executable='control',
+            name='controller',
             output='screen',
             parameters=[
                 {'use_sim_time': LaunchConfiguration('use_sim_time')},
                 {'cycletime': LaunchConfiguration('cycletime')},
             ],
             remappings=[
-              ([LaunchConfiguration('ns'), '/cm2ext'], '/carmaker/cm2ext'),
+              ([LaunchConfiguration('ns'), '/VehicleInfo'], '/carmaker/VehicleInfo'),
             ]
+        ),
+        DeclareLaunchArgument(
+            'ns_p',
+            default_value='/planning',
+            description='Node namespace'),
+        DeclareLaunchArgument(
+            'use_sim_time',
+            default_value='False',
+            description='Use node with simulation time'),
+        DeclareLaunchArgument(
+            'cycletime',
+            default_value='10000',
+            description='Node cycle time'),
+        Node(
+            namespace=LaunchConfiguration("ns_p"),
+            package="planning",
+            executable="planning",
+            name="planner",
+            output="screen",
+            parameters=[
+                {"use_sim_time": LaunchConfiguration("use_sim_time")},
+                {"cycletime": LaunchConfiguration("cycletime")},
+            ]
+            #remappings=[
+            #    ([LaunchConfiguration("ns"), "/VehicleInfo"], "/carmaker/VehicleInfo"),
+            #]
         )
     ])
