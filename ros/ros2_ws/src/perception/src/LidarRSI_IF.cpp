@@ -127,11 +127,11 @@ CMNode_LidarRSI_IF_TestrunStartAtEnd (cm_ros::CMNode *CMNode)
     iGetTableOpt(Inf_Sensor, "Beams", LidarRSI_IF.BeamTable, VLP_16_NUMBER_OF_POINTS * 6, 6, &LidarRSI_IF.Beam_nRow);
 	InfoDelete(Inf_Sensor);
 
-    typedef CMJob::RosPublisher<sensor_msgs::msg::PointCloud2> Lidar_example;
+    typedef CMJob::RosPublisher<sensor_msgs::msg::PointCloud2> Lidar_RSI;
 	rclcpp::Node::SharedPtr nhp = CMNode->getNodeHandle();
     CMJob::JobScheduler& scheduler = CMNode->getScheduler();
     
-    auto job = std::make_shared<Lidar_example>(nhp, "Lidar_example");
+    auto job = std::make_shared<Lidar_RSI>(nhp, "Lidar_RSI");
 	job->setCycleTime(100);
     job->setCycleOffset(0);
 	job->setCallbackHook(CMJob::CallbackHook::Calc);
@@ -158,7 +158,7 @@ CMNode_LidarRSI_IF_TestrunStartAtEnd (cm_ros::CMNode *CMNode)
     LidarRSI_IF.TF.transform.translation.y = position[1];
     LidarRSI_IF.TF.transform.translation.z = position[2];
     LidarRSI_IF.TF.header.frame_id       = "Fr1";
-    LidarRSI_IF.TF.child_frame_id        = "Lidar_example";
+    LidarRSI_IF.TF.child_frame_id        = "Lidar_RSI";
 
     LidarRSI_IF.TF_br = std::make_shared<tf2_ros::StaticTransformBroadcaster>(nhp);
     LidarRSI_IF.TF_br->sendTransform(LidarRSI_IF.TF);
@@ -171,5 +171,5 @@ CMNode_LidarRSI_IF_TestrunEnd (cm_ros::CMNode *CMNode)
 {
     CMJob::JobScheduler& scheduler = CMNode->getScheduler();
 
-    scheduler.deleteJob("Lidar_example");
+    scheduler.deleteJob("Lidar_RSI");
 }
