@@ -22,7 +22,7 @@ startup_delay="bash -c 'sleep " + str(float(delay_factor) * int(vds_config)) + "
 vds_host=carmaker_host
 vds_port=str(2210 + int(vds_config))
 connection_tries="5"
-camera_name="carmaker/perception/vds_node_" + vds_host + "_" + vds_port
+camera_name="perception/vds_node_" + vds_host + "_" + vds_port
 camera_frame=camera_name
 #<!-- VDS client -->
 

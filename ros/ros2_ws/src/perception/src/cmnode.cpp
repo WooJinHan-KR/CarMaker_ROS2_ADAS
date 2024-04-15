@@ -12,6 +12,7 @@
 #include "perception/cmnode.hpp"
 #include "perception/LidarRSI_IF.hpp"
 #include "perception/RadarRSI_IF.hpp"
+#include "perception/Odom_IF.hpp"
 
 
 using cm_ros::CMNode;
@@ -35,6 +36,7 @@ int CMNode::userTestrunStartAtBegin() {
 int CMNode::userTestrunStartAtEnd() {
 	CMNode_LidarRSI_IF_TestrunStartAtEnd(this);
 	CMNode_RadarRSI_IF_TestrunStartAtEnd(this);
+	CMNode_Odom_IF_TestrunStartAtEnd(this);
 	return 1;
 }
 
@@ -67,6 +69,7 @@ int CMNode::userTestrunEnd() {
 
 	CMNode_LidarRSI_IF_TestrunEnd(this);
 	CMNode_RadarRSI_IF_TestrunEnd(this);
+	CMNode_Odom_IF_TestrunEnd(this);
 
 	return 1;
 }

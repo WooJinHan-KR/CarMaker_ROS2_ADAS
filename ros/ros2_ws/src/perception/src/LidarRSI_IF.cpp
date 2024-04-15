@@ -36,7 +36,7 @@ LidarRSI_Data_Fill (sensor_msgs::msg::PointCloud2& msg)
 	sensor_msgs::convertPointCloudToPointCloud2(pointcloud, msg);
 
 	msg.header.stamp = rclcpp::Clock().now();
-	msg.header.frame_id = "Lidar_example";
+	msg.header.frame_id = "Lidar_RSI";
 
 }
 
@@ -65,7 +65,7 @@ CMNode_LidarRSI_IF_TestrunStartAtEnd (cm_ros::CMNode *CMNode)
 	rclcpp::Node::SharedPtr nhp = CMNode->getNodeHandle();
     CMJob::JobScheduler& scheduler = CMNode->getScheduler();
     
-    auto job = std::make_shared<Lidar_RSI>(nhp, "perception/Lidar_RSI");
+    auto job = std::make_shared<Lidar_RSI>(nhp, "/perception/Lidar_RSI");
 	job->setCycleTime(100);
     job->setCycleOffset(0);
 	job->setCallbackHook(CMJob::CallbackHook::Calc);

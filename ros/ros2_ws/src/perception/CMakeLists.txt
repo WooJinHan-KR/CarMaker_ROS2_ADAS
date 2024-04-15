@@ -32,6 +32,7 @@ add_library(${PROJECT_NAME} SHARED
   src/cmnode.cpp
   src/LidarRSI_IF.cpp
   src/RadarRSI_IF.cpp
+  src/Odom_IF.cpp
 )
 
 

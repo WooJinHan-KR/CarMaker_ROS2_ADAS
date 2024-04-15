@@ -88,9 +88,9 @@ class Planning : public rclcpp::Node {
 void Planning::init() {
   publisher_ = this->create_publisher<hellocm_msgs::msg::AEBSystem>("AEB_System", 10);
   subscriptionL_ = this->create_subscription<sensor_msgs::msg::PointCloud2>(
-      "carmaker/perception/LidarRSI", 10, std::bind(&Planning::topic_callback_Lidar, this, _1));
+      "/perception/Lidar_RSI", 10, std::bind(&Planning::topic_callback_Lidar, this, _1));
   subscriptionR_ = this->create_subscription<hellocm_msgs::msg::RadarData>(
-      "carmaker/perception/RadarRSI", 10, std::bind(&Planning::topic_callback_Radar, this, _1));
+      "/perception/Radar_RSI", 10, std::bind(&Planning::topic_callback_Radar, this, _1));
   service_ = this->create_service<hellocm_msgs::srv::Init>(
       "init", std::bind(&Planning::handle_service, this, _1, _2, _3));
 
