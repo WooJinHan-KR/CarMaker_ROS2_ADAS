@@ -1,4 +1,4 @@
-#include "perception/RadarRSI_IF.hpp"
+#include "sensing/RadarRSI_IF.hpp"
 
 using CMJob::Log;
 
@@ -90,7 +90,7 @@ CMNode_RadarRSI_IF_TestrunStartAtEnd (cm_ros::CMNode *CMNode)
 	rclcpp::Node::SharedPtr nhp = CMNode->getNodeHandle();
     CMJob::JobScheduler& scheduler = CMNode->getScheduler();
     
-    auto job = std::make_shared<Radar_RSI>(nhp, "/perception/Radar_RSI");
+    auto job = std::make_shared<Radar_RSI>(nhp, "/sensing/Radar_RSI");
 	job->setCycleTime(100);
     job->setCycleOffset(0);
 	job->setCallbackHook(CMJob::CallbackHook::Calc);

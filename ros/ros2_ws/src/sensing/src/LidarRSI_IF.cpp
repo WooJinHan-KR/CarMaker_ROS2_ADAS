@@ -1,4 +1,4 @@
-#include "perception/LidarRSI_IF.hpp"
+#include "sensing/LidarRSI_IF.hpp"
 
 using CMJob::Log;
 
@@ -65,7 +65,7 @@ CMNode_LidarRSI_IF_TestrunStartAtEnd (cm_ros::CMNode *CMNode)
 	rclcpp::Node::SharedPtr nhp = CMNode->getNodeHandle();
     CMJob::JobScheduler& scheduler = CMNode->getScheduler();
     
-    auto job = std::make_shared<Lidar_RSI>(nhp, "/perception/Lidar_RSI");
+    auto job = std::make_shared<Lidar_RSI>(nhp, "/sensing/Lidar_RSI");
 	job->setCycleTime(100);
     job->setCycleOffset(0);
 	job->setCallbackHook(CMJob::CallbackHook::Calc);

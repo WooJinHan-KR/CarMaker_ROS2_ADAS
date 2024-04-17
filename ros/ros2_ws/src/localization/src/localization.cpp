@@ -12,32 +12,25 @@
 #include <chrono>
 #include <memory>
 
-#include "hellocm_msgs/msg/radar_data.hpp"
 #include "hellocm_msgs/srv/init.hpp"
 #include "hellocm_msgs/msg/aeb_system.hpp"
 #include "rclcpp/create_timer.hpp"
 #include "rclcpp/rclcpp.hpp"
 
 // ROS Package header
-#include "sensor_msgs/msg/point_cloud2.hpp"
-#include "tf2/LinearMath/Quaternion.h"                  /* Ros TF2 quaternion */
-#include "tf2_ros/transform_broadcaster.h"              /* Publish TF2 transforms */
-#include "tf2_ros/static_transform_broadcaster.h"
-#include "sensor_msgs/point_cloud_conversion.hpp"
-#include <angles/angles.h>
-#include <cstring>
+#include "nav_msgs/msg/odometry.hpp"
 
 using namespace std::chrono_literals;
 using namespace std::placeholders;
 
-class Planning : public rclcpp::Node {
+class Localization : public rclcpp::Node {
  public:
-  Planning() : Node("Planning"), cycle_no_(0), delay_(0) {
-    RCLCPP_INFO(this->get_logger(), "Start spinning(Planning)...");
+  Localization() : Node("Localization"), cycle_no_(0), delay_(0) {
+    RCLCPP_INFO(this->get_logger(), "Start spinning(Localization)...");
     init();
   }
 
-  ~Planning() { RCLCPP_INFO(this->get_logger(), "Shutdown"); }
+  ~Localization() { RCLCPP_INFO(this->get_logger(), "Shutdown"); }
 
  private:
   /*! Cyclic log dependent on wall time (system time) */
@@ -47,8 +40,7 @@ class Planning : public rclcpp::Node {
   void on_timer();
 
   /*! Subscription callback function */
-  void topic_callback_Lidar(const sensor_msgs::msg::PointCloud2::SharedPtr msg);
-  void topic_callback_Radar(const hellocm_msgs::msg::RadarData::SharedPtr msg);
+  void topic_callback_Odom(const nav_msgs::msg::Odometry::SharedPtr msg);
   /*! Service callback function */
   void handle_service(
       const std::shared_ptr<rmw_request_id_t> request_header,
@@ -71,8 +63,7 @@ class Planning : public rclcpp::Node {
   double delay_;
 
   rclcpp::Publisher<hellocm_msgs::msg::AEBSystem>::SharedPtr publisher_;
-  rclcpp::Subscription<sensor_msgs::msg::PointCloud2>::SharedPtr subscriptionL_;
-  rclcpp::Subscription<hellocm_msgs::msg::RadarData>::SharedPtr subscriptionR_;
+  rclcpp::Subscription<nav_msgs::msg::Odometry>::SharedPtr subscription_;
 
 
   /*!< Service for resetting this node e.g. when simulation starts */
@@ -85,14 +76,12 @@ class Planning : public rclcpp::Node {
   rclcpp::TimerBase::SharedPtr timer_;
 };
 
-void Planning::init() {
-  publisher_ = this->create_publisher<hellocm_msgs::msg::AEBSystem>("AEB_System", 10);
-  subscriptionL_ = this->create_subscription<sensor_msgs::msg::PointCloud2>(
-      "/sensing/Lidar_RSI", 10, std::bind(&Planning::topic_callback_Lidar, this, _1));
-  subscriptionR_ = this->create_subscription<hellocm_msgs::msg::RadarData>(
-      "/sensing/Radar_RSI", 10, std::bind(&Planning::topic_callback_Radar, this, _1));
+void Localization::init() {
+  publisher_ = this->create_publisher<hellocm_msgs::msg::AEBSystem>("Vehicle_loc", 10);
+  subscription_ = this->create_subscription<nav_msgs::msg::Odometry>(
+      "/sensing/Odometry_Data", 10, std::bind(&Localization::topic_callback_Odom, this, _1));
   service_ = this->create_service<hellocm_msgs::srv::Init>(
-      "init", std::bind(&Planning::handle_service, this, _1, _2, _3));
+      "init", std::bind(&Localization::handle_service, this, _1, _2, _3));
 
   bool use_sim_time;
   this->get_parameter("use_sim_time", use_sim_time);
@@ -109,10 +98,10 @@ void Planning::init() {
   RCLCPP_INFO(this->get_logger(), "  -> Cycle time = %dms", cycle_time_);
 
   wall_timer_ =
-      create_wall_timer(10s, std::bind(&Planning::on_wall_timer, this));
+      create_wall_timer(10s, std::bind(&Localization::on_wall_timer, this));
   timer_ = rclcpp::create_timer(this, this->get_clock(),
                                 std::chrono::milliseconds(cycle_time_),
-                                std::bind(&Planning::on_timer, this));
+                                std::bind(&Localization::on_timer, this));
 
   // Print general information after everything is done
   RCLCPP_INFO(this->get_logger(), "%s", "Initialization of ROS Node finished!");
@@ -136,7 +125,7 @@ void Planning::init() {
   }
 }
 
-void Planning::on_timer() {
+void Localization::on_timer() {
   hellocm_msgs::msg::AEBSystem msg;
   msg.cycleno = static_cast<long>(++cycle_no_);
   msg.time = this->now();
@@ -160,22 +149,15 @@ void Planning::on_timer() {
               msg.cycleno);
 }
 
-void Planning::topic_callback_Lidar(const sensor_msgs::msg::PointCloud2::SharedPtr /*msg*/) {
+void Localization::topic_callback_Odom(const nav_msgs::msg::Odometry::SharedPtr msg) {
   // Update variables
-  //printf("Lidar\n");
-  //RCLCPP_INFO(this->get_logger(), "[%.3f]: Sub Msg: Time %.3fs",
-  //            this->now().seconds(), rclcpp::Time(msg->time).seconds());
+  //delay_ = msg->synthdelay;
+  //RCLCPP_INFO(this->get_logger(), "[%.3f]: Sub Msg: Time %.3fs, Cycle %lu",
+  //            this->now().seconds(), rclcpp::Time(msg->time).seconds(),
+  //            msg->cycleno);
 }
 
-void Planning::topic_callback_Radar(const hellocm_msgs::msg::RadarData::SharedPtr msg) {
-  // Update variables
-  delay_ = msg->synthdelay;
-  RCLCPP_INFO(this->get_logger(), "[%.3f]: Sub Msg: Time %.3fs, Cycle %lu",
-              this->now().seconds(), rclcpp::Time(msg->time).seconds(),
-              msg->cycleno);
-}
-
-void Planning::handle_service(
+void Localization::handle_service(
     const std::shared_ptr<rmw_request_id_t> request_header,
     const std::shared_ptr<hellocm_msgs::srv::Init::Request> request,
     const std::shared_ptr<hellocm_msgs::srv::Init::Response> response) {
@@ -188,10 +170,6 @@ void Planning::handle_service(
   cycle_no_ = 0;
   delay_ = 0.0;
 
-  /*
-   * Check if parameter has changed!
-   *  TODO: use topic /parameter_events instead?
-   */
   const char param[] = "cycletime";
 
   if (this->has_parameter(param)) {
@@ -205,7 +183,7 @@ void Planning::handle_service(
 
       timer_ = create_timer(this, this->get_clock(),
                             std::chrono::milliseconds(cycle_time_),
-                            std::bind(&Planning::on_timer, this));
+                            std::bind(&Localization::on_timer, this));
     }
   }
 
@@ -215,7 +193,7 @@ void Planning::handle_service(
 
 int main(int argc, char* argv[]) {
   rclcpp::init(argc, argv);
-  rclcpp::spin(std::make_shared<Planning>());
+  rclcpp::spin(std::make_shared<Localization>());
   rclcpp::shutdown();
   return 0;
 }

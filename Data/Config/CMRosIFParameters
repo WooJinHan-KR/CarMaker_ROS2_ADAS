@@ -48,7 +48,7 @@ FileCreator = CMRosIF v0.7.0 2023-12-12 11:53:15
 
 #Cfg.Lib.Path = libcmnode_hellocm.so
 #Cfg.Lib.Path = libcmnode.so
-Cfg.Lib.Path = libperception.so
+Cfg.Lib.Path = libsensing.so
 Cfg.Mode = 1
 Cfg.Name = cm_node
 
@@ -79,7 +79,7 @@ Cfg.LaunchProc = ::MyCMRosIFUtils::LaunchProc
 #Launch.Args = hellocm hellocm.launch use_sim_time:="true"
 
 ## Launch arguments for ROS 2 (ros2 launch <args>)
-Launch.Args = control control.launch.py use_sim_time:=True
+Launch.Args = sensing sensing.launch.py use_sim_time:=True
 
 rqt.Args =
 

@@ -18,23 +18,25 @@ endif()
 # find dependencies
 find_package(ament_cmake REQUIRED)
 find_package(rclcpp REQUIRED)
-find_package(cmrosutils REQUIRED)
 find_package(hellocm_msgs REQUIRED)
+find_package(nav_msgs REQUIRED)
 
-
-add_library(${PROJECT_NAME} SHARED
-  src/cmnode.cpp
- )
+add_executable(${PROJECT_NAME} src/localization.cpp)
 
 ament_target_dependencies(${PROJECT_NAME}
     rclcpp
-    cmrosutils
     hellocm_msgs
-)
+    nav_msgs
+ )
 
 install(TARGETS
     ${PROJECT_NAME}
-    DESTINATION lib
+    DESTINATION lib/${PROJECT_NAME}
+)
+
+install(DIRECTORY
+  launch
+  DESTINATION share/${PROJECT_NAME}/
 )
 
 ament_export_libraries(${PROJECT_NAME})
@@ -42,6 +44,7 @@ ament_export_libraries(${PROJECT_NAME})
 ament_export_dependencies(rclcpp)
 ament_export_dependencies(cmrosutils)
 ament_export_dependencies(hellocm_msgs)
+ament_export_dependencies(nav_msgs)
 ament_export_dependencies(rosidl_default_runtime)
 
 if(BUILD_TESTING)

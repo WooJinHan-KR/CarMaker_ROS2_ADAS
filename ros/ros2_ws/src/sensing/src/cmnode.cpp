@@ -9,7 +9,11 @@
  ******************************************************************************
  */
 
-#include "cmnode.hpp"
+#include "sensing/cmnode.hpp"
+#include "sensing/LidarRSI_IF.hpp"
+#include "sensing/RadarRSI_IF.hpp"
+#include "sensing/Odom_IF.hpp"
+
 
 using cm_ros::CMNode;
 using CMJob::Log;
@@ -30,6 +34,9 @@ int CMNode::userTestrunStartAtBegin() {
 }
 
 int CMNode::userTestrunStartAtEnd() {
+	CMNode_LidarRSI_IF_TestrunStartAtEnd(this);
+	CMNode_RadarRSI_IF_TestrunStartAtEnd(this);
+	CMNode_Odom_IF_TestrunStartAtEnd(this);
 	return 1;
 }
 
@@ -42,6 +49,7 @@ void CMNode::userIn() {
 }
 
 int CMNode::userDrivmanCalc(const double& dt) {
+	//printf("\nhihihihihi\n");
 	return 1;
 }
 
@@ -58,6 +66,11 @@ void CMNode::userOut() {
 }
 
 int CMNode::userTestrunEnd() {
+
+	CMNode_LidarRSI_IF_TestrunEnd(this);
+	CMNode_RadarRSI_IF_TestrunEnd(this);
+	CMNode_Odom_IF_TestrunEnd(this);
+
 	return 1;
 }
 
