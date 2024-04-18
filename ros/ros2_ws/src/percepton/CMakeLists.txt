@@ -51,7 +51,7 @@ install(TARGETS
 
 install(DIRECTORY
   launch
-  DESTINATION share/${PROJECT_NAME}/
+  DESTINATION share/${PROJECT_NAME}
 )
 #install(DIRECTORY include/
 #  DESTINATION include

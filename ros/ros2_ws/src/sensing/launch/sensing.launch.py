@@ -65,8 +65,8 @@ def generate_launch_description():
         DeclareLaunchArgument('startup_delay', default_value=startup_delay),
         launch_ros.actions.Node(
             package="sensing",
-            node_executable="IPGMovie_VDS_helper.sh",
-            node_name="vds_movie_helper_"+vds_config,
+            executable="IPGMovie_VDS_helper.sh",
+            name="vds_movie_helper_"+vds_config,
             emulate_tty=True,
             arguments= ['vds_config', 'project_folder', 'carmaker_host'],
             prefix=[LaunchConfiguration('startup_delay')],
@@ -88,9 +88,9 @@ def generate_launch_description():
         DeclareLaunchArgument('binning_y', default_value=binning_y),
         launch_ros.actions.Node(
             package="sensing",
-            node_executable="carmaker_vds_client_node",
-            node_namespace=LaunchConfiguration('camera_name'),
-            node_name="node",
+            executable="carmaker_vds_client_node",
+            namespace=LaunchConfiguration('camera_name'),
+            name="node",
             emulate_tty=True,
             output="screen",
             prefix=[LaunchConfiguration('startup_delay')],
@@ -114,14 +114,14 @@ def generate_launch_description():
         DeclareLaunchArgument('camera_name_rqt', default_value='/' + camera_name + '/image_raw'),
         launch_ros.actions.Node(
             package="rqt_image_view",
-            node_executable="rqt_image_view",
-            node_name="image_view",
+            executable="rqt_image_view",
+            name="image_view",
             emulate_tty=True,
             arguments=[LaunchConfiguration('camera_name_rqt')],
             condition=IfCondition(LaunchConfiguration('start_rqt_image_view')),
         ),        
         DeclareLaunchArgument(
-            'ns',
+            'ns_cont',
             default_value='/control',
             description='Node namespace'),
         DeclareLaunchArgument(
@@ -133,7 +133,7 @@ def generate_launch_description():
             default_value='10000',
             description='Node cycle time'),
         Node(
-            namespace=LaunchConfiguration('ns'),
+            namespace=LaunchConfiguration('ns_cont'),
             package="control",
             executable='control',
             name='controller',
@@ -143,11 +143,11 @@ def generate_launch_description():
                 {'cycletime': LaunchConfiguration('cycletime')},
             ],
             remappings=[
-              ([LaunchConfiguration('ns'), '/VehicleInfo'], '/carmaker/VehicleInfo'),
+              ([LaunchConfiguration('ns_cont'), '/VehicleInfo'], '/carmaker/VehicleInfo'),
             ]
         ),
         DeclareLaunchArgument(
-            'ns_p',
+            'ns_plan',
             default_value='/planning',
             description='Node namespace'),
         DeclareLaunchArgument(
@@ -159,7 +159,7 @@ def generate_launch_description():
             default_value='10000',
             description='Node cycle time'),
         Node(
-            namespace=LaunchConfiguration("ns_p"),
+            namespace=LaunchConfiguration("ns_plan"),
             package="planning",
             executable="planning",
             name="planner",
@@ -168,8 +168,51 @@ def generate_launch_description():
                 {"use_sim_time": LaunchConfiguration("use_sim_time")},
                 {"cycletime": LaunchConfiguration("cycletime")},
             ]
-            #remappings=[
-            #    ([LaunchConfiguration("ns"), "/VehicleInfo"], "/carmaker/VehicleInfo"),
-            #]
+        ),        
+        DeclareLaunchArgument(
+            'ns_localize',
+            default_value='/localization',
+            description='Node namespace'),
+        DeclareLaunchArgument(
+            'use_sim_time',
+            default_value='False',
+            description='Use node with simulation time'),
+        DeclareLaunchArgument(
+            'cycletime',
+            default_value='10000',
+            description='Node cycle time'),
+        Node(
+            namespace=LaunchConfiguration('ns_localize'),
+            package="localization",
+            executable='localization',
+            name='localization',
+            output='screen',
+            parameters=[
+                {'use_sim_time': LaunchConfiguration('use_sim_time')},
+                {'cycletime': LaunchConfiguration('cycletime')},
+            ]
+        ),        
+        DeclareLaunchArgument(
+            'ns_percept',
+            default_value='/perception',
+            description='Node namespace'),
+        DeclareLaunchArgument(
+            'use_sim_time',
+            default_value='False',
+            description='Use node with simulation time'),
+        DeclareLaunchArgument(
+            'cycletime',
+            default_value='10000',
+            description='Node cycle time'),
+        Node(
+            namespace=LaunchConfiguration('ns_percept'),
+            package="perception",
+            executable='perception',
+            name='perception',
+            output='screen',
+            parameters=[
+                {'use_sim_time': LaunchConfiguration('use_sim_time')},
+                {'cycletime': LaunchConfiguration('cycletime')},
+            ]
         )
     ])

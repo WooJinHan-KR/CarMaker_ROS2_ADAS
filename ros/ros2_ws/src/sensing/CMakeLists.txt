@@ -80,10 +80,6 @@ install(
   DESTINATION lib/${PROJECT_NAME}
 )
 
-#install(DIRECTORY include/
-#  DESTINATION include
-# )
-
 ament_export_libraries(${PROJECT_NAME})
 
 ament_export_dependencies(rclcpp)

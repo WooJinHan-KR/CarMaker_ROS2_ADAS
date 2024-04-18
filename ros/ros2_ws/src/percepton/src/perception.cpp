@@ -25,20 +25,18 @@
 #include "tf2_ros/transform_broadcaster.h"              /* Publish TF2 transforms */
 #include "tf2_ros/static_transform_broadcaster.h"
 #include "sensor_msgs/point_cloud_conversion.hpp"
-#include <angles/angles.h>
-#include <cstring>
 
 using namespace std::chrono_literals;
 using namespace std::placeholders;
 
 class Perception : public rclcpp::Node {
  public:
-  Planning() : Node("Perception"), cycle_no_(0), delay_(0) {
+  Perception() : Node("Perception"), cycle_no_(0), delay_(0) {
     RCLCPP_INFO(this->get_logger(), "Start spinning(Perception)...");
     init();
   }
 
-  ~Planning() { RCLCPP_INFO(this->get_logger(), "Shutdown"); }
+  ~Perception() { RCLCPP_INFO(this->get_logger(), "Shutdown"); }
 
  private:
   /*! Cyclic log dependent on wall time (system time) */
