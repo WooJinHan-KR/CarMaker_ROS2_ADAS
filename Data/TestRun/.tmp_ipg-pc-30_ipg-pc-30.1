@@ -1592,115 +1592,127 @@ Vehicle.Routing.Type = Route
 Vehicle.Routing.ObjId = 35
 Vehicle.StartPos.Type = Route
 Vehicle.StartPos.ObjId = 35
-Vehicle.StartPos = 1250.00 0
+Vehicle.StartPos = 0 0
 Vehicle.StartPos.Orientation.Type = Relative
 Vehicle.StartPos.Orientation = 0
-DrivMan.nMan = 1
+DrivMan.nMan = 2
 DrivMan.Man.Start.Velocity = 100
 DrivMan.Man.Start.GearNo = 5
 DrivMan.Man.Start.SteerAng = 0
-DrivMan.Man.Start.LaneOffset = -3.75
+DrivMan.Man.Start.LaneOffset = 0
 DrivMan.Man.Start.OperatorActive = 1
 DrivMan.Man.Start.OperatorState = drive
 DrivMan.VhclOperator.Kind = IPGOperator 1
-DrivMan.Man.0.nLongSteps = 7
-DrivMan.Man.0.nLatSteps = 7
+DrivMan.Man.0.nLongSteps = 1
+DrivMan.Man.0.nLatSteps = 1
 DrivMan.Man.0.CombinedSteps = 1
 DrivMan.Man.0.MaxExec = 1
 DrivMan.Man.0.ConsiderDomain = own
-DrivMan.Man.0.Transition.Interrupt = end
+DrivMan.Man.0.Transition.Interrupt = self
 DrivMan.Man.0.Transition.EndCond = end
 DrivMan.Man.0.Transition.SimultanStart = end
-DrivMan.Man.0.LongStep.0.Info = Drive right lane
-DrivMan.Man.0.LongStep.0.Cmds:
-	Eval first(Car.Road.sRoad>1450) ? StepJump("ToMiddle")
-	Eval first(Car.Road.sRoad>2700) ? StepJump("ToMiddle")
-DrivMan.Man.0.LongStep.0.Label = RightLane
+DrivMan.Man.0.LongStep.0.TimeLimit = 2000
 DrivMan.Man.0.LongStep.0.Dyn = Driver 1 0
-DrivMan.Man.0.LongStep.1.Info = Drive middle lane
-DrivMan.Man.0.LongStep.1.Cmds:
-	Eval first(Car.Road.sRoad>2450) ? StepJump("ToRight")
-	Eval first(Car.Road.sRoad>2800) ? StepJump("ToLeft")
-DrivMan.Man.0.LongStep.1.Label = MiddleLane
-DrivMan.Man.0.LongStep.1.Dyn = Driver 1 0
-DrivMan.Man.0.LongStep.2.Info = Drive left lane
-DrivMan.Man.0.LongStep.2.Cmds:
-	Eval first(Car.Road.sRoad>3450) ? StepJump("Ende")
-DrivMan.Man.0.LongStep.2.Label = LeftLane
-DrivMan.Man.0.LongStep.2.Dyn = Driver 1 0
-DrivMan.Man.0.LongStep.3.Info = Change to right lane
-DrivMan.Man.0.LongStep.3.Cmds:
-	Eval DM.LaneOffset <= -3.74 ? StepJump("RightLane")
-	Eval DM.LaneOffset > -3.74 ? DM.Lights.Indicator = -1 : DM.Lights.Indicator = 0
-DrivMan.Man.0.LongStep.3.Label = ToRight
-DrivMan.Man.0.LongStep.3.TimeLimit = 50
-DrivMan.Man.0.LongStep.3.DistLimit = 150
-DrivMan.Man.0.LongStep.3.Dyn = Driver 1 0
-DrivMan.Man.0.LongStep.4.Info = Change to middle lane
-DrivMan.Man.0.LongStep.4.Cmds:
-	Eval (DM.LaneOffset >= -0.1 && DM.LaneOffset <= 0.1) ? StepJump("MiddleLane")
-	Eval (DM.LaneOffset >= -0.1 && DM.LaneOffset <= 0.1) ? (DM.Lights.Indicator = 0) : (DM.LaneOffset < -0.1 ? DM.Lights.Indicator = 1 : DM.Lights.Indicator = -1)
-DrivMan.Man.0.LongStep.4.Label = ToMiddle
-DrivMan.Man.0.LongStep.4.TimeLimit = 50
-DrivMan.Man.0.LongStep.4.DistLimit = 150
-DrivMan.Man.0.LongStep.4.Dyn = Driver 1 0
-DrivMan.Man.0.LongStep.5.Info = Change to left lane
-DrivMan.Man.0.LongStep.5.Cmds:
-	Eval DM.LaneOffset >= 3.74 ? StepJump("LeftLane")
-	Eval DM.LaneOffset < 3.74 ? DM.Lights.Indicator = 1 : DM.Lights.Indicator = 0
-DrivMan.Man.0.LongStep.5.Label = ToLeft
-DrivMan.Man.0.LongStep.5.TimeLimit = 50
-DrivMan.Man.0.LongStep.5.DistLimit = 150
-DrivMan.Man.0.LongStep.5.Dyn = Driver 1 0
-DrivMan.Man.0.LongStep.6.Label = Ende
-DrivMan.Man.0.LongStep.6.TimeLimit = 0
-DrivMan.Man.0.LongStep.6.DistLimit = 0
-DrivMan.Man.0.LongStep.6.Dyn = Driver 1 0
-DrivMan.Man.0.LatStep.0.Info = Drive right lane
-DrivMan.Man.0.LatStep.0.Cmds:
+DrivMan.Man.0.LatStep.0.TimeLimit = 2000
+DrivMan.Man.0.LatStep.0.Dyn = Driver 0
+DrivMan.Man.1.nLongSteps = 7
+DrivMan.Man.1.nLatSteps = 7
+DrivMan.Man.1.CombinedSteps = 1
+DrivMan.Man.1.MaxExec = 1
+DrivMan.Man.1.ConsiderDomain = own
+DrivMan.Man.1.Transition.Interrupt = end
+DrivMan.Man.1.Transition.EndCond = end
+DrivMan.Man.1.Transition.SimultanStart = end
+DrivMan.Man.1.LongStep.0.Info = Drive right lane
+DrivMan.Man.1.LongStep.0.Cmds:
 	Eval first(Car.Road.sRoad>1450) ? StepJump("ToMiddle")
 	Eval first(Car.Road.sRoad>2700) ? StepJump("ToMiddle")
-DrivMan.Man.0.LatStep.0.Label = RightLane
-DrivMan.Man.0.LatStep.0.Dyn = Driver -3.75
-DrivMan.Man.0.LatStep.1.Info = Drive middle lane
-DrivMan.Man.0.LatStep.1.Cmds:
+DrivMan.Man.1.LongStep.0.Label = RightLane
+DrivMan.Man.1.LongStep.0.Dyn = Driver 1 0
+DrivMan.Man.1.LongStep.1.Info = Drive middle lane
+DrivMan.Man.1.LongStep.1.Cmds:
 	Eval first(Car.Road.sRoad>2450) ? StepJump("ToRight")
 	Eval first(Car.Road.sRoad>2800) ? StepJump("ToLeft")
-DrivMan.Man.0.LatStep.1.Label = MiddleLane
-DrivMan.Man.0.LatStep.1.Dyn = Driver 0
-DrivMan.Man.0.LatStep.2.Info = Drive left lane
-DrivMan.Man.0.LatStep.2.Cmds:
+DrivMan.Man.1.LongStep.1.Label = MiddleLane
+DrivMan.Man.1.LongStep.1.Dyn = Driver 1 0
+DrivMan.Man.1.LongStep.2.Info = Drive left lane
+DrivMan.Man.1.LongStep.2.Cmds:
 	Eval first(Car.Road.sRoad>3450) ? StepJump("Ende")
-DrivMan.Man.0.LatStep.2.Label = LeftLane
-DrivMan.Man.0.LatStep.2.Dyn = Driver 3.75
-DrivMan.Man.0.LatStep.3.Info = Change to right lane
-DrivMan.Man.0.LatStep.3.Cmds:
+DrivMan.Man.1.LongStep.2.Label = LeftLane
+DrivMan.Man.1.LongStep.2.Dyn = Driver 1 0
+DrivMan.Man.1.LongStep.3.Info = Change to right lane
+DrivMan.Man.1.LongStep.3.Cmds:
 	Eval DM.LaneOffset <= -3.74 ? StepJump("RightLane")
 	Eval DM.LaneOffset > -3.74 ? DM.Lights.Indicator = -1 : DM.Lights.Indicator = 0
-DrivMan.Man.0.LatStep.3.Label = ToRight
-DrivMan.Man.0.LatStep.3.TimeLimit = 50
-DrivMan.Man.0.LatStep.3.DistLimit = 150
-DrivMan.Man.0.LatStep.3.Dyn = Driver -3.75
-DrivMan.Man.0.LatStep.4.Info = Change to middle lane
-DrivMan.Man.0.LatStep.4.Cmds:
+DrivMan.Man.1.LongStep.3.Label = ToRight
+DrivMan.Man.1.LongStep.3.TimeLimit = 50
+DrivMan.Man.1.LongStep.3.DistLimit = 150
+DrivMan.Man.1.LongStep.3.Dyn = Driver 1 0
+DrivMan.Man.1.LongStep.4.Info = Change to middle lane
+DrivMan.Man.1.LongStep.4.Cmds:
 	Eval (DM.LaneOffset >= -0.1 && DM.LaneOffset <= 0.1) ? StepJump("MiddleLane")
 	Eval (DM.LaneOffset >= -0.1 && DM.LaneOffset <= 0.1) ? (DM.Lights.Indicator = 0) : (DM.LaneOffset < -0.1 ? DM.Lights.Indicator = 1 : DM.Lights.Indicator = -1)
-DrivMan.Man.0.LatStep.4.Label = ToMiddle
-DrivMan.Man.0.LatStep.4.TimeLimit = 50
-DrivMan.Man.0.LatStep.4.DistLimit = 150
-DrivMan.Man.0.LatStep.4.Dyn = Driver 0
-DrivMan.Man.0.LatStep.5.Info = Change to left lane
-DrivMan.Man.0.LatStep.5.Cmds:
+DrivMan.Man.1.LongStep.4.Label = ToMiddle
+DrivMan.Man.1.LongStep.4.TimeLimit = 50
+DrivMan.Man.1.LongStep.4.DistLimit = 150
+DrivMan.Man.1.LongStep.4.Dyn = Driver 1 0
+DrivMan.Man.1.LongStep.5.Info = Change to left lane
+DrivMan.Man.1.LongStep.5.Cmds:
 	Eval DM.LaneOffset >= 3.74 ? StepJump("LeftLane")
 	Eval DM.LaneOffset < 3.74 ? DM.Lights.Indicator = 1 : DM.Lights.Indicator = 0
-DrivMan.Man.0.LatStep.5.Label = ToLeft
-DrivMan.Man.0.LatStep.5.TimeLimit = 50
-DrivMan.Man.0.LatStep.5.DistLimit = 150
-DrivMan.Man.0.LatStep.5.Dyn = Driver 3.75
-DrivMan.Man.0.LatStep.6.Label = Ende
-DrivMan.Man.0.LatStep.6.TimeLimit = 0
-DrivMan.Man.0.LatStep.6.DistLimit = 0
-DrivMan.Man.0.LatStep.6.Dyn = Driver 0
+DrivMan.Man.1.LongStep.5.Label = ToLeft
+DrivMan.Man.1.LongStep.5.TimeLimit = 50
+DrivMan.Man.1.LongStep.5.DistLimit = 150
+DrivMan.Man.1.LongStep.5.Dyn = Driver 1 0
+DrivMan.Man.1.LongStep.6.Label = Ende
+DrivMan.Man.1.LongStep.6.TimeLimit = 0
+DrivMan.Man.1.LongStep.6.DistLimit = 0
+DrivMan.Man.1.LongStep.6.Dyn = Driver 1 0
+DrivMan.Man.1.LatStep.0.Info = Drive right lane
+DrivMan.Man.1.LatStep.0.Cmds:
+	Eval first(Car.Road.sRoad>1450) ? StepJump("ToMiddle")
+	Eval first(Car.Road.sRoad>2700) ? StepJump("ToMiddle")
+DrivMan.Man.1.LatStep.0.Label = RightLane
+DrivMan.Man.1.LatStep.0.Dyn = Driver -3.75
+DrivMan.Man.1.LatStep.1.Info = Drive middle lane
+DrivMan.Man.1.LatStep.1.Cmds:
+	Eval first(Car.Road.sRoad>2450) ? StepJump("ToRight")
+	Eval first(Car.Road.sRoad>2800) ? StepJump("ToLeft")
+DrivMan.Man.1.LatStep.1.Label = MiddleLane
+DrivMan.Man.1.LatStep.1.Dyn = Driver 0
+DrivMan.Man.1.LatStep.2.Info = Drive left lane
+DrivMan.Man.1.LatStep.2.Cmds:
+	Eval first(Car.Road.sRoad>3450) ? StepJump("Ende")
+DrivMan.Man.1.LatStep.2.Label = LeftLane
+DrivMan.Man.1.LatStep.2.Dyn = Driver 3.75
+DrivMan.Man.1.LatStep.3.Info = Change to right lane
+DrivMan.Man.1.LatStep.3.Cmds:
+	Eval DM.LaneOffset <= -3.74 ? StepJump("RightLane")
+	Eval DM.LaneOffset > -3.74 ? DM.Lights.Indicator = -1 : DM.Lights.Indicator = 0
+DrivMan.Man.1.LatStep.3.Label = ToRight
+DrivMan.Man.1.LatStep.3.TimeLimit = 50
+DrivMan.Man.1.LatStep.3.DistLimit = 150
+DrivMan.Man.1.LatStep.3.Dyn = Driver -3.75
+DrivMan.Man.1.LatStep.4.Info = Change to middle lane
+DrivMan.Man.1.LatStep.4.Cmds:
+	Eval (DM.LaneOffset >= -0.1 && DM.LaneOffset <= 0.1) ? StepJump("MiddleLane")
+	Eval (DM.LaneOffset >= -0.1 && DM.LaneOffset <= 0.1) ? (DM.Lights.Indicator = 0) : (DM.LaneOffset < -0.1 ? DM.Lights.Indicator = 1 : DM.Lights.Indicator = -1)
+DrivMan.Man.1.LatStep.4.Label = ToMiddle
+DrivMan.Man.1.LatStep.4.TimeLimit = 50
+DrivMan.Man.1.LatStep.4.DistLimit = 150
+DrivMan.Man.1.LatStep.4.Dyn = Driver 0
+DrivMan.Man.1.LatStep.5.Info = Change to left lane
+DrivMan.Man.1.LatStep.5.Cmds:
+	Eval DM.LaneOffset >= 3.74 ? StepJump("LeftLane")
+	Eval DM.LaneOffset < 3.74 ? DM.Lights.Indicator = 1 : DM.Lights.Indicator = 0
+DrivMan.Man.1.LatStep.5.Label = ToLeft
+DrivMan.Man.1.LatStep.5.TimeLimit = 50
+DrivMan.Man.1.LatStep.5.DistLimit = 150
+DrivMan.Man.1.LatStep.5.Dyn = Driver 3.75
+DrivMan.Man.1.LatStep.6.Label = Ende
+DrivMan.Man.1.LatStep.6.TimeLimit = 0
+DrivMan.Man.1.LatStep.6.DistLimit = 0
+DrivMan.Man.1.LatStep.6.Dyn = Driver 0
 Driver.Info = Example driver template
 Driver.Mode = std
 Driver.MultiStep = 1

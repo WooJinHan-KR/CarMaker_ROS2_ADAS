@@ -168,6 +168,29 @@ def generate_launch_description():
                 {"use_sim_time": LaunchConfiguration("use_sim_time")},
                 {"cycletime": LaunchConfiguration("cycletime")},
             ]
+        ),
+        DeclareLaunchArgument(
+            'ns_globalpath',
+            default_value='/global_path',
+            description='Node namespace'),
+        DeclareLaunchArgument(
+            'use_sim_time',
+            default_value='False',
+            description='Use node with simulation time'),
+        DeclareLaunchArgument(
+            'cycletime',
+            default_value='10000',
+            description='Node cycle time'),
+        Node(
+            namespace=LaunchConfiguration("ns_globalpath"),
+            package="planning",
+            executable="global_path",
+            name="global_path",
+            output="screen",
+            parameters=[
+                {"use_sim_time": LaunchConfiguration("use_sim_time")},
+                {"cycletime": LaunchConfiguration("cycletime")},
+            ]
         ),        
         DeclareLaunchArgument(
             'ns_localize',
