@@ -18,7 +18,6 @@ doc/*
 include/*
 !include/*
 lib/*
-!lib/*
 Movie/*
 !Movie/*
 MovieNX/*
@@ -31,6 +30,10 @@ SimOutput/*
 src_cm4sl/*
 src/.settings/org.eclipse.cdt.core.prefs
 src/.settings/org.eclipse.core.resources.prefs
+
+Data/Road/*
+Data/Script/Examples/*
+Data/TestRun/*
 
 # Compiled Java class files
 *.class
