@@ -3,77 +3,51 @@
 using CMJob::Log;
 
 void
-RadarRSI_Data_Fill (hellocm_msgs::msg::RadarData& msg)
+RadarRSI_Data_Fill (sensor_msgs::msg::PointCloud2& msg)
 {
-    //geometry_msgs::msg::Point32 points;
-	//sensor_msgs::msg::ChannelFloat32 channels;
-	//channels.name = "Power";
-	//sensor_msgs::msg::PointCloud pointcloud;
+    geometry_msgs::msg::Point32 points;
+	sensor_msgs::msg::ChannelFloat32 channels;
+	channels.name = "Power";
+	sensor_msgs::msg::PointCloud pointcloud;
+
 	//clearing vector data to avoid overflows
-	//channels.values.clear();
-
-	//Radar Quantity processing
-    sensor_msgs::msg::PointCloud2 pointcloud;
-
-    // Set the fields
-    pointcloud.height = 1;  // Height of the pointcloud, typically 1 for unordered point clouds
-    pointcloud.width = RadarRSI[0].nDetections;  // Number of points in the pointcloud
-    pointcloud.fields.resize(3);  // Resize the fields array to hold x, y, z fields
-    pointcloud.fields[0].name = "x";  // Name of the first field
-    pointcloud.fields[0].offset = 0;  // Offset of the first field in bytes
-    pointcloud.fields[0].datatype = sensor_msgs::msg::PointField::FLOAT32;  // Data type of the first field
-    pointcloud.fields[0].count = 1;  // Number of elements in the first field
-    pointcloud.fields[1].name = "y";  // Name of the second field
-    pointcloud.fields[1].offset = 4;  // Offset of the second field in bytes (FLOAT32 is 4 bytes)
-    pointcloud.fields[1].datatype = sensor_msgs::msg::PointField::FLOAT32;  // Data type of the second field
-    pointcloud.fields[1].count = 1;  // Number of elements in the second field
-    pointcloud.fields[2].name = "z";  // Name of the third field
-    pointcloud.fields[2].offset = 8;  // Offset of the third field in bytes
-    pointcloud.fields[2].datatype = sensor_msgs::msg::PointField::FLOAT32;  // Data type of the third field
-    pointcloud.fields[2].count = 1;  // Number of elements in the third field
-
-    // Calculate the total size of each point in the pointcloud (x, y, z fields)
-    pointcloud.point_step = 12;  // 3 fields * 4 bytes per field (FLOAT32)
-    pointcloud.row_step = pointcloud.point_step * RadarRSI[0].nDetections;  // Total size of all points in the pointcloud
-
-    // Resize the data array to hold all the points
-    pointcloud.data.resize(pointcloud.row_step * pointcloud.height);
+	channels.values.clear();
 
 	for (int j = 0; j < RadarRSI[0].nDetections; j++) {
 
-		const double x = RadarRSI[0].DetPoints[j].Coordinates[0];
-		const double y = RadarRSI[0].DetPoints[j].Coordinates[1];
-		const double z = RadarRSI[0].DetPoints[j].Coordinates[2];
 
-		//points.x = x;
-		//points.y = y;
-		//points.z = z;
+		points.x = RadarRSI[0].DetPoints[j].Coordinates[0];
+		points.y = RadarRSI[0].DetPoints[j].Coordinates[1];
+		points.z = RadarRSI[0].DetPoints[j].Coordinates[2];
 
-        size_t offset = j * pointcloud.point_step;
+        //size_t offset = j * pointcloud.point_step;
 
-        double distance = std::sqrt(std::pow(x, 2) + std::pow(y, 2) + std::pow(z, 2));
+        double distance = std::sqrt(std::pow(points.x, 2) + std::pow(points.y, 2) + std::pow(points.z, 2));
 
-		//pointcloud.points.push_back(points);
-		//channels.values.push_back(RadarRSI[0].DetPoints[j].Power);
-        memcpy(&pointcloud.data[offset], &x, sizeof(float));
-        memcpy(&pointcloud.data[offset + 4], &y, sizeof(float));
-        memcpy(&pointcloud.data[offset + 8], &z, sizeof(float));
-        msg.distance.push_back(distance);
-        msg.velocity.push_back(RadarRSI[0].DetPoints[j].Velocity);
-	}
-	
+		pointcloud.points.push_back(points);
+		channels.values.push_back(RadarRSI[0].DetPoints[j].Power);
+        //memcpy(&pointcloud.data[offset], &x, sizeof(float));
+        //memcpy(&pointcloud.data[offset + 4], &y, sizeof(float));
+        //memcpy(&pointcloud.data[offset + 8], &z, sizeof(float));
+        //msg.distance.push_back(distance);
+        //msg.velocity.push_back(RadarRSI[0].DetPoints[j].Velocity);
+	}	
 	//pointcloud.channels.push_back(channels);
     //sensor_msgs::convertPointCloudToPointCloud2(pointcloud, msg.pointcloud2);
 
-	pointcloud.header.stamp = rclcpp::Clock().now();
-	pointcloud.header.frame_id = "Radar_RSI";
+    pointcloud.channels.push_back(channels);
+
+	sensor_msgs::convertPointCloudToPointCloud2(pointcloud, msg);
+
+	msg.header.stamp = rclcpp::Clock().now();
+	msg.header.frame_id = "Radar_RSI";
 
     // Set other fields of the pointcloud message
-    pointcloud.is_bigendian = false;  // Endianness of the data (false for little endian)
-    pointcloud.is_dense = true;  // Whether the pointcloud contains all finite points
+    //pointcloud.is_bigendian = false;  // Endianness of the data (false for little endian)
+    //pointcloud.is_dense = true;  // Whether the pointcloud contains all finite points
 
     // Set the pointcloud message in the RadarData message
-    msg.pointcloud2 = pointcloud;
+    //msg.pointcloud2 = pointcloud;
 
 }
 
@@ -86,7 +60,7 @@ CMNode_RadarRSI_IF_TestrunStartAtEnd (cm_ros::CMNode *CMNode)
     
     if(RadarRSICount < 1) return 0;
 
-    typedef CMJob::RosPublisher<hellocm_msgs::msg::RadarData> Radar_RSI;
+    typedef CMJob::RosPublisher<sensor_msgs::msg::PointCloud2> Radar_RSI;
 	rclcpp::Node::SharedPtr nhp = CMNode->getNodeHandle();
     CMJob::JobScheduler& scheduler = CMNode->getScheduler();
     

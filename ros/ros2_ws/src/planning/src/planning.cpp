@@ -48,7 +48,7 @@ class Planning : public rclcpp::Node {
 
   /*! Subscription callback function */
   void topic_callback_Lidar(const sensor_msgs::msg::PointCloud2::SharedPtr msg);
-  void topic_callback_Radar(const hellocm_msgs::msg::RadarData::SharedPtr msg);
+  void topic_callback_Radar(const sensor_msgs::msg::PointCloud2::SharedPtr msg);
   /*! Service callback function */
   void handle_service(
       const std::shared_ptr<rmw_request_id_t> request_header,
@@ -72,7 +72,7 @@ class Planning : public rclcpp::Node {
 
   rclcpp::Publisher<hellocm_msgs::msg::AEBSystem>::SharedPtr publisher_;
   rclcpp::Subscription<sensor_msgs::msg::PointCloud2>::SharedPtr subscriptionL_;
-  rclcpp::Subscription<hellocm_msgs::msg::RadarData>::SharedPtr subscriptionR_;
+  rclcpp::Subscription<sensor_msgs::msg::PointCloud2>::SharedPtr subscriptionR_;
 
 
   /*!< Service for resetting this node e.g. when simulation starts */
@@ -89,7 +89,7 @@ void Planning::init() {
   publisher_ = this->create_publisher<hellocm_msgs::msg::AEBSystem>("AEB_System", 10);
   subscriptionL_ = this->create_subscription<sensor_msgs::msg::PointCloud2>(
       "/sensing/Lidar_RSI", 10, std::bind(&Planning::topic_callback_Lidar, this, _1));
-  subscriptionR_ = this->create_subscription<hellocm_msgs::msg::RadarData>(
+  subscriptionR_ = this->create_subscription<sensor_msgs::msg::PointCloud2>(
       "/sensing/Radar_RSI", 10, std::bind(&Planning::topic_callback_Radar, this, _1));
   service_ = this->create_service<hellocm_msgs::srv::Init>(
       "init", std::bind(&Planning::handle_service, this, _1, _2, _3));
@@ -167,12 +167,12 @@ void Planning::topic_callback_Lidar(const sensor_msgs::msg::PointCloud2::SharedP
   //            this->now().seconds(), rclcpp::Time(msg->time).seconds());
 }
 
-void Planning::topic_callback_Radar(const hellocm_msgs::msg::RadarData::SharedPtr msg) {
+void Planning::topic_callback_Radar(const sensor_msgs::msg::PointCloud2::SharedPtr /*msg*/) {
   // Update variables
-  delay_ = msg->synthdelay;
-  RCLCPP_INFO(this->get_logger(), "[%.3f]: Sub Msg: Time %.3fs, Cycle %lu",
-              this->now().seconds(), rclcpp::Time(msg->time).seconds(),
-              msg->cycleno);
+  //delay_ = msg->synthdelay;
+  //RCLCPP_INFO(this->get_logger(), "[%.3f]: Sub Msg: Time %.3fs, Cycle %lu",
+  //            this->now().seconds(), rclcpp::Time(msg->time).seconds(),
+  //            msg->cycleno);
 }
 
 void Planning::handle_service(
