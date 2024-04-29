@@ -20,20 +20,18 @@ RadarRSI_Data_Fill (sensor_msgs::msg::PointCloud2& msg)
 		points.y = RadarRSI[0].DetPoints[j].Coordinates[1];
 		points.z = RadarRSI[0].DetPoints[j].Coordinates[2];
 
-        //size_t offset = j * pointcloud.point_step;
-
         double distance = std::sqrt(std::pow(points.x, 2) + std::pow(points.y, 2) + std::pow(points.z, 2));
+        double angle = std::atan2(points.y, points.x) * 180.0 / M_PI;
 
-		pointcloud.points.push_back(points);
-		channels.values.push_back(RadarRSI[0].DetPoints[j].Power);
-        //memcpy(&pointcloud.data[offset], &x, sizeof(float));
-        //memcpy(&pointcloud.data[offset + 4], &y, sizeof(float));
-        //memcpy(&pointcloud.data[offset + 8], &z, sizeof(float));
-        //msg.distance.push_back(distance);
-        //msg.velocity.push_back(RadarRSI[0].DetPoints[j].Velocity);
+        if (angle >= -30.0 && angle <= 30.0 && distance < 10) {
+            // If the point is within the range, add it to the pointcloud
+            pointcloud.points.push_back(points);
+            channels.values.push_back(RadarRSI[0].DetPoints[j].Power);
+        }
+		//pointcloud.points.push_back(points);
+		//channels.values.push_back(RadarRSI[0].DetPoints[j].Power);
+
 	}	
-	//pointcloud.channels.push_back(channels);
-    //sensor_msgs::convertPointCloudToPointCloud2(pointcloud, msg.pointcloud2);
 
     pointcloud.channels.push_back(channels);
 
@@ -41,13 +39,6 @@ RadarRSI_Data_Fill (sensor_msgs::msg::PointCloud2& msg)
 
 	msg.header.stamp = rclcpp::Clock().now();
 	msg.header.frame_id = "Radar_RSI";
-
-    // Set other fields of the pointcloud message
-    //pointcloud.is_bigendian = false;  // Endianness of the data (false for little endian)
-    //pointcloud.is_dense = true;  // Whether the pointcloud contains all finite points
-
-    // Set the pointcloud message in the RadarData message
-    //msg.pointcloud2 = pointcloud;
 
 }
 
